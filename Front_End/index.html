@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>User Dashboard</title>
     <meta content="width=device-width initial-scale=1" name="viewport">
-    <link href="asserts/bootstrap.min.css" rel="stylesheet">
-    <link href="asserts/bootstrap.bundle.js" rel="stylesheet">
+    <link href="assets/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/bootstrap.bundle.js" rel="stylesheet">
     <!-- font awesome cdn link  -->
     <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
           integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
@@ -18,7 +18,8 @@
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 
-    <link href="asserts/CSS/1_Header.css" rel="stylesheet">
+    <link href="assets/CSS/1_Header.css" rel="stylesheet">
+    <link href="assets/CSS/style.css" rel="stylesheet">
     <style>
         ul > li {
             cursor: pointer;
@@ -26,32 +27,47 @@
     </style>
 </head>
 <body>
-<header class="main ui">
-    <section>
-        <section id="navBar">
-    <nav id="na">
-        <ul class="nav">
-            <li><a href="" style="text-decoration: none;" >Home</a></li>
-            <li><a href="" style="text-decoration: none;" >Vehicle Fleet</a></li>
-            <li><a href="" style="text-decoration: none;" >Account</a></li>
-            <li><a href="" style="text-decoration: none;" >Check Out</a></li>
-        </ul>
-    </nav>
-            </section>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-between">
+        <h1 class="logo"><a href="index.html">ND RENTAL</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-        <div id="homePng">
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                <li><a class="nav-link scrollto" href="#services">Vehicle Fleet</a></li>
+                <li><a class="nav-link scrollto " href="#portfolio">Account</a></li>
+                <li><a class="nav-link scrollto" href="#team">Check Out</a></li>
+                <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
 
+    </div>
+</header><!-- End Header -->
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+
+    <div class="container-fluid" data-aos="fade-up">
+        <div class="row justify-content-center">
+            <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                <h1>FIND THE IDEAL
+                    CAR FOR YOU.</h1>
+                <h2>We have more cars for you to choose</h2>
+                <div><a href="#about" class="btn-get-started scrollto">Get Started</a></div>
+            </div>
+            <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
+                <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+            </div>
         </div>
-        <h1 id="Find">FIND THE IDEAL
-            CAR FOR YOU.
-        </h1>
-        <h3 id="weHave">We have more cars for you to choose</h3>
+    </div>
 
-        <button type="button" id="getStarted" class="btn btn-primary btn-lg">Get Started</button>
-    </section>
+</section><!-- End Hero -->
 
 
-</header>
+
 
 <main class="logInM">
     <section class="lgms">
@@ -132,10 +148,21 @@
                 <input class="form-control"placeholder="Date" id="txtDate" required type="text">
                 <span class="control-error" id="lblDate"></span>
             </div>
-            <button class="btn btn-primary" id="btnSignUp">Sign Up</button>
+            <div class="col-fileNIC" id="uploadIm">
+            <label for="register-form-NIC-image" class="form-label ">NIC Image or Driving Licence Image</label>
+            <input  class="form-control  " type="file" id="register-form-NIC-image">
+        </div>
+            <button class="btn btn-primary" id="btnSignL">Login</button>
         </div>
 
     </section>
 </main>
+
+<main id="vfeet">
+    <section id="vehicleFleet">
+
+    </section>
+</main>
+<script src="assets/JS/main.js"></script>
 </body>
 </html>
