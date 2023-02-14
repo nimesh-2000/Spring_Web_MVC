@@ -1,0 +1,267 @@
+body{
+}
+header{
+    height: 800px;
+    width:98.9vw ;
+    position: relative;
+}
+
+.nav{
+    position: absolute;
+    right: 43px;
+    top: 10px;
+    /*display: inline-block;*/
+}
+#navBar{
+    background: #0984E3;
+    box-shadow: 0px -1px 8px 2px #1c1717e8;
+    position: fixed;
+    width:  98.9vw;
+    top: 0;
+    height: 73px;
+    z-index: 3;
+    opacity: 0.8;
+}
+#na{
+    /*position: absolute;*/
+    right: 40px;
+    top: 0;
+}
+.nav>li{
+    display: inline-block;
+    cursor: pointer;
+    padding: 13px;
+    font-family: 'Poppins',Inter;
+    color: white;
+    font-size: 17px;
+
+}
+.nav>li>a{
+    color:white;
+}
+
+#homePng{
+    background-image:url("../img/7506746.jpg");
+    position: absolute;
+    width: 98.9vw;
+    height: 818px;
+    background-size:cover;
+    background-position: center;
+    top: 30px;
+    left: 0px;
+    right: 0;
+    /*background-position: center;*/
+    /*background-size: cover;*/
+    z-index: 1;
+}
+#Find{
+    position: absolute;
+    z-index: 1;
+    top: 94px;
+    left: 1034px;
+    width: 468px;
+    font-size: 50px;
+    font-family: 'Poppins', Inter;
+    font-weight: bold;
+    color: black;
+}
+
+
+#weHave{
+    position: absolute;
+    z-index: 1;
+    top: 219px;
+    left: 1036px;
+    width: 473px;
+    font-size: 25px;
+    font-family: 'Poppins', Inter;
+    font-weight: normal;
+    color: black;
+}
+#getStarted{
+    position: absolute;
+    z-index: 1;
+    top: 298px;
+    left: 1046px;
+    color: white;
+    font-weight: bold;
+    width: 233px;
+    background-color: #0984E3;
+}
+   /*login css--------------------------------------------------------------------------------------------------*/
+.logInM{
+    height: 800px;
+    width:98.9vw ;
+    position: relative;
+    background-color: white;
+}
+#lgm1{
+    position: absolute;
+    font-size: 40px;
+    top: 71px;
+    left: 745px;
+    font-weight:bolder;
+}
+.form-groupE1 {
+    position: absolute;
+    top: 221px;
+    width: 400px;
+    height: 60px;
+    left: 599px;
+}
+#txtUserName{
+    background-color: white;
+    border-color: black;
+    border-radius: 0px;
+    height: 50px;
+    font-size: 20px;
+    border-width: 2px;
+}
+.form-groupE2{
+    position: absolute;
+    top: 300px;
+    width: 400px;
+    height: 60px;
+    left: 599px;
+}
+#txtPassword{
+    background-color: white;
+    border-color: black;
+    border-radius: 0px;
+    height: 50px;
+    font-size: 20px;
+    border-width: 2px;
+}
+#btnLogIn{
+    position: absolute;
+    width: 400px;
+    height: 50px;
+    top: 380px;
+    left: 599px;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    background-color: #0984E3;
+}
+#or{
+    position: absolute;
+    font-size: 25px;
+    top: 436px;
+    left: 781px;
+    font-weight: normal;
+}
+#line1{
+    position: absolute;
+    width: 163px;
+    height: 1px;
+    background-color: black;
+    top: 453px;
+    left: 607px;
+}
+
+#line2{
+    position: absolute;
+    width: 163px;
+    height: 1px;
+    background-color: black;
+    top: 453px;
+    left: 818px;
+}
+#btnSign{
+    position: absolute;
+    width: 400px;
+    height: 50px;
+    top: 481px;
+    left: 599px;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    background-color: #0984E3;
+}
+/*sign up css ------------------------------------------------------------------------------*/
+
+.lams{
+    height: 800px;
+    width:98.9vw ;
+    position: relative;
+    background-color: #b6d4fe;
+}
+#sign{
+    position: absolute;
+    font-size: 40px;
+    top: 35px;
+    left: 712px;
+    font-weight: bolder;
+}
+.full-name{
+    position: absolute;
+    top: 146px;
+    width: 400px;
+    height: 60px;
+    left: 352px;
+}
+#txtFullName{
+    background-color: white;
+    border-color: black;
+    border-radius: 0px;
+    height: 50px;
+    font-size: 20px;
+    border-width: 2px;
+}
+.form-Uname{
+    position: absolute;
+    top: 146px;
+    width: 400px;
+    height: 60px;
+    left: 818px;
+}
+#txtUName{
+    background-color: white;
+    border-color: black;
+    border-radius: 0px;
+    height: 50px;
+    font-size: 20px;
+    border-width: 2px;
+}
+
+.form-pass{
+    position: absolute;
+    top: 230px;
+    width: 400px;
+    height: 60px;
+    left: 352px;
+}
+#txtSignPassword{
+    background-color: white;
+    border-color: black;
+    border-radius: 0px;
+    height: 50px;
+    font-size: 20px;
+    border-width: 2px;
+}
+.form-SNic{
+    position: absolute;
+    top: 230px;
+    width: 400px;
+    height: 60px;
+    left: 818px;
+}
+#txtNIC{
+    background-color: white;
+    border-color: black;
+    border-radius: 0px;
+    height: 50px;
+    font-size: 20px;
+    border-width: 2px;
+}
+.form-Dl{
+    position: absolute;
+    top: 314px;
+    width: 400px;
+    height: 60px;
+    left: 352px;
+}
+#txtDl{
+
+}
+
