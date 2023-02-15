@@ -1203,4 +1203,105 @@
     left: 783px;
     top: 487px;
 }
+/*=========================================================*/
+.account{
+    position: relative;
+    top: 140px;
+    /*margin-top: 460px;*/
+
+}
+.account1{
+    position: relative;
+    background: green;
+    z-index: 1;
+    height: 631px;
+    width: 98.9vw;
+    margin: auto;
+    top: 0px;
+}
+
+#account2{
+    position: absolute;
+    color: black;
+    top: 168px;
+    left: 97px;
+}
+
+#adminlg{
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    background: url("../../assets/img/user1234455.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    top: 19px;
+    left: 81px;
+}
+
+#an{
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    z-index: 1;
+    top: 33px;
+    left: 140px;
+    font-size: 20px;
+}
+
+#ae{
+    position: absolute;
+    color: black;
+    z-index: 1;
+    top: 57px;
+    left: 140px;
+    font-size: 18px;
+}
+
+/*#editIm{*/
+/*    position: absolute;*/
+/*    width: 20px;*/
+/*    height: 20px;*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*    z-index: 1;*/
+/*    top: 87px;*/
+/*    left: 130px;*/
+/*}*/
+
+#editIm2{
+    position: absolute;
+    color: black;
+    z-index: 1;
+    top: 88px;
+    left: 152px;
+    font-size: 18px;
+}
+
+/*///////////////*/
+#acct{
+    position: absolute;
+    z-index: 1;
+    left: 105px;
+    top: 206px;
+    width: 1328px;
+}
+
+.btnUpdate{
+    position: absolute;
+    top: 181px;
+    left: 1000px;
+    border-radius: 5px;
+    background-color: #F3BF06;
+    width: 150px;
+}
+
+.btnCancel{
+    position: absolute;
+    top: 181px;
+    left: 1174px;
+    border-radius: 5px;
+    background-color: #E74C3C;
+    width: 150px;
+}
 
