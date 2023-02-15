@@ -1206,19 +1206,14 @@
 /*=========================================================*/
 .account{
     position: relative;
-    top: 140px;
-    /*margin-top: 460px;*/
-
-}
-.account1{
-    position: relative;
     background: green;
     z-index: 1;
     height: 645px;
-    width: 98.9vw;
-    margin: auto;
-    top: 0px;
+    width: 98.9vw
+    /*margin-top: 460px;*/
+
 }
+
 
 #account2{
     position: absolute;
@@ -1303,5 +1298,38 @@
     border-radius: 5px;
     background-color: #E74C3C;
     width: 150px;
+}
+/*=================================================================*/
+#dash{
+    height: 800px;
+    width:98.9vw ;
+    position: relative;
+    background-color:#b6d4fe;
+}
+#ad{
+    position: absolute;
+    color: black;
+    left: 100px;
+    top: 10px;
+    font-weight: normal;
+    font-size: 25px;
+}
+#adIMG{
+    position: absolute;
+    background-image: url("../img/icons8-male-user-100 (1).png");
+    background-size: cover;
+    background-position: center;
+    width: 80px;
+    height: 80px;
+    top: 42px;
+    left: 99px;
+}
+#adName{
+    position: absolute;
+    color: black;
+    left: 33px;
+    top: 122px;
+    font-weight: normal;
+    font-size: 25px;
 }
 
