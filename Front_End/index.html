@@ -59,7 +59,7 @@
                 <div><a href="#about" class="btn-get-started scrollto">Get Started</a></div>
             </div>
             <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
-                <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+                <img src="assets/img/AutoUnion-slider-5-noloop.gif" class="img-fluid animated" alt="">
             </div>
         </div>
     </div>
@@ -225,6 +225,7 @@
                 <h3 id="trId">Auto</h3>
                 <h3 id="fId">Petrol</h3>
                 <h3 id="nId">100</h3>
+                <button type="button" id="addtoc" class="btn btn-primary btn-lg">Add To Cart</button>
             </div>
         </div>
         <div id="k11">
@@ -248,6 +249,7 @@
             <h3 id="trId2">Auto</h3>
             <h3 id="fId2">Petrol</h3>
             <h3 id="nId2">100</h3>
+            <button type="button" id="addTo" class="btn btn-primary btn-lg">Add To Cart</button>
         </div>
         </div>
 
@@ -272,6 +274,7 @@
             <h3 id="trId3">Auto</h3>
             <h3 id="fId3">Petrol</h3>
             <h3 id="nId3">100</h3>
+            <button type="button" id="addToca" class="btn btn-primary btn-lg">Add To Cart</button>
         </div>
         </div>
 
@@ -279,9 +282,65 @@
 </main>
 
 <!--------------------------------------------------------->
-<main>
+<main id="chO">
+<h1 id="cO">Check Out</h1>
+    <div id="checkOut" class="d-flex flex-column mb-3">
+        <div >
+            <h3 id="sLK">suzuki Alto K10</h3>
+            <h3 id="cD">Daily</h3>
+            <h3 id="cM">Monthly</h3>
+            <h3 id="cOH">On Hold</h3>
+            <h3 id="cF">From</h3>
+            <h3 id="cT">To</h3>
+            <h3 id="CDR">Driver</h3>
+            <h3 id="cDV">5000</h3>
+            <h3 id="cMV">5000</h3>
+            <h3 id="cOHV">5000</h3>
+            <h3 id="cFV">Kalutara</h3>
+            <h3 id="cTV">Kalutara</h3>
+            <select class="form-brand" aria-label="Default select example" id="selectD">
+                <option selected>None</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            <div class="col-fileNIC" id="checkOutImg">
+                <label for="register-form-NIC-image" class="form-label ">Lost Damage Payment Slip</label>
+                <input  class="form-control  " type="file" id="checkOutI">
+            </div>
+        </div>
 
+    </div>
+
+    <form>
+        <div class="mb-3" id="pickI">
+            <label for="pickL" style="color: black" class="form-label">Pick Up Location</label>
+            <input type="email" class="form-control" id="pickL" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text"></div>
+        </div>
+
+        <div class="mb-3" id="returnI">
+            <label for="returnL"style="color: black"  class="form-label">Return Location</label>
+            <input type="email" class="form-control" id="returnL" aria-describedby="emailHelp">
+            <div id="emailHelp2" class="form-text"></div>
+        </div>
+
+        <div class="mb-3" id="toRA">
+            <label for="TotalRent"style="color: black"  class="form-label">Total Rent Amount</label>
+            <input type="email" class="form-control" id="TotalRent" aria-describedby="emailHelp">
+            <div id="emailHelp3" class="form-text"></div>
+        </div>
+
+        <div class="mb-3" id="toDWA">
+            <label for="returnL"style="color: black"  class="form-label">Total Damage Waiver Amount</label>
+            <input type="email" class="form-control" id="totalDamage" aria-describedby="emailHelp">
+            <div id="emailHelp4" class="form-text"></div>
+        </div>
+
+        <button type="button" id="sentRent" class="btn btn-primary btn-lg">Sent Rental Request</button>
+    </form>
 </main>
+
 <script src="assets/JS/main.js"></script>
 </body>
 </html>
