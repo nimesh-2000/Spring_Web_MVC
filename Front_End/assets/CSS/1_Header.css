@@ -1392,6 +1392,61 @@
     top: 550px;
     left: 35px
 }
+#d {
+    position: absolute;
+    font-size: 20px;
+    top: 190px;
+    left: 105px;
+    font-weight: normal;
+    color: black;
+}
+#c{
+    position: absolute;
+    font-size: 20px;
+    top: 267px;
+    left: 105px;
+    font-weight: normal;
+    color: black;
+}
+#ca{
+    position: absolute;
+    font-size: 20px;
+    top: 340px;
+    left: 105px;
+    font-weight: normal;
+    color: black;
+}
+#r{
+    position: absolute;
+    font-size: 20px;
+    top: 415px;
+    left: 105px;
+    font-weight: normal;
+    color: black;
+}
+#p{
+    position: absolute;
+    font-size: 20px;
+    top: 491px;
+    left: 105px;
+    font-weight: normal;
+    color: black;
+}
+#e{
+    position: absolute;
+    font-size: 20px;
+    top: 567px;
+    left: 105px;
+    font-weight: normal;
+    color: black;
+}
+/*}*/
+/*#dashDiv{*/
+/*    width: 100px;*/
+/*    height: 100px;*/
+/*    border: 1px solid black;*/
+/*    position: absolute;*/
+/*}*/
 
 
 
