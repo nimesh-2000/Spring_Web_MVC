@@ -990,7 +990,7 @@
 }
 /*------------------------------------------------------*/
 #chO{
-    height: 490px;
+    min-height: 100vh;
     width:98.9vw ;
     position: relative;
     background-color:white;
@@ -1342,4 +1342,56 @@
     top: 175px;
     left: 35px
 }
+#cusImg{
+    position: absolute;
+    background-image: url("../img/user1234455.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    top: 250px;
+    left: 35px
+}
+#carImg{
+    position: absolute;
+    background-image: url("../img/photo_2023-02-16_00-15-34.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    top: 325px;
+    left: 35px
+}
+#reserveImg{
+    position: absolute;
+    background-image: url("../img/photo_2023-02-16_00-15-30.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    top: 400px;
+    left: 35px
+}
+#payImg{
+    position: absolute;
+    background-image: url("../img/photo_2023-02-16_00-15-40.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    top: 475px;
+    left: 35px
+}
+#employeeImg{
+    position: absolute;
+    background-image: url("../img/photo_2023-02-16_00-15-48.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    top: 550px;
+    left: 35px
+}
+
+
 
