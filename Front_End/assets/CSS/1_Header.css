@@ -1484,7 +1484,7 @@
     left: 33px;
     top: 42px;
     height: 220px;
-    border: 1px solid black;
+    border: 1px solid #0984E3;
 }
 #bookingH{
     position: absolute;
@@ -1509,7 +1509,7 @@
     left:338px;
     top: 42px;
     height: 220px;
-    border: 1px solid black;
+    border: 1px solid #0984E3;
 }
 #availableH{
     position: absolute;
@@ -1534,7 +1534,7 @@
     left:638px;
     top: 42px;
     height: 220px;
-    border: 1px solid black;
+    border: 1px solid #0984E3;
 }
 #reserveH{
     position: absolute;
@@ -1552,7 +1552,31 @@
     color: black;
     font-weight: normal;
 }
-
+/*=====================================================================*/
+#activeBDiv{
+    position: absolute;
+    width: 260px;
+    left:938px;
+    top: 42px;
+    height: 220px;
+    border: 1px solid #0984E3;
+}
+#activeH{
+    position: absolute;
+    top: 89px;
+    left: 951px;
+    font-size: 30px;
+    color: black;
+    font-weight: normal;
+}
+#activeV{
+    position: absolute;
+    top: 154px;
+    left: 1043px;
+    font-size: 30px;
+    color: black;
+    font-weight: normal;
+}
 
 
 
