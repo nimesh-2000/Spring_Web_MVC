@@ -1577,7 +1577,111 @@
     color: black;
     font-weight: normal;
 }
-
+/*===================================================*/
+/*===================================================*/
+#registerDiv{
+    position: absolute;
+    width: 260px;
+    left: 33px;
+    top: 42px;
+    height: 220px;
+    border: 1px solid #0984E3;
+}
+#registerH{
+    position: absolute;
+    top: 89px;
+    left: 90px;
+    font-size: 30px;
+    color: black;
+    font-weight: normal;
+}
+#registerV{
+    position: absolute;
+    top: 154px;
+    left: 130px;
+    font-size: 30px;
+    color: black;
+    font-weight: normal;
+}
+/*=========================*/
+#maintenanceDiv{
+    position: absolute;
+    width: 260px;
+    left:338px;
+    top: 42px;
+    height: 220px;
+    border: 1px solid #0984E3;
+}
+#maintenanceH{
+    position: absolute;
+    top: 89px;
+    left: 362px;
+    font-size: 30px;
+    color: black;
+    font-weight: normal;
+}
+#maintenanceV{
+    position: absolute;
+    top: 154px;
+    left: 446px;
+    font-size: 30px;
+    color: black;
+    font-weight: normal;
+}
+/*====================================================================*/
+#occupiedDiv{
+    position: absolute;
+    width: 260px;
+    left:638px;
+    top: 42px;
+    height: 220px;
+    border: 1px solid #0984E3;
+}
+#occupiedH{
+    position: absolute;
+    top: 89px;
+    left: 658px;
+    font-size: 30px;
+    color: black;
+    font-weight: normal;
+}
+#occupiedV{
+    position: absolute;
+    top: 154px;
+    left: 734px;
+    font-size: 30px;
+    color: black;
+    font-weight: normal;
+}
+/*=====================================================================*/
+#availableDriverDiv{
+    position: absolute;
+    width: 260px;
+    left:938px;
+    top: 42px;
+    height: 220px;
+    border: 1px solid #0984E3;
+}
+#availableDriverH{
+    position: absolute;
+    top: 89px;
+    left: 951px;
+    font-size: 30px;
+    color: black;
+    font-weight: normal;
+}
+#availableDriverV{
+    position: absolute;
+    top: 154px;
+    left: 1043px;
+    font-size: 30px;
+    color: black;
+    font-weight: normal;
+}
+#2row{
+    top: 100px;
+    position: absolute;
+}
 
 
 
