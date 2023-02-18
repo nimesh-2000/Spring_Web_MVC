@@ -1303,7 +1303,7 @@
     height: 800px;
     width: 18vw;
     position: relative;
-    background-color: #b6d4fe;
+    background-color: white;
 }
 #ad{
     position: absolute;
@@ -1466,13 +1466,69 @@
 
 #dashSE{
     height: 800px;
-    width: 80.9vw;
+    width: 80.8vw;
     top: -800px;
     position: relative;
     background-color: yellow;
     right: -58px;
     left: 277px;
 }
+#firstRow{
+    left: 10px;
+    top: 10px;
+    width: 10px;
+}
+#bookingDiv{
+    position: absolute;
+    width: 260px;
+    left: 81px;
+    top: 42px;
+    height: 220px;
+    border: 1px solid black;
+}
+#bookingH{
+    position: absolute;
+    top: 89px;
+    left: 138px;
+    font-size: 30px;
+    color: black;
+    font-weight: normal;
+}
+#bookingV{
+    position: absolute;
+    top: 154px;
+    left: 180px;
+    font-size: 30px;
+    color: black;
+    font-weight: normal;
+}
+/*=========================*/
+#availableDiv{
+    position: absolute;
+    width: 260px;
+    left:393px;
+    top: 42px;
+    height: 220px;
+    border: 1px solid black;
+}
+#availableH{
+    position: absolute;
+    top: 89px;
+    left: 414px;
+    font-size: 30px;
+    color: black;
+    font-weight: normal;
+}
+#availableV{
+    position: absolute;
+    top: 154px;
+    left: 495px;
+    font-size: 30px;
+    color: black;
+    font-weight: normal;
+}
+/*====================================================================*/
+
 
 
 
