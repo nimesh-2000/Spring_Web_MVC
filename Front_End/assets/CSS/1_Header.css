@@ -1301,9 +1301,9 @@
 /*=================================================================*/
 #dash{
     height: 800px;
-    width:98.9vw ;
+    width: 18vw;
     position: relative;
-    background-color:#b6d4fe;
+    background-color: #b6d4fe;
 }
 #ad{
     position: absolute;
@@ -1461,6 +1461,17 @@
     width: 139px;
     height: 40px;
 
+}
+/*=================================================dashsec*/
+
+#dashSE{
+    height: 800px;
+    width: 80.9vw;
+    top: -800px;
+    position: relative;
+    background-color: yellow;
+    right: -58px;
+    left: 277px;
 }
 
 
