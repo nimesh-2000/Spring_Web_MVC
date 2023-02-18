@@ -1446,6 +1446,15 @@
 /*    border: 1px solid black;*/
 /*    position: absolute;*/
 /*}*/
+#dashLine{
+    position: absolute;
+    top: 0px;
+    left: 268px;
+    width: 1px;
+    background-color: black;
+    min-height: 100vh;
+}
+
 
 
 
