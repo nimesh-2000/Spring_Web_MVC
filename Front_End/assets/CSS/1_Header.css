@@ -1746,5 +1746,37 @@
     color: black;
     font-weight: normal;
 }
-
+/*===========================================================*/
+#monthlyDiv{
+    position: absolute;
+    width: 200px;
+    left: 516px;
+    top: 445px;
+    height: 180px;
+    border: 1px solid #0984E3;
+}
+#monthlyH{
+    position: absolute;
+    top: 467px;
+    left: 534px;
+    font-size: 20px;
+    color: black;
+    font-weight: normal;
+}
+#monthV{
+    position: absolute;
+    top: 516px;
+    left: 557px;
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+}
+#lk3{
+    position: absolute;
+    top: 546px;
+    left: 380px;
+    font-size: 20px;
+    color: black;
+    font-weight: normal;
+}
 
