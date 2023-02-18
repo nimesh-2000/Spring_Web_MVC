@@ -1454,6 +1454,14 @@
     background-color: black;
     min-height: 100vh;
 }
+#logOut{
+    top: 658px;
+    left: 58px;
+    position: absolute;
+    width: 139px;
+    height: 40px;
+
+}
 
 
 
