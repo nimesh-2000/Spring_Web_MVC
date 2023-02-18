@@ -1581,35 +1581,35 @@
 /*===================================================*/
 #registerDiv{
     position: absolute;
-    width: 260px;
+    width: 200px;
     left: 33px;
-    top: 280px;
-    height: 220px;
+    top: 242px;
+    height: 180px;
     border: 1px solid #0984E3;
 }
 #registerH{
     position: absolute;
-    top: 341px;
-    left: 36px;
-    font-size: 30px;
+    top: 295px;
+    left: 50px;
+    font-size: 20px;
     color: black;
     font-weight: normal;
 }
 #registerV{
     position: absolute;
-    top: 414px;
-    left: 130px;
-    font-size: 30px;
+    top: 358px;
+    left: 112px;
+    font-size: 25px;
     color: black;
-    font-weight: normal;
+    font-weight: bold;
 }
 /*=========================*/
 #maintenanceDiv{
     position: absolute;
-    width: 260px;
-    left:338px;
-    top: 280px;
-    height: 220px;
+    width: 200px;
+    left: 276px;
+    top: 243px;
+    height: 180px;
     border: 1px solid #0984E3;
 }
 #maintenanceH{
