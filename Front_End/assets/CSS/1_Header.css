@@ -1812,3 +1812,64 @@
     color: black;
     font-weight: normal;
 }
+
+/*====================================
+==========================================================*/
+.carDash{
+    position: relative;
+    background: bisque;
+    z-index: 5;
+    height: 741px;
+    width: 80.8vw;
+    margin: auto;
+    top: 0px;
+}
+
+#carh{
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    z-index: 2;
+    top: 33px;
+    left: 290px;
+    font-size: 30px;
+    font-family: 'IM Fell French Canon', serif;
+}
+
+/*#carhl{*/
+/*    position: absolute;*/
+/*    top: 65px;*/
+/*    left: 293px;*/
+/*    background: url("../../assets/images/Line 5.png");*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*    width: 33px;*/
+/*    height: 2px;*/
+/*    margin: 0;*/
+/*}*/
+
+.card-body2{
+    position: absolute;
+    top: 102px;
+    left: 326px;
+    margin: 0;
+}
+
+#btnAddC2{
+    position: absolute;
+    left: 422px;
+    background-color: #F3BF06;
+    width: 150px;
+    top: 569px;
+    border-radius: 5px;
+    color: black;
+}
+
+#btnViewAllCars{
+    position: absolute;
+    left: 875px;
+    background-color: #E74C3C;
+    width: 125px;
+    top: 40px;
+    color: black;
+}
