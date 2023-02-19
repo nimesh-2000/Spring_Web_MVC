@@ -1874,3 +1874,14 @@
     top: 40px;
     color: black;
 }
+/*=====================================
+=======================================*/
+#customerVerification{
+    height: 800px;
+    width: 80.8vw;
+    top: -800px;
+    position: relative;
+    background-color: deeppink;
+    right: -58px;
+    left: 277px;
+}
