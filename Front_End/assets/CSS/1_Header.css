@@ -1818,7 +1818,7 @@
 .carDash{
     position: relative;
     background: bisque;
-    z-index: 5;
+    z-index: 1;
     height: 741px;
     width: 80.8vw;
     margin: auto;
@@ -1830,11 +1830,10 @@
     position: absolute;
     color: black;
     font-weight: bold;
-    z-index: 2;
+    z-index: 1;
     top: 33px;
     left: 290px;
     font-size: 30px;
-    font-family: 'IM Fell French Canon', serif;
 }
 
 /*#carhl{*/
@@ -1884,4 +1883,33 @@
     background-color: deeppink;
     right: -58px;
     left: 277px;
+}
+#cvH{
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    z-index: 2;
+    top: 33px;
+    left: 290px;
+    font-size: 30px;
+}
+/*============================
+=================================*/
+#rentVerificationTable{
+    height: 800px;
+    width: 80.8vw;
+    top: -800px;
+    position: relative;
+    background-color: deeppink;
+    right: -58px;
+    left: 277px;
+}
+#rvH{
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    z-index: 2;
+    top: 33px;
+    left: 290px;
+    font-size: 30px;
 }
