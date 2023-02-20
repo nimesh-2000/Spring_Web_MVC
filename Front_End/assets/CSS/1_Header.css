@@ -1895,12 +1895,12 @@
 }
 /*============================
 =================================*/
-#rentVerificationTable{
+#rentVerification{
     height: 800px;
     width: 80.8vw;
     top: -800px;
     position: relative;
-    background-color: deeppink;
+    background-color: lightblue;
     right: -58px;
     left: 277px;
 }
