@@ -2081,3 +2081,14 @@
     left: 326px;
     margin: 0;
 }
+#admH{
+    position: absolute;
+    top: -63px;
+    color: black;
+}
+#btnAddAdmin{
+    position: absolute;
+    top: 119px;
+    width: 100px;
+    left: 365px;
+}
