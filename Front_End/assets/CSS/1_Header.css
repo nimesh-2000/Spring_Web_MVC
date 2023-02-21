@@ -1913,3 +1913,154 @@
     left: 290px;
     font-size: 30px;
 }
+/*==================================
+============================================*/
+
+.payments{
+    position: relative;
+    background: #FFFFFF;
+    z-index: 5;
+    height: 663px;
+    width: 80.8vw;
+    margin: auto;
+    top: 0px;
+}
+
+#payment1{
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    z-index: 2;
+    top: 33px;
+    left: 290px;
+    font-size: 30px;
+    font-family: 'IM Fell French Canon', serif;
+}
+
+/*#paymentI{*/
+/*    position: absolute;*/
+/*    top: 72px;*/
+/*    left: 293px;*/
+/*    background: url("../../assets/images/Line 5.png");*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*    width: 79px;*/
+/*    height: 2px;*/
+/*    margin: 0;*/
+/*}*/
+
+.form-selectRI{
+    position: absolute;
+    left: 292px;
+    top: 110px;
+    width: 246px;
+    border-radius: 5px;
+    height: 31px;
+}
+
+#cus1{
+    position: absolute;
+    left: 591px;
+    top: 104px;
+    width: 246px;
+}
+
+#CD{
+    position: absolute;
+    font-size: 15px;
+}
+
+#CDN{
+    position: absolute;
+    font-size: 15px;
+    font-weight: bold;
+    top: 21px;
+}
+
+/*////////////////////////////*/
+#cus2{
+    position: absolute;
+    left: 810px;
+    top: 104px;
+    width: 246px;
+}
+
+#CPD{
+    position: absolute;
+    font-size: 15px;
+}
+
+#CPDd{
+    position: absolute;
+    font-size: 15px;
+    font-weight: bold;
+    top: 21px;
+}
+
+/*////////////////////////////*/
+#cus3{
+    position: absolute;
+    left: 955px;
+    top: 104px;
+    width: 246px;
+}
+
+#CRD{
+    position: absolute;
+    font-size: 15px;
+}
+
+#CRDd{
+    position: absolute;
+    font-size: 15px;
+    font-weight: bold;
+    top: 21px;
+}
+
+/*////////////////////////////*/
+
+#rental1{
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    z-index: 2;
+    top: 181px;
+    left: 290px;
+    font-size: 20px;
+}
+
+#rentPay{
+    position: absolute;
+    left: 293px;
+    width: 1036px;
+    top: 203px;
+}
+
+/*///////////////////////////////*/
+
+.card-body5{
+    position: absolute;
+    top: 416px;
+    left: 292px;
+    margin: 0;
+}
+
+.form-control{
+    border-color: black;
+}
+
+#btnPay{
+    position: absolute;
+    left: 316px;
+    background-color: #F3BF06;
+    width: 150px;
+    top: 193px;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+}
+
+.form-groupDC{
+    position: absolute;
+    top: 1px;
+}

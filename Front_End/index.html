@@ -718,7 +718,118 @@
             </table>
         </div>
     </section>
+<!--    ===================================
+=================================================-->
+    <section class="payments">
+        <h3 id="payment1">Payments</h3>
+        <div id="paymentI"></div>
 
+        <select class="form-selectRI" aria-label="Default select example" id="selectReservation">
+            <option selected>Reservation ID</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+
+        <div id="cus1">
+            <h4 id="CP">Customer</h4>
+            <h4 id="CDN">W.Nimesh Denuwan</h4>
+        </div>
+
+        <div id="cus2">
+            <h4 id="CPD">Pick up date</h4>
+            <h4 id="CPDd">13/02/2023</h4>
+        </div>
+
+        <div id="cus3">
+            <h4 id="CRD">Return date</h4>
+            <h4 id="CRDd">14/02/2023</h4>
+        </div>
+
+        <h3 id="rental1">Rentals</h3>
+
+        <!--payments details table-->
+        <div class="col-md-12 mt-4" id="rentPay" style="height:180px; overflow-y: scroll">
+            <table class="table table-bordered text-white">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Car Num</th>
+                    <th>Driver</th>
+                    <th>Amount Due</th>
+                    <th>Extra km</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody class="bg-light text-dark" id="rentPayTable">
+                <tr>
+
+                    <td>NB-6889</td>
+                    <td>D00-001</td>
+                    <td>20000</td>
+                    <td>50</td>
+                    <td>Paid</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card-body5">
+            <form>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-groupDC">
+                            <label for="txtDmCost">Damage Cost</label>
+                            <input class="form-control" id="txtDmCost" type="text">
+                            <span class="control-error" id="lbldmcost"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-groupEKC">
+                            <label for="txtExtraKC">Extra Km Cost</label>
+                            <input class="form-control" id="txtExtraKC" type="text">
+                            <span class="control-error" id="lblextrakc"></span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-groupRDWA">
+                            <label for="txtRetDamA">Returning Damage Amount</label>
+                            <input class="form-control" id="txtRetDamA" type="text">
+                            <span class="control-error" id="lblretdama"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-groupDW">
+                            <label for="txtDriverWag">Driver Wages</label>
+                            <input class="form-control" id="txtDriverWag" type="text">
+                            <span class="control-error" id="lbldriverwag"></span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-groupDamDes">
+                            <label for="txtDaDes">Damage Description</label>
+                            <input class="form-control" id="txtDaDes" type="text">
+                            <span class="control-error" id="lbldades"></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <button class="btn btn-primary" id="btnPay">Pay</button>
+
+        </div>
+
+    </section>
 </main>
 <script src="assets/JS/main.js"></script>
 </body>

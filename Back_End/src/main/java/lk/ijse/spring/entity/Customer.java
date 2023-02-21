@@ -17,9 +17,8 @@ import java.util.List;
 @Entity
 public class Customer {
     @Id
-    private String customerId;
-    private String cusName;
     private String nic;
+    private String cusName;
     private String contactNo;
     private String address;
     private String email;
