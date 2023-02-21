@@ -1918,12 +1918,12 @@
 
 .payments{
     position: relative;
-    background: #FFFFFF;
+    background: mediumpurple;
     z-index: 5;
     height: 663px;
     width: 80.8vw;
-    margin: auto;
-    top: 0px;
+    top: -800px;
+    left: 278px;
 }
 
 #payment1{
@@ -1965,7 +1965,7 @@
     width: 246px;
 }
 
-#CD{
+#CP{
     position: absolute;
     font-size: 15px;
 }
