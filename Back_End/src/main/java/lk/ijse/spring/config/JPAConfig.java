@@ -1,6 +1,7 @@
 package lk.ijse.spring.config;
 
 //import lk.ijse.spring.repo.CustomerRepo;
+import lk.ijse.spring.repo.CustomerRepo;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -17,6 +18,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 @Configuration
 @EnableTransactionManagement
+@EnableJpaRepositories(basePackageClasses = {CustomerRepo.class})
 public class JPAConfig {
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource ds, JpaVendorAdapter jpa){
