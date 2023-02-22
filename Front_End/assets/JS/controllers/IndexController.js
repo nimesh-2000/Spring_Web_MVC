@@ -1,0 +1,10 @@
+$("#h").click(function(){
+    $("#hero").css('display','block');
+    $("#Clogin").css('display','none');
+    $("#Csign").css('display','none');
+    $("#vfeet").css('display','none');
+    $("#chO").css('display','none');
+    $("#ac").css('display','none');
+    $("#dash").css('display','none');
+    $("#dashSEM").css('display','none');
+});

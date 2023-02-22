@@ -36,11 +36,11 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                <li><a class="nav-link scrollto" href="#services">Vehicle Fleet</a></li>
-                <li><a class="nav-link scrollto " href="#portfolio">Account</a></li>
-                <li><a class="nav-link scrollto" href="#team">Check Out</a></li>
-                <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+                <li><a class="nav-link scrollto active" id="h">Home</a></li>
+                <li><a class="nav-link scrollto" id="vF">Vehicle Fleet</a></li>
+                <li><a class="nav-link scrollto " id="A">Account</a></li>
+                <li><a class="nav-link scrollto" id="ckeck">Check Out</a></li>
+                <li><a class="getstarted scrollto" id="get">Get Started</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -69,7 +69,7 @@
 
 
 
-<main class="logInM">
+<main class="logInM" id="Clogin">
     <section class="lgms">
         <!--       <div>-->
         <!--           <ul class="list-group list-group-horizontal text-danger justify-content-end font-weight-bold">-->
@@ -99,7 +99,7 @@
 
     </section>
 </main>
-<main class="signUpM">
+<main class="signUpM" id="Csign">
     <section class="lams">
         <!--       <div>-->
         <!--           <ul class="list-group list-group-horizontal text-danger justify-content-end font-weight-bold">-->
@@ -341,7 +341,7 @@
     </form>
 </main>
 <!--===================================================-->
-<main class="account">
+<main class="account" id="ac">
     <section class="account1">
         <div id="adminlg"></div>
         <h3 id="an">Nimesh Denuwan</h3>
@@ -409,7 +409,7 @@
     <button type="button" id="logOut" class="btn btn-outline-dark">Log Out</button>
 </section></main>
 
-<main>
+<main id="dashSEM">
 <section id="dashSE">
     <div class="d-flex flex-row mb-3">
         <div id="bookingDiv"></div>
@@ -915,7 +915,159 @@
             </form>
         </div>
     </section>
+<!--    =================================================================
+=========================================================================-->
+
+    <section class="viewCar">
+        <h3 id="vwC">View Cars</h3>
+        <div id="vwC1"></div>
+
+        <h3 id="viewshed"><a>View Driver Schedule</a></h3>
+
+        <div>
+            <select class="form-selectCT" aria-label="Default select example" id="selectCType">
+                <option selected>Type</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+
+            <select class="form-selectCB" aria-label="Default select example" id="selectCBrand">
+                <option selected>Brand</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+
+            <select class="form-selectCN" aria-label="Default select example" id="selectCNum">
+                <option selected>Car Num</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+
+        <div class="d-flex flex-row mb-3" id="v1" style="position: absolute;top: 180px;left: 285px;">
+            <div class="p-2">
+                <input class="form-control" id="txtVCbrnd" placeholder="Brand" type="text">
+                <span class="control-error" id="lblvcbrnd"></span>
+            </div>
+            <div class="p-2">
+                <input class="form-control" id="txtVCTrans" placeholder="Transmission" type="text">
+                <span class="control-error" id="lblvctrans"></span>
+            </div>
+            <div class="p-2">
+                <input class="form-control" id="txtVCcperex" placeholder="Cost per extra km" type="text">
+                <span class="control-error" id="lblvcperex"></span>
+            </div>
+        </div>
+
+        <div class="d-flex flex-row mb-3" id="v2" style="position: absolute;top: 241px;left: 285px;">
+            <div class="p-2">
+                <input class="form-control" id="txtCNu" placeholder="Car Num" type="text">
+                <span class="control-error" id="lblcnu"></span>
+            </div>
+            <div class="p-2">
+                <input class="form-control" id="txtNOP" placeholder="No Of Passengers" type="text">
+                <span class="control-error" id="lblnop"></span>
+            </div>
+            <div class="p-2">
+                <input class="form-control" id="txtDai" placeholder="Daily" type="text">
+                <span class="control-error" id="lbldai"></span>
+            </div>
+        </div>
+
+        <div class="d-flex flex-row mb-3" id="v3" style="position: absolute;top: 302px;left: 285px;">
+            <div class="p-2">
+                <input class="form-control" id="txtCT" placeholder="Type" type="text">
+                <span class="control-error" id="lblct"></span>
+            </div>
+            <div class="p-2">
+                <input class="form-control" id="txtFM" placeholder="Free Mileage" type="text">
+                <span class="control-error" id="lblfm"></span>
+            </div>
+            <div class="p-2">
+                <input class="form-control" id="txtMn" placeholder="Monthly" type="text">
+                <span class="control-error" id="lblmn"></span>
+            </div>
+        </div>
+
+        <div class="d-flex flex-row mb-3" id="v4" style="position: absolute;top: 363px;left: 285px;">
+            <div class="p-2">
+                <input class="form-control" id="txtFT" placeholder="Fuel" type="text">
+                <span class="control-error" id="lblft"></span>
+            </div>
+            <div class="p-2">
+                <input class="form-control" id="txtLDW" placeholder="Loss Damage Waiver" type="text">
+                <span class="control-error" id="lblldw"></span>
+            </div>
+        </div>
+
+        <div class=".sub-detail-container" style="position: absolute;top: 67px;width: 50%;left: 586px;">
+            <div class="w-100 d-flex justify-content-between">
+
+
+                <div class="btn-group d-flex ms-auto mb-5 w-25">
+                    <button class="btn btn-dark" type="button">Action</button>
+                    <button aria-expanded="false" class="btn btn-dark dropdown-toggle dropdown-toggle-split"
+                            data-bs-toggle="dropdown" type="button">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" id="admin-car-underMaintain">Under Maintaining</a></li>
+                        <li><a class="dropdown-item" id="admin-car-needMaintain">Need Maintain</a></li>
+                        <li><a class="dropdown-item" id="admin-car-available">Available</a></li>
+                        <li><a class="dropdown-item" id="admin-car-unavailable">Unavailable</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <button class="btn btn-primary" id="btnUpdate">Update</button>
+        <button class="btn btn-primary" id="btnDelete">Delete</button>
+
+        <div class="col-md-12 mt-4" id="carViewTb" style="height:180px; overflow-y: scroll">
+            <table class="table table-bordered text-white">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Brand</th>
+                    <th>CarNum</th>
+                    <th>Type</th>
+                    <th>Fuel</th>
+                    <th>Transmission</th>
+                    <th>No_Passengers</th>
+                    <th>FreeMile</th>
+                    <th>LossDamage</th>
+                    <th>CostExtrakm</th>
+                    <th>Daily</th>
+                    <th>Monthly</th>
+                </tr>
+                </thead>
+                <tbody class="bg-light text-dark" id="carViewTable">
+                <tr>
+                    <td>Suzuki Alto</td>
+                    <td>NB-6889</td>
+                    <td>General</td>
+                    <td>Petrol</td>
+                    <td>Auto</td>
+                    <td>6</td>
+                    <td>100</td>
+                    <td>15000</td>
+                    <td>49.50</td>
+                    <td>5000</td>
+                    <td>110330</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </section>
 </main>
+<script src="assets/JS/jquery-3.6.1.min.js"></script>
 <script src="assets/JS/main.js"></script>
+<script src="assets/JS/controllers/IndexController.js"></script>
 </body>
+<script src="assets/JS/bootstrap.min.js"></script>
 </html>

@@ -2109,3 +2109,118 @@
     top: -63px;
     color: black;
 }
+/*========================================
+============================================*/
+
+.viewCar{
+    position: relative;
+    background: #FFFFFF;
+    z-index: 5;
+    height: 663px;
+    width: 80.8vw;
+    margin: auto;
+    top: 0px;
+}
+
+#vwC{
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    z-index: 2;
+    top: 33px;
+    left: 290px;
+    font-size: 30px;
+    font-family: 'IM Fell French Canon', serif;
+}
+
+/*#vwC1{*/
+/*    position: absolute;*/
+/*    top: 71px;*/
+/*    left: 293px;*/
+/*    background: url("../../assets/images/Line 5.png");*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*    width: 87px;*/
+/*    height: 2px;*/
+/*    margin: 0;*/
+/*}*/
+
+#viewshed{
+    position: absolute;
+    top: 41px;
+    left: 1096px;
+    color: #0a53be;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.form-selectCT{
+    position: absolute;
+    left: 292px;
+    top: 110px;
+    width: 180px;
+    border-radius: 5px;
+    height: 31px;
+    background-color: #D9D9D9;
+    font-weight: bold;
+}
+
+.form-selectCB{
+    position: absolute;
+    left: 487px;
+    top: 110px;
+    width: 180px;
+    border-radius: 5px;
+    height: 31px;
+    background-color: #D9D9D9;
+    font-weight: bold;
+}
+
+.form-selectCN{
+    position: absolute;
+    left: 681px;
+    top: 110px;
+    width: 180px;
+    border-radius: 5px;
+    height: 31px;
+    background-color: #D9D9D9;
+    font-weight: bold;
+}
+
+#btnUpdate{
+    position: absolute;
+    left: 869px;
+    background-color: #F3BF06;
+    width: 117px;
+    top: 400px;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+}
+
+#btnDelete{
+    position: absolute;
+    left: 997px;
+    background-color: #E74C3C;
+    width: 117px;
+    top: 400px;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+}
+
+#carViewTb{
+    position: absolute;
+    left: 234px;
+    width: 1116px;
+    top: 458px;
+}
+
+.sub-detail-container{
+    display: flex;
+    height: 90%;
+    width: 90%;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
