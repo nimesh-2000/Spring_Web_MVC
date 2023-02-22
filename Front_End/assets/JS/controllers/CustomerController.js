@@ -1,5 +1,5 @@
 
-let baseURL="http://localhost:8080/app/";
+let baseURL="http://localhost:8080/Back_End_war/";
 
 $("#btnSignL").click(function () {
 
@@ -65,7 +65,7 @@ function imagePath(){
         data: data,
         success: function (resp) {
             alert("Successfully Uploaded");
-            loadTheLastUploadedImage();
+            // loadTheLastUploadedImage();
         },
         error: function (err) {
             console.log(err);
