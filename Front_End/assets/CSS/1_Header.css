@@ -2119,12 +2119,13 @@
 
 .viewCar{
     position: relative;
-    background: #FFFFFF;
+    background: antiquewhite;
     z-index: 5;
     height: 663px;
     width: 80.8vw;
     margin: auto;
-    top: 0px;
+    top: -800px;
+    left: 139px;
 }
 
 #vwC{
@@ -2216,7 +2217,7 @@
 
 #carViewTb{
     position: absolute;
-    left: 234px;
+    left: 70px;
     width: 1116px;
     top: 458px;
 }

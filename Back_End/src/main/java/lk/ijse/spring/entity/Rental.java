@@ -19,7 +19,7 @@ public class Rental {
     @Id
     private String rentalId;
     @ManyToOne
-    private Customer cusId;
+    private Customer nic;
     private LocalDate date;
     private LocalDate pickUpDate;
     private LocalDate returnDate;

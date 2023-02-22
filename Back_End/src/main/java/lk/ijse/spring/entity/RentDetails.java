@@ -19,7 +19,7 @@ public class RentDetails {
     @EmbeddedId
     private RentalDetails_PK id;
     @ManyToOne
-    private Driver driver_id;
+    private Driver driverId;
     private String rental_status;
     private String payment_slip;
 }
