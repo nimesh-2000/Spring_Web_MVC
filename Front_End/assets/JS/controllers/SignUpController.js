@@ -1,7 +1,7 @@
-$("#btnSign").click(function(){
+$("#btnSignL").click(function(){
     $("#home").css('display','none');
-    $("#Clogin").css('display','none');
-    $("#Csign").css('display','block');
+    $("#Clogin").css('display','block');
+    $("#Csign").css('display','none');
     $("#vfeet").css('display','none');
     $("#chO").css('display','none');
     $("#ac").css('display','none');

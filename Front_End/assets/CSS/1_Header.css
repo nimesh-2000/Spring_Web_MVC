@@ -185,6 +185,7 @@
     width:98.9vw ;
     position: relative;
     background-color:white;
+    top: 64px;
 }
 #sign{
     position: absolute;
@@ -192,6 +193,7 @@
     top: 35px;
     left: 712px;
     font-weight: bolder;
+    color: black;
 }
 .full-name{
     position: absolute;
