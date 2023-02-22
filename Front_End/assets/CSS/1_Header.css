@@ -88,17 +88,19 @@
 }
    /*login css--------------------------------------------------------------------------------------------------*/
 .logInM{
-    height: 800px;
+    height: 719px;
     width:98.9vw ;
     position: relative;
+    z-index: 1;
     background-color: white;
 }
 #lgm1{
     position: absolute;
     font-size: 40px;
-    top: 71px;
+    top: 114px;
     left: 745px;
-    font-weight:bolder;
+    font-weight: bolder;
+    color: black;
 }
 .form-groupE1 {
     position: absolute;
@@ -365,7 +367,7 @@
 #vehicleF{
     position: absolute;
     font-size: 40px;
-    top: 35px;
+    top: 70px;
     left: 165px;
     font-weight: bolder;
     color: black;
@@ -1205,11 +1207,11 @@
 /*=========================================================*/
 .account{
     position: relative;
-    background: green;
+    background: white;
     z-index: 1;
     height: 645px;
-    width: 98.9vw
-    /*margin-top: 460px;*/
+    width: 98.9vw;
+    top: 70px;
 
 }
 
