@@ -79,4 +79,9 @@ public class CarServiceImpl implements CarService {
     public List<CarDTO> sortCarsByAttributes(CarDTO carDTO) {
         return null;
     }
+
+    @Override
+    public void uploadCarImages(String frontPath, String backPath, String sidePath, String InteriorPath, String registrationId) {
+
+    }
 }
