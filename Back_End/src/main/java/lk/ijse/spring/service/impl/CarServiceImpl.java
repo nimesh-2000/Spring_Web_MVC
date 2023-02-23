@@ -82,6 +82,10 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void uploadCarImages(String frontPath, String backPath, String sidePath, String InteriorPath, String registrationId) {
-
+        if (repo.existsById(registrationId)) {
+            repo.updateCarFilePaths(frontPath, backPath, sidePath,interiorPath, registrationNum);
+        } else {
+            throw new RuntimeException("User Not Found");
+        }
     }
 }
