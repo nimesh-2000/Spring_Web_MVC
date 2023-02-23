@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.time.LocalDate;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -14,4 +16,7 @@ public class DriverDTO {
     private String name;
     private String nic;
     private String password;
+    private String dl;
+    private LocalDate dob;
+    private String available;
 }
