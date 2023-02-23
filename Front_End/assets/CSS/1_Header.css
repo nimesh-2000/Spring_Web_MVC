@@ -2239,3 +2239,6 @@
     justify-content: space-evenly;
     flex-direction: column;
 }
+.btn-outline-info{
+    width: 150px;
+}
