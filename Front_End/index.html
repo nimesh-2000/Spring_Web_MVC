@@ -906,6 +906,23 @@
                     <div class="col-6">
                         <div class="form-groupCF">
                             <!--                            <label for="txtFName">B</label>-->
+                            <input class="form-control" id="txtDLN" placeholder="Driver License No" type="text">
+                            <span class="control-error" id="lblDLN"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-groupTF">
+                            <!--                            <label for="txtUserName">User Name</label>-->
+                            <input class="form-control" id="txtDOB" placeholder="DOB" type="text">
+                            <span class="control-error" id="lblDOB"></span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-groupCF">
+                            <!--                            <label for="txtFName">B</label>-->
                             <input class="form-control" id="txtDNIC" placeholder="NIC" type="text">
                             <span class="control-error" id="lblDNIC"></span>
                         </div>
@@ -918,6 +935,11 @@
                         </div>
                     </div>
                 </div>
+                <select class="form-selectRI" aria-label="Default select example" id="selectDriver">
+                    <option selected>Available</option>
+                    <option > Non Available</option>
+
+                </select>
                 <button class="btn btn-primary" id="btnAddDriver">Save</button>
             </form>
         </div>
