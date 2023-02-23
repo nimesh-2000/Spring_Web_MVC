@@ -14,9 +14,8 @@ import java.time.LocalDate;
 public class DriverDTO {
     private String driverId;
     private String name;
+    private String dob;
     private String nic;
-    private String password;
-    private String dl;
-    private LocalDate dob;
-    private String available;
+    private String drivingLicenceNum;
+    private String availability;
 }

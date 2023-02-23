@@ -3,7 +3,6 @@ $("#btnAddDriver").click(function () {
     let driverId =  $("#txtDId").val();
     let driverName = $("#txtDNa").val();
     let driverNic =$("#txtDNIC").val();
-    let driverPassword= $("#txtDP").val();
     let driverLicense= $("#txtDLN").val();
     let driverDOB= $("#txtDOB").val();
     let driverAvailability= $("#selectDriver").val();
@@ -12,10 +11,9 @@ $("#btnAddDriver").click(function () {
         driverId:driverId,
         name:driverName,
         nic:driverNic,
-        password:driverPassword,
-        dl:driverLicense,
+        drivingLicenceNum:driverLicense,
         dob:driverDOB,
-        available:driverAvailability
+        availability:driverAvailability
     }
 
     //send ajax request to the customer servlet
