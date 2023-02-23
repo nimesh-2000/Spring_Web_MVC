@@ -2127,6 +2127,15 @@
     top: -800px;
     left: 139px;
 }
+#selectAvailable{
+    position: absolute;
+    width: 210px;
+    height: 37px;
+    left: 685px;
+    top: -62px;
+    border-radius: 5px;
+    background: white;
+}
 
 #vwC{
     position: absolute;

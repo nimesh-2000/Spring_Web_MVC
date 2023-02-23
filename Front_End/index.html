@@ -393,10 +393,10 @@
     <h1 id="ad">Admin</h1>
     <div id="adIMG"></div>
     <h1 id="adName">Nimesh Denuwan</h1>
-    <div id="dashDiv" >
-    <h3 id="d">Dashboard</h3>
+
+        <div><a id="d" style="cursor: pointer;background-color: #0dcaf0" class="btn-get-started scrollto">Dashboard</a></div>
+<!--    <h3 id="d">Dashboard</h3>-->
     <div id="dashImg"></div>
-    </div>
     <h3 id="c">Customers</h3>
     <h3 id="ca">Cars</h3>
     <h3 id="r">Reservation</h3>
@@ -524,7 +524,7 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="form-groupTT">
-                            <input class="form-control" id="txtTyp" placeholder="Type" type="text">
+                            <input class="form-control" id="txtType" placeholder="Type" type="text">
                             <span class="control-error" id="lbltype"></span>
                         </div>
                     </div>
@@ -643,6 +643,11 @@
                         <label for="register-form-NIC-image" class="form-label ">Upload Interior View</label>
                         <input style="border: 1px solid gray" class="form-control  " type="file" id="uploadUIV">
                     </div>
+                    <select class="form-selectAL" aria-label="Default select example" id="selectAvailable" >
+                        <option selected>Availability</option>
+                        <option >Available</option>
+                        <option >Unavailable</option>
+                    </select>
 
                 </div>
 
@@ -1072,6 +1077,7 @@
 <script src="assets/JS/controllers/IndexController.js"></script>
 <script src="assets/JS/controllers/LoginController.js"></script>
 <script src="assets/JS/controllers/CustomerController.js"></script>
+<script src="assets/JS/controllers/CarController.js"></script>
 <!--<script src="assets/JS/controllers/SignUpController.js"></script>-->
 </body>
 <script src="assets/JS/bootstrap.min.js"></script>

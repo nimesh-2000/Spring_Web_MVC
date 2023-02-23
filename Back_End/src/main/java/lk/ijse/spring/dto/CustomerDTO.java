@@ -9,7 +9,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @Data
 @ToString
-public class CustomerDTO {
+public class CustomerDTO{
     private String nic;
     private String cusName;
     private String contactNo;
