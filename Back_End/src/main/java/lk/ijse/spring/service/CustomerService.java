@@ -17,4 +17,6 @@ public interface CustomerService {
     List<CustomerDTO> getAllCustomerDetail();
 
     List<CustomerDTO> getTodayRegisteredCustomers();
+
+    void uploadCustomerImages(String imageLocation, String nic);
 }
