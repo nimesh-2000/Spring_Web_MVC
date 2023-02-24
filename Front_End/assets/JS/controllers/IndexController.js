@@ -63,3 +63,15 @@ $("#check").click(function (){
     $("#dash").css('display','none');
     $("#dashSEM").css('display','none');
 });
+
+//
+$("#btnSign").click(function(){
+    $("#home").css('display','none');
+    $("#Clogin").css('display','none');
+    $("#Csign").css('display','block');
+    $("#vfeet").css('display','none');
+    $("#chO").css('display','none');
+    $("#ac").css('display','none');
+    $("#dash").css('display','none');
+    $("#dashSEM").css('display','none');
+});
