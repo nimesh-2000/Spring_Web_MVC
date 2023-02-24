@@ -71,4 +71,9 @@ public class CustomerServiceImpl implements CustomerService {
             throw new RuntimeException("Customer Not Found");
         }
     }
+
+    @Override
+    public CustomerDTO searchCustomerByEmail(String email) {
+        return mapper.map( repo.getCustomerByEmail(email),CustomerDTO.class);
+    }
 }
