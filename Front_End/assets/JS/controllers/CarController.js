@@ -44,7 +44,7 @@ function addCar() {
         success: function (resp) {
             uploadCarImages(registrationId);
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'success',
                 title: "car Added Successfully",
                 showConfirmButton: false,
@@ -55,7 +55,7 @@ function addCar() {
         error: function (error) {
             let errorReason = JSON.parse(error.responseText);
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'error',
                 title: "car Not Added Successfully",
                 showConfirmButton: false,
@@ -96,7 +96,7 @@ $.ajax({
     success: function (res) {
         console.log("Uploaded");
         Swal.fire({
-            position: 'top-end',
+            position: 'center',
             icon: 'success',
             title: "Images Upload Successfully",
             showConfirmButton: false,
@@ -106,7 +106,7 @@ $.ajax({
     error: function (error) {
         let errorReason = JSON.parse(error.responseText);
         Swal.fire({
-            position: 'top-end',
+            position: 'center',
             icon: 'error',
             title: "Images Not Upload Successfully",
             showConfirmButton: false,

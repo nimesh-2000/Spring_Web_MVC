@@ -37,7 +37,7 @@ function addCustomer() {
         success: function (resp) {
             uploadCustomerImages(nicNum);
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'success',
                 title: "customer Added Successfully",
                 showConfirmButton: false,
@@ -48,7 +48,7 @@ function addCustomer() {
         error: function (error) {
             let errorReason = JSON.parse(error.responseText);
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'error',
                 title: "customer Not Added Successfully",
                 showConfirmButton: false,
@@ -78,7 +78,7 @@ function uploadCustomerImages(nicNum) {
         success: function (res) {
             console.log("Uploaded");
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'success',
                 title: "Images Upload Successfully",
                 showConfirmButton: false,
@@ -88,7 +88,7 @@ function uploadCustomerImages(nicNum) {
         error: function (error) {
             let errorReason = JSON.parse(error.responseText);
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'error',
                 title: "Images Not Upload Successfully",
                 showConfirmButton: false,
