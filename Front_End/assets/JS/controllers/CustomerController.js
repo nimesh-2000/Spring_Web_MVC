@@ -98,6 +98,40 @@ function uploadCustomerImages(nicNum) {
     });
 }
 
+var password;
+var user_name;
+var imageLoaction;
+function updateCustomer(){
+
+    var newDetails = {
+        nic: $("#customer-profile-nic").val(),
+        address: $("#customer-profile-address").val(),
+        contactNumber: $("#customer-profile-mobile").val(),
+        name: $("#customer-profile-name").val(),
+        email: $("#customer-profile-email").val(),
+        password: customer.password,
+        user_name: customer.user_name,
+        imageLocation: customer.imageLocation,
+    }
+
+    $.ajax({
+        url: baseURL + "customer/updateCustomer",
+        method: "PUT",
+        contentType: "application/json",
+        data: JSON.stringify(newDetails),
+        success: function (res) {
+            if (res.status === 200) {
+                alert(res.message)
+            } else {
+                alert("Cant update your Details in this moment")
+            }
+        },
+        error: function (ob) {
+            console.log(ob.responseJSON.message);
+        }
+    });
+}
+
 function clearCustomerTextFields() {
     $('#txtNIC').val("");
     $('#txtAddress').val("");

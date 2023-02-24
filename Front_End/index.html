@@ -396,7 +396,12 @@
                 <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
             <div class="modal-body">
-                <section style="height: 38rem; border: 1px solid white; background-color: white">
+                <section style="height: 36rem; border: 1px solid white; background-color: white">
+                    <section id="model">
+                    <div class="mb-3">
+                        <label class="form-label" for="txtNI">NIC</label>
+                        <input class="form-control" id="txtNI" required type="text" disabled>
+                    </div>
                     <div class="mb-3">
                         <label class="form-label" for="txtCustomerId">User Name</label>
                         <input class="form-control" id="txtCustomerId" required type="text">
@@ -411,16 +416,16 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="txtCustomerPhone"> Phone</label>
-                        <input class="form-control form-control-sm" id="txtCustomerPhone" type="text">
+                        <input class="form-control " id="txtCustomerPhone" type="text">
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="txtCustomerPhone">Email</label>
-                        <input class="form-control form-control-sm" id="txtCustomerEmail" type="text">
+                        <input class="form-control "  id="txtCustomerEmail" type="text">
                     </div>
+                        <button type="button" style="width: 200px;left: 135px;position: relative" class="btn btn-outline-success">Update</button>
+                    </section>
 
-                    <div aria-label="Basic mixed styles example" class="btn-group" role="group">
-                        <button class="btn btn-danger"id="btnU" type="button">Update</button>
-                    </div>
+
                 </section>
             </div>
             <!--            <div class="modal-footer">-->

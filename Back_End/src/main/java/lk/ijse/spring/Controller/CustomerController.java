@@ -51,7 +51,7 @@ public class CustomerController {
     }
 
 
-    @PutMapping
+    @PutMapping("/updateCustomer")
     public ResponseUtil updateCustomer(@RequestBody CustomerDTO dto){
         service.updateCustomer(dto);
         return new ResponseUtil("200",dto.toString()+" Updated",null);
