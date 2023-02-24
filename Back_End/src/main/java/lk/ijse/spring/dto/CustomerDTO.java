@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.time.LocalDate;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -19,4 +21,5 @@ public class CustomerDTO{
     private String password;
     private String drivingLicenceNumber;
     private String imageLocation;
+    private LocalDate date;
 }
