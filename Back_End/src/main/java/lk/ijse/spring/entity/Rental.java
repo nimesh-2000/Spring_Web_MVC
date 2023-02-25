@@ -5,10 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,8 +17,6 @@ import java.time.LocalDate;
 public class Rental {
     @Id
     private String rentalId;
-    @ManyToOne
-    private Customer nic;
     private LocalDate date;
     private LocalDate pickUpDate;
     private LocalDate returnDate;
@@ -27,4 +24,12 @@ public class Rental {
     private double total_damage_waiver_payment;
     private String pickupLocation;
     private String returnLocation;
+
+    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+    @JoinColumn(name = "nic",referencedColumnName = "nic",nullable = false)
+    private Customer cusNic;
+
+    @OneToMany(mappedBy = "rental",cascade = CascadeType.ALL)
+    private List<RentDetails> rentDetails;
+
 }

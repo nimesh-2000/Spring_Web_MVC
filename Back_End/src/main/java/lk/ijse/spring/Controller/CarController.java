@@ -59,4 +59,11 @@ public class CarController {
         ArrayList<CarDTO> allCars = service.getAllCarDetail();
         return new ResponseUtil("200"," Success",allCars);
     }
+
+
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateCar(@RequestBody CarDTO dto){
+        service.updateCar(dto);
+        return new ResponseUtil("200",dto.toString()+" Updated",null);
+    }
 }

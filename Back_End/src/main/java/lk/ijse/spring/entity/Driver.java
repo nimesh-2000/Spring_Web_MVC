@@ -17,13 +17,12 @@ import java.util.List;
 @Entity
 public class Driver {
     @Id
-    private String driverId;
+    private String driver_id;
     private String name;
-    private String dob;
     private String nic;
     private String drivingLicenceNum;
     private String availability;
 
-    @OneToMany(mappedBy = "driverId")
+    @OneToMany(mappedBy = "driver_id")
     private List<RentDetails> rentalDetailsList;
 }

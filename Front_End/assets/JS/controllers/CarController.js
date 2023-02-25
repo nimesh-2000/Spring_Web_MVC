@@ -44,6 +44,7 @@ function addCar() {
         contentType: "application/json",
         data: JSON.stringify(car),
         success: function (resp) {
+
             uploadCarImages(registrationId);
             loadAllCars();
             Swal.fire({
@@ -60,14 +61,14 @@ function addCar() {
             Swal.fire({
                 position: 'center',
                 icon: 'error',
-                title: "car Not Added Successfully",
+                title: "car Added Failed",
                 showConfirmButton: false,
                 timer: 1500
             });
         }
     })
 }
-
+var image_u1;
 function uploadCarImages(registrationId) {
 
     let frontViewFile = $("#uploadFVI")[0].files[0];
@@ -79,6 +80,7 @@ function uploadCarImages(registrationId) {
     let backFileName = registrationId + "-image_2-" + $("#uploadBV")[0].files[0].name;
     let sideFileName = registrationId + "-image_3-" + $("#uploadUSV")[0].files[0].name;
     let interiorFileName = registrationId + "-image_4-" + $("#uploadUIV")[0].files[0].name;
+    image_u1=registrationId+"-image_1-"+$("#uploadFVI")[0].files[0].name;
 
 
     var data = new FormData();
@@ -147,12 +149,21 @@ function clearCarTextFields() {
 
 
 //Load all cars
+var i;
 function loadAllCars() {
     $("#carViewTable").empty();
     $.ajax({
         url: baseURL+"car",
         dataType: "json",
         success: function (resp) {
+
+
+            model=resp.data.model;
+            colour= resp.data.colour;
+            lastServiceMileage= resp.data.lastServiceMileage;
+            availability= resp.data.availability;
+
+
             console.log(resp);
             for (let car of resp.data) {
                 var row = '<tr><td>' + car.registrationId + '</td><td>' + car.brand + '</td><td>' + car.type + '</td><td>' + car.fuelType + '</td><td>' + car.transmissionType + '</td><td>' + car.noOfPassengers + '</td><td>' + car.freeMileage + '</td><td>' + car.priceForExtraKm + '</td><td>' + car.dailyRate + '</td><td>' + car.monthlyRate + '</td></tr>';
@@ -208,3 +219,81 @@ function setCarTextFieldValues(registrationId, brand, type, fuelType,transmissio
     $("#txtMn").val(monthlyRate);
     $("#txtFT").val(fuelType);
 }
+
+
+// ==================================
+// ============================================
+// =================================================================================================//
+
+var model;
+var colour;
+var lastServiceMileage;
+var availability;
+var image1;
+// Update car details
+$("#btnUpdate").click(function () {
+
+    let registrationId = $("#txtCNu").val();
+    let brand = $("#txtVCbrnd").val();
+    let type = $("#txtCT").val();
+    let fuelType =$("#txtFT").val();
+    let transmissionType = $("#txtVCTrans").val();
+    let noOfPassengers = $("#txtNOP").val();
+    let freeMileage = $("#txtFM").val();
+    let priceForExtraKm = $("#txtVCcperex").val();
+    let dailyRate =  $("#txtDai").val();
+    let monthlyRate = $("#txtMn").val();
+    // let frontView = $("#uploadUImFV").val();
+    // let backView = $("#uploadUImBV").val();
+    // let sideView =  $("#uploadUImSV").val();
+    // let interiorView = $("#uploadUIImV").val();
+
+
+    var car = {
+        registrationId: registrationId,
+        brand: brand,
+        type: type,
+        fuelType: fuelType,
+        transmissionType: transmissionType,
+        noOfPassengers: noOfPassengers,
+        freeMileage: freeMileage,
+        priceForExtraKm: priceForExtraKm,
+        dailyRate: dailyRate,
+        monthlyRate: monthlyRate,
+
+        model: model,
+        colour: colour,
+        lastServiceMileage: lastServiceMileage,
+        availability: availability,
+
+
+
+
+
+        // cusName:name,
+        // drivingLicenceNumber: licenceNum,
+        // date:date,
+        // imageLocation:image
+    }
+
+    $.ajax({
+        url: baseURL+'car',
+        method: 'put',
+        contentType:"application/json",
+        data:JSON.stringify(car),
+        dataType:"json",
+        success: function (res) {
+
+
+            alert(res.message);
+            loadAllCars();
+        },
+        error:function (error){
+            let cause= JSON.parse(error.responseText).message;
+            alert(cause);
+        }
+
+    });
+});
+
+

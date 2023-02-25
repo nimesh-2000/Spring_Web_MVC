@@ -19,18 +19,18 @@ import java.util.List;
 public class Customer {
     @Id
     private String nic;
+    //    private String customerId;
     private String cusName;
     private String contactNo;
     private String address;
     private String email;
+    private LocalDate date;
+    private String user_name;
     private String password;
     private String drivingLicenceNumber;
     private String imageLocation;
-    private String user_name;
-    private LocalDate date;
-
-    @OneToMany(mappedBy = "nic")
-    private List<Rental> rentalDetails;
-
 
 }
+
+
+

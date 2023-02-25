@@ -5,21 +5,36 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.time.LocalDate;
 
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 @ToString
+@Data
+@IdClass(RentalDetails_PK.class)
 @Entity
 public class RentDetails {
-    @EmbeddedId
-    private RentalDetails_PK id;
-    @ManyToOne
-    private Driver driverId;
+    @Id
+    String rentalId;
+    @Id
+    String registrationId;
+    @Id
+    String driver_id;
     private String rental_status;
     private String payment_slip;
+    private LocalDate pickupDate;
+    private LocalDate returnDate;
+
+    @ManyToOne
+    @JoinColumn(name = "driver_id",referencedColumnName = "driver_id",insertable = false,updatable = false)
+    private Driver driver;
+    @ManyToOne
+    @JoinColumn(name = "registrationId",referencedColumnName = "registrationId",insertable = false,updatable = false)
+    private Car car;
+
+    @ManyToOne
+    @JoinColumn(name = "rentalId",referencedColumnName = "rentalId",insertable = false,updatable = false)
+    private Rental rental;
 }
