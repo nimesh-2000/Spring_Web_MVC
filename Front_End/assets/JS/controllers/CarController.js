@@ -1,3 +1,5 @@
+
+loadAllCars();
 $("#btnAddC2").click(function (){
     addCar();
 });
@@ -43,6 +45,7 @@ function addCar() {
         data: JSON.stringify(car),
         success: function (resp) {
             uploadCarImages(registrationId);
+            loadAllCars();
             Swal.fire({
                 position: 'center',
                 icon: 'success',
@@ -135,4 +138,73 @@ function clearCarTextFields() {
     $('#uploadBV').val("");
     $('#uploadUSV').val("");
     $('#uploadUIV').val("");
+}
+
+
+
+
+
+
+
+//Load all cars
+function loadAllCars() {
+    $("#carViewTable").empty();
+    $.ajax({
+        url: baseURL+"car",
+        dataType: "json",
+        success: function (resp) {
+            console.log(resp);
+            for (let car of resp.data) {
+                var row = '<tr><td>' + car.registrationId + '</td><td>' + car.brand + '</td><td>' + car.type + '</td><td>' + car.fuelType + '</td><td>' + car.transmissionType + '</td><td>' + car.noOfPassengers + '</td><td>' + car.freeMileage + '</td><td>' + car.priceForExtraKm + '</td><td>' + car.dailyRate + '</td><td>' + car.monthlyRate + '</td></tr>';
+                $("#carViewTable").append(row);
+            }
+            bindCarRowClickEvents();
+            setCarTextFieldValues("","","","","","","","","","");
+            // $("#txtCustomerID").focus();
+        }
+    });
+
+}
+
+
+//Event binding for table rows
+function bindCarRowClickEvents() {
+    $("#carViewTable>tr").click(function () {
+        let registrationId = $(this).children(":eq(0)").text();
+        let brand = $(this).children(":eq(1)").text();
+        let type = $(this).children(":eq(2)").text();
+        let fuelType = $(this).children(":eq(3)").text();
+        let transmissionType = $(this).children(":eq(4)").text();
+        let noOfPassengers = $(this).children(":eq(5)").text();
+        let freeMileage = $(this).children(":eq(6)").text();
+        let priceForExtraKm = $(this).children(":eq(7)").text();
+        let dailyRate = $(this).children(":eq(8)").text();
+        let monthlyRate = $(this).children(":eq(9)").text();
+        // console.log(registrationId, brand, type, fuelType);
+
+        //setting table details values to text fields
+        $("#txtCNu").val(registrationId);
+        $("#txtVCbrnd").val(brand);
+        $("#txtCT").val(type);
+        $("#txtFT").val(fuelType);
+        $("#txtVCTrans").val(transmissionType);
+        $("#txtNOP").val(noOfPassengers);
+        $("#txtFM").val(freeMileage);
+        $("#txtVCcperex").val(priceForExtraKm);
+        $("#txtDai").val(dailyRate);
+        $("#txtMn").val(monthlyRate);
+    });
+}
+
+function setCarTextFieldValues(registrationId, brand, type, fuelType,transmissionType,noOfPassengers,freeMileage,priceForExtraKm,dailyRate,monthlyRate) {
+    $("#txtVCbrnd").val(brand);
+    $("#txtVCTrans").val(transmissionType);
+    $("#txtVCcperex").val(priceForExtraKm);
+    $("#txtCNu").val(registrationId);
+    $("#txtNOP").val(noOfPassengers);
+    $("#txtDai").val(dailyRate);
+    $("#txtCT").val(type);
+    $("#txtFM").val(freeMileage);
+    $("#txtMn").val(monthlyRate);
+    $("#txtFT").val(fuelType);
 }

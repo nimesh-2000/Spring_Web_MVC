@@ -75,6 +75,7 @@ $("#logOut").click(function(){
     $("#home").css('display','block');
     $("#header").css('display','block');
 
+
     // $("#carDash").css('display','none');
     // $("#customerVerification").css('display','none');
     // $("#rentVerification").css('display','none');
@@ -83,4 +84,15 @@ $("#logOut").click(function(){
     // $("#viewCar").css('display','none');
     // $("#home").css('display','none');
     // $("#header").css('display','none');
+});
+$("#btnViewAllCars").click(function() {
+    $("#dashSE").css('display', 'none');
+    $("#carDash").css('display', 'none');
+    $("#customerVerification").css('display', 'none');
+    $("#rentVerification").css('display', 'none');
+    $("#payment").css('display', 'none');
+    $("#employeeS").css('display', 'none');
+    $("#viewCar").css('display', 'block');
+    $("#home").css('display', 'none');
+    $("#header").css('display', 'none');
 });
