@@ -34,7 +34,7 @@ function carAppend(){
                         <h3 id="trId">${car.transmissionType}</h3>
                         <h3 id="fId">${car.fuelType}</h3>
                         <h3 id="nId">${car.noOfPassengers}</h3>
-                        <div>
+                        <div style="position: relative;z-index: 3">
                         <button type="button" id="${car.registrationId}" class="addTo" style="background-color: #0984E3;
                         
                      
