@@ -193,42 +193,52 @@
             <option value="2">Two</option>
             <option value="3">Three</option>
         </select>
-        <div class="col-6">
+        <div class="col-6" style="z-index: 3;
+    position: relative;
+    top: -101px;">
             <div class="form-groupDF">
                 <label>From</label>
                 <input class="form-control" id="txtFD" type="date">
             </div>
             <div class="form-groupDT">
-                <label>From</label>
+                <label>To</label>
                 <input class="form-control" id="txtTD" type="date">
             </div>
+            <select class="form-selectD" aria-label="Default select example" id="selectDrive" style="position: absolute;
+    width: 100px;
+    height: 33px;
+    left: 553px;
+    top: 248px;">
+                <option >Driver</option>
+                <option >None</option>
+            </select>
         </div>
         <div class=" " id="rentA" style="display: flex">
-            <div class="mmclass">
-                <div id="k10">
-                </div>
-                <div id="details">
-                    <h1 id="bName">Suzuki Alto K10</h1>
-                    <h3 id="daily1">Daily</h3>
-                    <h3 id="monthly1">Monthly</h3>
-                    <h3 id="onH1">On Hold</h3>
-                    <h3 id="dalyV">5000</h3>
-                    <h3 id="monthlyV">5000</h3>
-                    <h3 id="onV">5000</h3>
-                    <div id="liC"></div>
-                    <h3 id="b">Brand</h3>
-                    <h3 id="t">Type</h3>
-                    <h3 id="tr">Transmission</h3>
-                    <h3 id="f">Fuel</h3>
-                    <h3 id="nOP">No Of Passengers</h3>
-                    <h3 id="bId">Suzuki Alto</h3>
-                    <h3 id="tId">General</h3>
-                    <h3 id="trId">Auto</h3>
-                    <h3 id="fId">Petrol</h3>
-                    <h3 id="nId">100</h3>
-                    <button class="btn btn-primary btn-lg" id="addtoc" type="button">Add To Cart</button>
-                </div>
-            </div>
+<!--            <div class="mmclass">-->
+<!--                <div id="k10">-->
+<!--                </div>-->
+<!--                <div id="details">-->
+<!--                    <h1 id="bName">Suzuki Alto K10</h1>-->
+<!--                    <h3 id="daily1">Daily</h3>-->
+<!--                    <h3 id="monthly1">Monthly</h3>-->
+<!--                    <h3 id="onH1">On Hold</h3>-->
+<!--                    <h3 id="dalyV">5000</h3>-->
+<!--                    <h3 id="monthlyV">5000</h3>-->
+<!--                    <h3 id="onV">5000</h3>-->
+<!--                    <div id="liC"></div>-->
+<!--                    <h3 id="b">Brand</h3>-->
+<!--                    <h3 id="t">Type</h3>-->
+<!--                    <h3 id="tr">Transmission</h3>-->
+<!--                    <h3 id="f">Fuel</h3>-->
+<!--                    <h3 id="nOP">No Of Passengers</h3>-->
+<!--                    <h3 id="bId">Suzuki Alto</h3>-->
+<!--                    <h3 id="tId">General</h3>-->
+<!--                    <h3 id="trId">Auto</h3>-->
+<!--                    <h3 id="fId">Petrol</h3>-->
+<!--                    <h3 id="nId">100</h3>-->
+<!--                    <button class="btn btn-primary btn-lg" id="addtoc" type="button">Add To Cart</button>-->
+<!--                </div>-->
+<!--            </div>-->
             <!--        <div>-->
             <!--        <div id="k11">-->
             <!--        </div>-->
@@ -287,63 +297,93 @@
 </main>
 
 <!--------------------------------------------------------->
-<main id="chO" style="display: none">
-    <h1 id="cO">Check Out</h1>
-    <div class="d-flex flex-column mb-3" id="checkOut">
-        <div>
-            <h3 id="sLK">suzuki Alto K10</h3>
-            <h3 id="cD">Daily</h3>
-            <h3 id="cM">Monthly</h3>
-            <h3 id="cOH">On Hold</h3>
-            <h3 id="cF">From</h3>
-            <h3 id="cT">To</h3>
-            <h3 id="CDR">Driver</h3>
-            <h3 id="cDV">5000</h3>
-            <h3 id="cMV">5000</h3>
-            <h3 id="cOHV">5000</h3>
-            <h3 id="cFV">Kalutara</h3>
-            <h3 id="cTV">Kalutara</h3>
-            <select aria-label="Default select example" class="form-brand" id="selectD">
-                <option selected>None</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
-            <div class="col-fileNIC" id="checkOutImg">
-                <label class="form-label " for="register-form-NIC-image">Lost Damage Payment Slip</label>
-                <input class="form-control  " id="checkOutI" type="file">
-            </div>
+<main class="checkOut" id="chO" style="display:none;">
+    <section class="checko" id="checko2">
+        <h2 id="checko1">Check Out --></h2>
+
+        <div class="form-groupRent" style="position: absolute;left: 754px;top: 74px;">
+            <label for="txtRentalId">RenatlId</label>
+            <input class="form-control" id="txtRentalId" type="text">
+            <span class="control-error" id="lblrentalid"></span>
         </div>
 
-    </div>
+        <div class="card-body2">
+            <form>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-groupPl">
+                            <label for="txtFPickL">Pick Up Location</label>
+                            <input class="form-control" id="txtFPickL" type="text">
+                            <span class="control-error" id="lblpick"></span>
+                        </div>
+                    </div>
 
-    <form>
-        <div class="mb-3" id="pickI">
-            <label class="form-label" for="pickL" style="color: black">Pick Up Location</label>
-            <input aria-describedby="emailHelp" class="form-control" id="pickL" type="email">
-            <div class="form-text" id="emailHelp"></div>
+                    <div class="col-6">
+                        <div class="form-groupRl">
+                            <label for="txtReturnL">Return Location</label>
+                            <input class="form-control" id="txtReturnL" type="text">
+                            <span class="control-error" id="lblreturn"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-groupTR">
+                            <label for="txtTotalRent">Total Rent Amount</label>
+                            <input class="form-control" id="txtTotalRent" type="text">
+                            <span class="control-error" id="lbltotalrent"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-groupLDA">
+                            <label for="txtLossDwa">Total Damage Waiver Amount</label>
+                            <input class="form-control" id="txtLossDwa" type="password">
+                            <span class="control-error" id="lbllossdma"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+            <button class="btnSendRent" id="btnsendReq" type="button">Send Rent</button>
+
         </div>
 
-        <div class="mb-3" id="returnI">
-            <label class="form-label" for="returnL" style="color: black">Return Location</label>
-            <input aria-describedby="emailHelp" class="form-control" id="returnL" type="email">
-            <div class="form-text" id="emailHelp2"></div>
+        <div class="col-md-12 mt-4" id="CheckRe" style="height:180px; overflow-y: scroll">
+            <table class="table table-bordered text-white" id="myTable">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Car Number</th>
+                    <th>Car</th>
+                    <th>Daily</th>
+                    <th>Monthly</th>
+                    <th>On Hold</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Driver</th>
+                    <!--                    <th>Payment Slip</th>-->
+                </tr>
+                </thead>
+                <tbody class="bg-light text-dark" id="CheckReTable">
+
+
+
+                </tbody>
+            </table>
         </div>
 
-        <div class="mb-3" id="toRA">
-            <label class="form-label" for="TotalRent" style="color: black">Total Rent Amount</label>
-            <input aria-describedby="emailHelp" class="form-control" id="TotalRent" type="email">
-            <div class="form-text" id="emailHelp3"></div>
+        <!--        <select class="form-selectD" aria-label="Default select example" id="selectDriver" style="position: absolute;width: 100px;height: 33px;left: 1275px;top: 196px;">-->
+        <!--            <option >Driver</option>-->
+        <!--            <option >None</option>-->
+        <!--        </select>-->
+
+        <div class="col-6" id="uploadLIC" style="position: absolute;left: 1002px;top: 66px;">
+            <label for="register-form-NIC-image" class="form-label ">Loss Damage Payment Slip</label>
+            <input style="width: 259px;border: 1px solid gray" class="form-control  " type="file" id="lossDP2">
         </div>
 
-        <div class="mb-3" id="toDWA">
-            <label class="form-label" for="returnL" style="color: black">Total Damage Waiver Amount</label>
-            <input aria-describedby="emailHelp" class="form-control" id="totalDamage" type="email">
-            <div class="form-text" id="emailHelp4"></div>
-        </div>
-
-        <button class="btn btn-primary btn-lg" id="sentRent" type="button">Sent Rental Request</button>
-    </form>
+    </section>
 </main>
 <!--===================================================-->
 <main class="account" id="ac" style="display: none">

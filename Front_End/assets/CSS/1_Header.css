@@ -487,6 +487,18 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+#checkOut{
+    position: relative;
+    height: 500px;
+    width: 386px;
+    left: -153px;
+}
+#check{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 #k10{
     position: absolute;
@@ -639,7 +651,7 @@
     width: 50px;
     font-weight: bold;
 }
-#nId{
+#nId {
     position: absolute;
     font-size: 12px;
     color: black;
@@ -648,15 +660,16 @@
     width: 50px;
     font-weight: bold;
 }
-#addtoc{
-    background-color: #0984E3;
-    font-weight: bold;
-    color: black;
-    position: absolute;
-    width: 200px;
-    left: 78px;
-    top: 179px;
-}
+/*}*/
+/*.add{*/
+/*    background-color: #0984E3;*/
+/*    font-weight: bold;*/
+/*    color: black;*/
+/*    position: absolute;*/
+/*    width: 200px;*/
+/*    left: 78px;*/
+/*    top: 179px;*/
+/*}*/
 
 /*}*/
 /*::placeholder {*/
@@ -1021,14 +1034,14 @@
     color: black;
     font-weight: bold;
 }
-#checkOut{
-    position: absolute;
-    left: 38px;
-    height: 110px;
-    border: 1px solid #0984E3;
-    width: 1428px;
-    top: 111px;
-}
+/*#checkOut{*/
+/*!*    position: absolute;*!//////////////////////////////////////////////////////////////////////////////////////////check/////////////////*/
+/*    left: 38px;*/
+/*    height: 110px;*/
+/*    border: 1px solid #0984E3;*/
+/*    width: 1428px;*/
+/*    top: 111px;*/
+/*}*/
 #sLK{
     position: absolute;
     left: 27px;
@@ -2328,5 +2341,79 @@
 #btnU{
     position: relative;
     top: 0px;
+}
+
+/*=================checkOut*/
+#chO{
+    position: relative;
+    top: 43px;
+    min-height: 100vh;
+    background: #D2DAE2;
+
+}
+.checko{
+    position: relative;
+    background: #D2DAE2;
+    z-index: 5;
+    min-height: 100vh;
+    width: 98.7vw;
+    margin: auto;
+    top: 43px;
+}
+#checko1{
+    position: absolute;
+    color: #E74C3C;
+    top: 48px;
+    left: 125px;
+}
+
+#CheckRe{
+    position: absolute;
+    left: 233px;
+    width: 1036px;
+    top: 126px;
+}
+
+.card-body2{
+    position: absolute;
+    top: 102px;
+    left: 288px;
+    margin: 0;
+}
+
+.form-groupPl{
+    position: absolute;
+    left: 4px;
+    top: 300px;
+    width: 273px;
+}
+
+.form-groupRl{
+    position: absolute;
+    left: 326px;
+    top: 300px;
+    width: 273px;
+}
+
+.form-groupTR{
+    position: absolute;
+    left: 4px;
+    top: 395px;
+    width: 273px;
+}
+
+.form-groupLDA{
+    position: absolute;
+    left: 326px;
+    top: 395px;
+    width: 273px;
+}
+
+.btnSendRent{
+    position: absolute;
+    top: 427px;
+    left: 800px;
+    background-color: #F3BF06;
+    width: 140px;
 }
 

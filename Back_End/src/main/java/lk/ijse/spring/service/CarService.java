@@ -30,4 +30,5 @@ public interface CarService {
     List<CarDTO> sortCarsByAttributes(CarDTO carDTO);
 
     void uploadCarImages(String frontPath, String backPath, String sidePath, String InteriorPath, String registrationId);
+
 }

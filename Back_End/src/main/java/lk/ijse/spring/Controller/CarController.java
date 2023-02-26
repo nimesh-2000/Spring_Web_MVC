@@ -66,4 +66,11 @@ public class CarController {
         service.updateCar(dto);
         return new ResponseUtil("200",dto.toString()+" Updated",null);
     }
+
+    @GetMapping(params = "registrationId")
+    public ResponseUtil getCarDetail(String registrationId){
+        CarDTO carDetail = service.getCarDetail(registrationId);
+        System.out.println(carDetail.toString());
+        return new ResponseUtil("200","Get",carDetail);
+    }
 }

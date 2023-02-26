@@ -43,8 +43,8 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public CarDTO getCarDetail(String id) {
-        return null;
+    public CarDTO getCarDetail(String registrationId) {
+        return mapper.map( repo.getCarByRegistrationId(registrationId),CarDTO.class);
     }
 
     @Override

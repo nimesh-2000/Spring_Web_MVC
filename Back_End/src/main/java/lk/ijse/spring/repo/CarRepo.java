@@ -18,4 +18,6 @@ public interface CarRepo extends JpaRepository<Car,String> {
                             @Param("image_3") String image_3,
                             @Param("image_4") String image_4,
                             @Param("registrationId") String registrationId);
+
+    Car getCarByRegistrationId(String registrationId);
 }
