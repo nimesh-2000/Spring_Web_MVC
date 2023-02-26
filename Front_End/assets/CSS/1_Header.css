@@ -473,6 +473,20 @@
     border-color: black;
     height: 46px;
 }
+/*=================== methana idn */
+
+.mmclass{
+    position: relative;
+    height: 660px;
+    width: 386px;
+    left: -153px;
+}
+#rentA{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 #k10{
     position: absolute;
@@ -2315,3 +2329,4 @@
     position: relative;
     top: 0px;
 }
+

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>User Dashboard</title>
@@ -9,8 +9,8 @@
     <!-- font awesome cdn link  -->
     <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
           integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
     <link href="assets/css/normalize.css" rel="stylesheet">
     <!--    <meta content="width=device-width initial-scale=1" name="viewport">-->
@@ -28,13 +28,13 @@
 </head>
 <body>
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top ">
+<header class="fixed-top " id="header">
     <div class="container d-flex align-items-center justify-content-between">
         <h1 class="logo"><a href="index.html">ND RENTAL</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-        <nav id="navbar" class="navbar">
+        <nav class="navbar" id="navbar">
             <ul>
                 <li><a class=" " id="h">Home</a></li>
                 <li><a class="" id="vF">Vehicle Fleet</a></li>
@@ -49,26 +49,24 @@
 </header><!-- End Header -->
 <!-- ======= Hero Section ======= -->
 <main id="home">
-<section id="hero" class="d-flex align-items-center" style="display: block">
+    <section class="d-flex align-items-center" id="hero" style="display: block">
 
-    <div class="container-fluid" data-aos="fade-up">
-        <div class="row justify-content-center">
-            <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                <h1>FIND THE IDEAL
-                    CAR FOR YOU.</h1>
-                <h2>We have more cars for you to choose</h2>
-                <div><a id="getS" style="cursor: pointer" class="btn-get-started scrollto">Get Started</a></div>
-            </div>
-            <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
-                <img src="assets/img/7506746-removebg-preview.png" class="img-fluid animated" alt="">
+        <div class="container-fluid" data-aos="fade-up">
+            <div class="row justify-content-center">
+                <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                    <h1>FIND THE IDEAL
+                        CAR FOR YOU.</h1>
+                    <h2>We have more cars for you to choose</h2>
+                    <div><a class="btn-get-started scrollto" id="getS" style="cursor: pointer">Get Started</a></div>
+                </div>
+                <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
+                    <img alt="" class="img-fluid animated" src="assets/img/7506746-removebg-preview.png">
+                </div>
             </div>
         </div>
-    </div>
 
-</section><!-- End Hero -->
+    </section><!-- End Hero -->
 </main>
-
-
 
 
 <main class="logInM" id="Clogin" style="display: none">
@@ -85,11 +83,11 @@
             <h1 id="lgm1">Login</h1>
 
             <div class="form-groupE1">
-                <input class="form-control"placeholder="Email" id="txtUserName" required type="text">
+                <input class="form-control" id="txtUserName" placeholder="Email" required type="text">
                 <span class="control-error" id="lblUser"></span>
             </div>
             <div class="form-groupE2">
-                <input type="password" class="form-control" placeholder="Password" id="txtPassword">
+                <input class="form-control" id="txtPassword" placeholder="Password" type="password">
                 <span class="control-error" id="lblPassword"></span>
             </div>
             <button class="btn btn-primary" id="btnLogIn">Login</button>
@@ -115,45 +113,45 @@
             <h1 id="sign">Sign Up</h1>
 
             <div class="full-name">
-                <input class="form-control"placeholder="Full Name" id="txtFullName" required type="text">
+                <input class="form-control" id="txtFullName" placeholder="Full Name" required type="text">
                 <span class="control-error" id="lblFullName"></span>
             </div>
             <div class="form-Uname">
-                <input class="form-control"placeholder="User Name" id="txtUName" required type="text">
+                <input class="form-control" id="txtUName" placeholder="User Name" required type="text">
                 <span class="control-error" id="lblUName"></span>
             </div>
             <div class="form-pass">
-                <input type="password" class="form-control" placeholder="Password" id="txtSignPassword">
+                <input class="form-control" id="txtSignPassword" placeholder="Password" type="password">
                 <span class="control-error" id="lblSignPassword"></span>
             </div>
             <div class="form-SNic">
-                <input class="form-control"placeholder="NIC" id="txtNIC" required type="text">
+                <input class="form-control" id="txtNIC" placeholder="NIC" required type="text">
                 <span class="control-error" id="lblNIC"></span>
             </div>
             <div class="form-Dl">
-                <input class="form-control"placeholder="Driving License" id="txtDl" required type="text">
+                <input class="form-control" id="txtDl" placeholder="Driving License" required type="text">
                 <span class="control-error" id="lblDl"></span>
             </div>
             <div class="form-SEmail">
-                <input class="form-control"placeholder="Email" id="txtEmail" required type="text">
+                <input class="form-control" id="txtEmail" placeholder="Email" required type="text">
                 <span class="control-error" id="lblEmail"></span>
             </div>
             <div class="form-SAddress">
-                <input class="form-control"placeholder="Address" id="txtAddress" required type="text">
+                <input class="form-control" id="txtAddress" placeholder="Address" required type="text">
                 <span class="control-error" id="lblAddress"></span>
             </div>
             <div class="form-SPhone">
-                <input class="form-control"placeholder="Phone" id="txtPhone" required type="text">
+                <input class="form-control" id="txtPhone" placeholder="Phone" required type="text">
                 <span class="control-error" id="lblPhone"></span>
             </div>
             <div class="form-SDate">
-                <input class="form-control"placeholder="Date" id="txtDate" required type="date">
+                <input class="form-control" id="txtDate" placeholder="Date" required type="date">
                 <span class="control-error" id="lblDate"></span>
             </div>
             <div class="col-fileNIC" id="uploadIm">
-            <label for="register-form-NIC-image" class="form-label ">NIC Image or Driving Licence Image</label>
-            <input  class="form-control  " type="file" id="register-form-NIC-image" name="myFile">
-        </div>
+                <label class="form-label " for="register-form-NIC-image">NIC Image or Driving Licence Image</label>
+                <input class="form-control  " id="register-form-NIC-image" name="myFile" type="file">
+            </div>
             <button class="btn btn-primary" id="btnSignL">Login</button>
         </div>
 
@@ -162,34 +160,34 @@
 
 <main id="vfeet" style="display: none">
     <section id="vehicleFleet">
-          <h1 id="vehicleF">Vehicle Fleet</h1>
+        <h1 id="vehicleF">Vehicle Fleet</h1>
 
 
-            <select class="form-brand" aria-label="Default select example" id="selectBrand">
-                <option selected>Brand</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
-        <select class="form-brand" aria-label="Default select example" id="selectTy">
+        <select aria-label="Default select example" class="form-brand" id="selectBrand">
+            <option selected>Brand</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+        <select aria-label="Default select example" class="form-brand" id="selectTy">
             <option selected>Type</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
         </select>
-        <select class="form-brand" aria-label="Default select example" id="selectF">
+        <select aria-label="Default select example" class="form-brand" id="selectF">
             <option selected>Fuel Type</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
         </select>
-        <select class="form-brand" aria-label="Default select example" id="selectT">
+        <select aria-label="Default select example" class="form-brand" id="selectT">
             <option selected>Transmission</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
         </select>
-        <select class="form-brand" aria-label="Default select example" id="selectP">
+        <select aria-label="Default select example" class="form-brand" id="selectP">
             <option selected>Passengers</option>
             <option value="1">One</option>
             <option value="2">Two</option>
@@ -205,89 +203,94 @@
                 <input class="form-control" id="txtTD" type="date">
             </div>
         </div>
-        <div class="d-flex flex-row mb-3">
-            <div id="k10">
+        <div class=" " id="rentA" style="display: flex">
+            <div class="mmclass">
+                <div id="k10">
+                </div>
+                <div id="details">
+                    <h1 id="bName">Suzuki Alto K10</h1>
+                    <h3 id="daily1">Daily</h3>
+                    <h3 id="monthly1">Monthly</h3>
+                    <h3 id="onH1">On Hold</h3>
+                    <h3 id="dalyV">5000</h3>
+                    <h3 id="monthlyV">5000</h3>
+                    <h3 id="onV">5000</h3>
+                    <div id="liC"></div>
+                    <h3 id="b">Brand</h3>
+                    <h3 id="t">Type</h3>
+                    <h3 id="tr">Transmission</h3>
+                    <h3 id="f">Fuel</h3>
+                    <h3 id="nOP">No Of Passengers</h3>
+                    <h3 id="bId">Suzuki Alto</h3>
+                    <h3 id="tId">General</h3>
+                    <h3 id="trId">Auto</h3>
+                    <h3 id="fId">Petrol</h3>
+                    <h3 id="nId">100</h3>
+                    <button class="btn btn-primary btn-lg" id="addtoc" type="button">Add To Cart</button>
+                </div>
             </div>
-            <div id="details">
-                <h1 id="bName">Suzuki Alto K10</h1>
-                <h3 id="daily1">Daily</h3>
-                <h3 id="monthly1">Monthly</h3>
-                <h3 id="onH1">On Hold</h3>
-                <h3 id="dalyV">5000</h3>
-                <h3 id="monthlyV">5000</h3>
-                <h3 id="onV">5000</h3>
-                <div id="liC"></div>
-                <h3 id="b">Brand</h3>
-                <h3 id="t">Type</h3>
-                <h3 id="tr">Transmission</h3>
-                <h3 id="f">Fuel</h3>
-                <h3 id="nOP">No Of Passengers</h3>
-                <h3 id="bId">Suzuki Alto</h3>
-                <h3 id="tId">General</h3>
-                <h3 id="trId">Auto</h3>
-                <h3 id="fId">Petrol</h3>
-                <h3 id="nId">100</h3>
-                <button type="button" id="addtoc" class="btn btn-primary btn-lg">Add To Cart</button>
-            </div>
-        </div>
-        <div id="k11">
-        </div>
-        <div id="details2">
-            <h1 id="bName2">Suzuki Alto K10</h1>
-            <h3 id="daily12">Daily</h3>
-            <h3 id="monthly12">Monthly</h3>
-            <h3 id="onH12">On Hold</h3>
-            <h3 id="dalyV2">5000</h3>
-            <h3 id="monthlyV2">5000</h3>
-            <h3 id="onV2">5000</h3>
-            <div id="liC2"></div>
-            <h3 id="b2">Brand</h3>
-            <h3 id="t2">Type</h3>
-            <h3 id="tr2">Transmission</h3>
-            <h3 id="f2">Fuel</h3>
-            <h3 id="nOP2">No Of Passengers</h3>
-            <h3 id="bId2">Suzuki Alto</h3>
-            <h3 id="tId2">General</h3>
-            <h3 id="trId2">Auto</h3>
-            <h3 id="fId2">Petrol</h3>
-            <h3 id="nId2">100</h3>
-            <button type="button" id="addTo" class="btn btn-primary btn-lg">Add To Cart</button>
-        </div>
+            <!--        <div>-->
+            <!--        <div id="k11">-->
+            <!--        </div>-->
+            <!--        <div id="details2">-->
+            <!--            <h1 id="bName2">Suzuki Alto K10</h1>-->
+            <!--            <h3 id="daily12">Daily</h3>-->
+            <!--            <h3 id="monthly12">Monthly</h3>-->
+            <!--            <h3 id="onH12">On Hold</h3>-->
+            <!--            <h3 id="dalyV2">5000</h3>-->
+            <!--            <h3 id="monthlyV2">5000</h3>-->
+            <!--            <h3 id="onV2">5000</h3>-->
+            <!--            <div id="liC2"></div>-->
+            <!--            <h3 id="b2">Brand</h3>-->
+            <!--            <h3 id="t2">Type</h3>-->
+            <!--            <h3 id="tr2">Transmission</h3>-->
+            <!--            <h3 id="f2">Fuel</h3>-->
+            <!--            <h3 id="nOP2">No Of Passengers</h3>-->
+            <!--            <h3 id="bId2">Suzuki Alto</h3>-->
+            <!--            <h3 id="tId2">General</h3>-->
+            <!--            <h3 id="trId2">Auto</h3>-->
+            <!--            <h3 id="fId2">Petrol</h3>-->
+            <!--            <h3 id="nId2">100</h3>-->
+            <!--            <button type="button" id="addTo" class="btn btn-primary btn-lg">Add To Cart</button>-->
+            <!--        </div>-->
+            <!--        </div>-->
+
+            <!--        <div>-->
+            <!--        <div id="k12">-->
+            <!--        </div>-->
+            <!--        <div id="details3">-->
+            <!--            <h1 id="bName3">Suzuki Alto K10</h1>-->
+            <!--            <h3 id="daily3">Daily</h3>-->
+            <!--            <h3 id="monthly3">Monthly</h3>-->
+            <!--            <h3 id="onH3">On Hold</h3>-->
+            <!--            <h3 id="dalyV3">5000</h3>-->
+            <!--            <h3 id="monthlyV3">5000</h3>-->
+            <!--            <h3 id="onV3">5000</h3>-->
+            <!--            <div id="liC3"></div>-->
+            <!--            <h3 id="b3">Brand</h3>-->
+            <!--            <h3 id="t3">Type</h3>-->
+            <!--            <h3 id="tr3">Transmission</h3>-->
+            <!--            <h3 id="f3">Fuel</h3>-->
+            <!--            <h3 id="nOP3">No Of Passengers</h3>-->
+            <!--            <h3 id="bId3">Suzuki Alto</h3>-->
+            <!--            <h3 id="tId3">General</h3>-->
+            <!--            <h3 id="trId3">Auto</h3>-->
+            <!--            <h3 id="fId3">Petrol</h3>-->
+            <!--            <h3 id="nId3">100</h3>-->
+            <!--            <button type="button" id="addToca" class="btn btn-primary btn-lg">Add To Cart</button>-->
+            <!--        </div>-->
+            <!--        </div>-->
         </div>
 
-        <div id="k12">
-        </div>
-        <div id="details3">
-            <h1 id="bName3">Suzuki Alto K10</h1>
-            <h3 id="daily3">Daily</h3>
-            <h3 id="monthly3">Monthly</h3>
-            <h3 id="onH3">On Hold</h3>
-            <h3 id="dalyV3">5000</h3>
-            <h3 id="monthlyV3">5000</h3>
-            <h3 id="onV3">5000</h3>
-            <div id="liC3"></div>
-            <h3 id="b3">Brand</h3>
-            <h3 id="t3">Type</h3>
-            <h3 id="tr3">Transmission</h3>
-            <h3 id="f3">Fuel</h3>
-            <h3 id="nOP3">No Of Passengers</h3>
-            <h3 id="bId3">Suzuki Alto</h3>
-            <h3 id="tId3">General</h3>
-            <h3 id="trId3">Auto</h3>
-            <h3 id="fId3">Petrol</h3>
-            <h3 id="nId3">100</h3>
-            <button type="button" id="addToca" class="btn btn-primary btn-lg">Add To Cart</button>
-        </div>
-        </div>
 
     </section>
 </main>
 
 <!--------------------------------------------------------->
 <main id="chO" style="display: none">
-<h1 id="cO">Check Out</h1>
-    <div id="checkOut" class="d-flex flex-column mb-3">
-        <div >
+    <h1 id="cO">Check Out</h1>
+    <div class="d-flex flex-column mb-3" id="checkOut">
+        <div>
             <h3 id="sLK">suzuki Alto K10</h3>
             <h3 id="cD">Daily</h3>
             <h3 id="cM">Monthly</h3>
@@ -300,15 +303,15 @@
             <h3 id="cOHV">5000</h3>
             <h3 id="cFV">Kalutara</h3>
             <h3 id="cTV">Kalutara</h3>
-            <select class="form-brand" aria-label="Default select example" id="selectD">
+            <select aria-label="Default select example" class="form-brand" id="selectD">
                 <option selected>None</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
             </select>
             <div class="col-fileNIC" id="checkOutImg">
-                <label for="register-form-NIC-image" class="form-label ">Lost Damage Payment Slip</label>
-                <input  class="form-control  " type="file" id="checkOutI">
+                <label class="form-label " for="register-form-NIC-image">Lost Damage Payment Slip</label>
+                <input class="form-control  " id="checkOutI" type="file">
             </div>
         </div>
 
@@ -316,30 +319,30 @@
 
     <form>
         <div class="mb-3" id="pickI">
-            <label for="pickL" style="color: black" class="form-label">Pick Up Location</label>
-            <input type="email" class="form-control" id="pickL" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text"></div>
+            <label class="form-label" for="pickL" style="color: black">Pick Up Location</label>
+            <input aria-describedby="emailHelp" class="form-control" id="pickL" type="email">
+            <div class="form-text" id="emailHelp"></div>
         </div>
 
         <div class="mb-3" id="returnI">
-            <label for="returnL"style="color: black"  class="form-label">Return Location</label>
-            <input type="email" class="form-control" id="returnL" aria-describedby="emailHelp">
-            <div id="emailHelp2" class="form-text"></div>
+            <label class="form-label" for="returnL" style="color: black">Return Location</label>
+            <input aria-describedby="emailHelp" class="form-control" id="returnL" type="email">
+            <div class="form-text" id="emailHelp2"></div>
         </div>
 
         <div class="mb-3" id="toRA">
-            <label for="TotalRent"style="color: black"  class="form-label">Total Rent Amount</label>
-            <input type="email" class="form-control" id="TotalRent" aria-describedby="emailHelp">
-            <div id="emailHelp3" class="form-text"></div>
+            <label class="form-label" for="TotalRent" style="color: black">Total Rent Amount</label>
+            <input aria-describedby="emailHelp" class="form-control" id="TotalRent" type="email">
+            <div class="form-text" id="emailHelp3"></div>
         </div>
 
         <div class="mb-3" id="toDWA">
-            <label for="returnL"style="color: black"  class="form-label">Total Damage Waiver Amount</label>
-            <input type="email" class="form-control" id="totalDamage" aria-describedby="emailHelp">
-            <div id="emailHelp4" class="form-text"></div>
+            <label class="form-label" for="returnL" style="color: black">Total Damage Waiver Amount</label>
+            <input aria-describedby="emailHelp" class="form-control" id="totalDamage" type="email">
+            <div class="form-text" id="emailHelp4"></div>
         </div>
 
-        <button type="button" id="sentRent" class="btn btn-primary btn-lg">Sent Rental Request</button>
+        <button class="btn btn-primary btn-lg" id="sentRent" type="button">Sent Rental Request</button>
     </form>
 </main>
 <!--===================================================-->
@@ -350,7 +353,8 @@
         <h3 id="ae"><a>nimeshdenuwan2000@gmail.com</a></h3>
         <h2 id="account2">Rentals</h2>
         <div id="editIm"></div>
-        <button id="editIm2" type="button"data-bs-toggle="modal" data-bs-target="#exampleModal">Edit User Information</button>
+        <button data-bs-target="#exampleModal" data-bs-toggle="modal" id="editIm2" type="button">Edit User Information
+        </button>
 
         <button class="btnUpdate" type="submit">Update</button>
         <button class="btnCancel" type="submit">Cancel</button>
@@ -398,31 +402,33 @@
             <div class="modal-body">
                 <section style="height: 36rem; border: 1px solid white; background-color: white">
                     <section id="model">
-                    <div class="mb-3">
-                        <label class="form-label" for="txtNI">NIC</label>
-                        <input class="form-control" id="txtNI" required type="text" disabled>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="txtUserN">User Name</label>
-                        <input class="form-control" id="txtUserN" required type="text">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="txtPass">Password</label>
-                        <input class="form-control" id="txtPass" multiple type="text">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="txtCustomerAddress"> Address</label>
-                        <input class="form-control" id="txtCustomerAddress" type="text">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="txtCustomerPhone"> Phone</label>
-                        <input class="form-control " id="txtCustomerPhone" type="text">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="txtCustomerEmail">Email</label>
-                        <input class="form-control "  id="txtCustomerEmail" type="text">
-                    </div>
-                        <button type="button" id="btnUp" style="width: 200px;left: 135px;position: relative" class="btn btn-outline-success">Update</button>
+                        <div class="mb-3">
+                            <label class="form-label" for="txtNI">NIC</label>
+                            <input class="form-control" disabled id="txtNI" required type="text">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="txtUserN">User Name</label>
+                            <input class="form-control" id="txtUserN" required type="text">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="txtPass">Password</label>
+                            <input class="form-control" id="txtPass" multiple type="text">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="txtCustomerAddress"> Address</label>
+                            <input class="form-control" id="txtCustomerAddress" type="text">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="txtCustomerPhone"> Phone</label>
+                            <input class="form-control " id="txtCustomerPhone" type="text">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="txtCustomerEmail">Email</label>
+                            <input class="form-control " id="txtCustomerEmail" type="text">
+                        </div>
+                        <button class="btn btn-outline-success" id="btnUp" style="width: 200px;left: 135px;position: relative"
+                                type="button">Update
+                        </button>
                     </section>
 
 
@@ -437,110 +443,111 @@
 </div>
 <!---------------------------------------------------------------------->
 <main id="dash" style="">
-<section id="dashLIN">
-    <h1 id="ad">Admin</h1>
-    <div id="adIMG"></div>
-    <h1 id="adName">Nimesh Denuwan</h1>
+    <section id="dashLIN">
+        <h1 id="ad">Admin</h1>
+        <div id="adIMG"></div>
+        <h1 id="adName">Nimesh Denuwan</h1>
 
-    <button id="d" type="button" class="btn btn-outline-info">Dashboard</button>
-<!--    <h3 id="d">Dashboard</h3>-->
-    <div id="dashImg"></div>
-    <button id="c" type="button" class="btn btn-outline-info">Customer</button>
-    <button id="ca" type="button" class="btn btn-outline-info">Cars</button>
-    <button id="r" type="button" class="btn btn-outline-info">Reservation</button>
-    <button id="p" type="button" class="btn btn-outline-info">Payment</button>
-    <button id="e" type="button" class="btn btn-outline-info">Employee</button>
-    <div id="cusImg"></div>
-    <div id="carImg"></div>
-    <div id="reserveImg"></div>
-    <div id="payImg"></div>
-    <div id="employeeImg"></div>
-    <div id="dashLine"></div>
-    <button type="button" id="logOut" class="btn btn-outline-dark">Log Out</button>
-</section></main>
+        <button class="btn btn-outline-info" id="d" type="button">Dashboard</button>
+        <!--    <h3 id="d">Dashboard</h3>-->
+        <div id="dashImg"></div>
+        <button class="btn btn-outline-info" id="c" type="button">Customer</button>
+        <button class="btn btn-outline-info" id="ca" type="button">Cars</button>
+        <button class="btn btn-outline-info" id="r" type="button">Reservation</button>
+        <button class="btn btn-outline-info" id="p" type="button">Payment</button>
+        <button class="btn btn-outline-info" id="e" type="button">Employee</button>
+        <div id="cusImg"></div>
+        <div id="carImg"></div>
+        <div id="reserveImg"></div>
+        <div id="payImg"></div>
+        <div id="employeeImg"></div>
+        <div id="dashLine"></div>
+        <button class="btn btn-outline-dark" id="logOut" type="button">Log Out</button>
+    </section>
+</main>
 
 <main id="dashSEM" style="">
-<section id="dashSE">
-    <div class="d-flex flex-row mb-3">
-        <div id="bookingDiv"></div>
-        <div>
-            <h1 id="bookingH">Bookings</h1>
-            <h1 id="bookingV">150</h1>
+    <section id="dashSE">
+        <div class="d-flex flex-row mb-3">
+            <div id="bookingDiv"></div>
+            <div>
+                <h1 id="bookingH">Bookings</h1>
+                <h1 id="bookingV">150</h1>
+            </div>
+            <div id="availableDiv"></div>
+            <div>
+                <h1 id="availableH">Available Cars</h1>
+                <h1 id="availableV">150</h1>
+            </div>
+            <div id="reserveDiv"></div>
+            <div>
+                <h1 id="reserveH">Reserved Cars</h1>
+                <h1 id="reserveV">150</h1>
+            </div>
+            <div id="activeBDiv"></div>
+            <div>
+                <h1 id="activeH">Active Bookings</h1>
+                <h1 id="activeV">150</h1>
+            </div>
         </div>
-        <div id="availableDiv"></div>
-           <div>
-               <h1 id="availableH">Available Cars</h1>
-               <h1 id="availableV">150</h1>
-           </div>
-        <div id="reserveDiv"></div>
-        <div>
-            <h1 id="reserveH">Reserved Cars</h1>
-            <h1 id="reserveV">150</h1>
-        </div>
-        <div id="activeBDiv"></div>
-        <div>
-            <h1 id="activeH">Active Bookings</h1>
-            <h1 id="activeV">150</h1>
-        </div>
-    </div>
 
-<!--    =====================================================================-->
-    <div class="d-flex flex-row mb-3" >
-        <div id="registerDiv"></div>
-        <div>
-            <h1 id="registerH">Registered Users</h1>
-            <h1 id="registerV">150</h1>
+        <!--    =====================================================================-->
+        <div class="d-flex flex-row mb-3">
+            <div id="registerDiv"></div>
+            <div>
+                <h1 id="registerH">Registered Users</h1>
+                <h1 id="registerV">150</h1>
+            </div>
+            <div id="maintenanceDiv"></div>
+            <div>
+                <h1 id="maintenanceH">Under Maintenance</h1>
+                <h1 id="maintenanceV">150</h1>
+            </div>
+            <div id="occupiedDiv"></div>
+            <div>
+                <h1 id="occupiedH">Occupied Drivers</h1>
+                <h1 id="occupiedV">150</h1>
+            </div>
+            <div id="availableDriverDiv"></div>
+            <div>
+                <h1 id="availableDriverH">Available Drivers</h1>
+                <h1 id="availableDriverV">156</h1>
+            </div>
         </div>
-        <div id="maintenanceDiv"></div>
-        <div>
-            <h1 id="maintenanceH">Under Maintenance</h1>
-            <h1 id="maintenanceV">150</h1>
-        </div>
-        <div id="occupiedDiv"></div>
-        <div>
-            <h1 id="occupiedH">Occupied Drivers</h1>
-            <h1 id="occupiedV">150</h1>
-        </div>
-        <div id="availableDriverDiv"></div>
-        <div>
-            <h1 id="availableDriverH">Available Drivers</h1>
-            <h1 id="availableDriverV">156</h1>
-        </div>
-    </div>
 
 
-<!--    =========================================================-->
-    <div class="d-flex flex-row mb-3" >
-        <div id="incomeDiv"></div>
-        <div>
-            <h1 id="dailyH">Daily Income</h1>
-            <h1 id="dailyV">15000.00</h1>
-            <h1 id="lk1">LKR</h1>
+        <!--    =========================================================-->
+        <div class="d-flex flex-row mb-3">
+            <div id="incomeDiv"></div>
+            <div>
+                <h1 id="dailyH">Daily Income</h1>
+                <h1 id="dailyV">15000.00</h1>
+                <h1 id="lk1">LKR</h1>
+            </div>
+            <div id="weeklyDiv"></div>
+            <div>
+                <h1 id="weeklyH">Weekly Income</h1>
+                <h1 id="weeklyV">15000.00</h1>
+                <h1 id="lk2">LKR</h1>
+            </div>
+            <div id="monthlyDiv"></div>
+            <div>
+                <h1 id="monthlyH">Monthly Income</h1>
+                <h1 id="monthV">15000.00</h1>
+                <h1 id="lk3">LKR</h1>
+            </div>
+            <div id="annuallyDiv"></div>
+            <div>
+                <h1 id="annuallyH">Annually Income</h1>
+                <h1 id="annuallyV">15000.00</h1>
+                <h1 id="lk4">LKR</h1>
+            </div>
         </div>
-        <div id="weeklyDiv"></div>
-        <div>
-            <h1 id="weeklyH">Weekly Income</h1>
-            <h1 id="weeklyV">15000.00</h1>
-            <h1 id="lk2">LKR</h1>
-        </div>
-        <div id="monthlyDiv"></div>
-        <div>
-            <h1 id="monthlyH">Monthly Income</h1>
-            <h1 id="monthV">15000.00</h1>
-            <h1 id="lk3">LKR</h1>
-        </div>
-        <div id="annuallyDiv"></div>
-        <div>
-            <h1 id="annuallyH">Annually Income</h1>
-            <h1 id="annuallyV">15000.00</h1>
-            <h1 id="lk4">LKR</h1>
-        </div>
-    </div>
     </section>
 
-<!--    ==============================================================
-=====================================================================-->
-    <section id="carDash" class="carDash">
+    <!--    ==============================================================
+    =====================================================================-->
+    <section class="carDash" id="carDash">
         <h3 id="carh">Cars</h3>
         <div id="carhl"></div>
 
@@ -666,21 +673,21 @@
 
 
                     <div class="col-6" id="uploadFWI">
-                        <label for="register-form-NIC-image" class="form-label ">Upload Front View</label>
-                        <input style="border: 1px solid gray" class="form-control  " type="file" id="uploadFVI">
+                        <label class="form-label " for="register-form-NIC-image">Upload Front View</label>
+                        <input class="form-control  " id="uploadFVI" style="border: 1px solid gray" type="file">
                     </div>
 
                 </div>
 
                 <div class="row">
                     <div class="col-6" id="uploadUBFW">
-                        <label for="register-form-NIC-image" class="form-label ">Upload Back View</label>
-                        <input style="border: 1px solid gray" class="form-control  " type="file" id="uploadBV">
+                        <label class="form-label " for="register-form-NIC-image">Upload Back View</label>
+                        <input class="form-control  " id="uploadBV" style="border: 1px solid gray" type="file">
                     </div>
 
                     <div class="col-6" id="uploadUSVT">
-                        <label for="register-form-NIC-image" class="form-label ">Upload Side View</label>
-                        <input style="border: 1px solid gray" class="form-control  " type="file" id="uploadUSV">
+                        <label class="form-label " for="register-form-NIC-image">Upload Side View</label>
+                        <input class="form-control  " id="uploadUSV" style="border: 1px solid gray" type="file">
                     </div>
 
                 </div>
@@ -688,13 +695,13 @@
 
                 <div class="row">
                     <div class="col-6" id="uploadUIVT">
-                        <label for="register-form-NIC-image" class="form-label ">Upload Interior View</label>
-                        <input style="border: 1px solid gray" class="form-control  " type="file" id="uploadUIV">
+                        <label class="form-label " for="register-form-NIC-image">Upload Interior View</label>
+                        <input class="form-control  " id="uploadUIV" style="border: 1px solid gray" type="file">
                     </div>
-                    <select class="form-selectAL" aria-label="Default select example" id="selectAvailable" >
+                    <select aria-label="Default select example" class="form-selectAL" id="selectAvailable">
                         <option selected>Availability</option>
-                        <option >Available</option>
-                        <option >Unavailable</option>
+                        <option>Available</option>
+                        <option>Unavailable</option>
                     </select>
 
                 </div>
@@ -773,13 +780,13 @@
             </table>
         </div>
     </section>
-<!--    ===================================
-=================================================-->
-    <section  id="payment" class="payments">
+    <!--    ===================================
+    =================================================-->
+    <section class="payments" id="payment">
         <h3 id="payment1">Payments</h3>
         <div id="paymentI"></div>
 
-        <select class="form-selectRI" aria-label="Default select example" id="selectReservation">
+        <select aria-label="Default select example" class="form-selectRI" id="selectReservation">
             <option selected>Reservation ID</option>
             <option value="1">One</option>
             <option value="2">Two</option>
@@ -886,8 +893,8 @@
 
     </section>
 
-<!--    ==================================================================
-============================================================================-->
+    <!--    ==================================================================
+    ============================================================================-->
     <section id="employeeS">
         <div class="emS">
             <h3 id="admH">Admin</h3>
@@ -908,8 +915,8 @@
                         </div>
                     </div>
                 </div>
-                    <br>
-                    <div class="row">
+                <br>
+                <div class="row">
                     <div class="col-6">
                         <div class="form-groupCF">
                             <!--                            <label for="txtFName">B</label>-->
@@ -928,7 +935,7 @@
                 <button class="btn btn-primary" id="btnAddAdmin">Save</button>
             </form>
         </div>
-<!--        =---------------------------------------------->
+        <!--        =---------------------------------------------->
 
         <div class="emS2">
             <h3 id="dH">Driver</h3>
@@ -960,7 +967,7 @@
                     </div>
                     <div class="col-6">
                         <div class="form-groupTF">
-                                           <label for="txtUserName">Date Of Birth</label>
+                            <label for="txtUserName">Date Of Birth</label>
                             <input class="form-control" id="txtDOB" placeholder="DOB" type="date">
                             <span class="control-error" id="lblDOB"></span>
                         </div>
@@ -977,7 +984,7 @@
                     </div>
                     <div class="col-6">
                         <div class="form-groupTF">
-                            <select class="form-selectRI" aria-label="Default select example" id="selectDriver">
+                            <select aria-label="Default select example" class="form-selectRI" id="selectDriver">
                                 <option selected>Available</option>
                             </select>
                         </div>
@@ -988,31 +995,31 @@
             </form>
         </div>
     </section>
-<!--    =================================================================
-=========================================================================-->
+    <!--    =================================================================
+    =========================================================================-->
 
-    <section id="viewCar" class="viewCar">
+    <section class="viewCar" id="viewCar">
         <h3 id="vwC">View Cars</h3>
         <div id="vwC1"></div>
 
         <h3 id="viewshed"><a>View Driver Schedule</a></h3>
 
         <div>
-            <select class="form-selectCT" aria-label="Default select example" id="selectCType">
+            <select aria-label="Default select example" class="form-selectCT" id="selectCType">
                 <option selected>Type</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
             </select>
 
-            <select class="form-selectCB" aria-label="Default select example" id="selectCBrand">
+            <select aria-label="Default select example" class="form-selectCB" id="selectCBrand">
                 <option selected>Brand</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
             </select>
 
-            <select class="form-selectCN" aria-label="Default select example" id="selectCNum">
+            <select aria-label="Default select example" class="form-selectCN" id="selectCNum">
                 <option selected>Car Num</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
@@ -1022,11 +1029,11 @@
 
         <div class="d-flex flex-row mb-3" id="v1" style="position: absolute;top: 180px;left: 285px;">
             <div class="p-2">
-                <input class="form-control" id="txtVCbrnd" placeholder="Brand" type="text" disabled>
+                <input class="form-control" disabled id="txtVCbrnd" placeholder="Brand" type="text">
                 <span class="control-error" id="lblvcbrnd"></span>
             </div>
             <div class="p-2">
-                <input class="form-control" id="txtVCTrans" placeholder="Transmission" type="text" disabled>
+                <input class="form-control" disabled id="txtVCTrans" placeholder="Transmission" type="text">
                 <span class="control-error" id="lblvctrans"></span>
             </div>
             <div class="p-2">
@@ -1037,11 +1044,11 @@
 
         <div class="d-flex flex-row mb-3" id="v2" style="position: absolute;top: 241px;left: 285px;">
             <div class="p-2">
-                <input class="form-control" id="txtCNu" placeholder="Car Num" type="text" disabled>
+                <input class="form-control" disabled id="txtCNu" placeholder="Car Num" type="text">
                 <span class="control-error" id="lblcnu"></span>
             </div>
             <div class="p-2">
-                <input class="form-control" id="txtNOP" placeholder="No Of Passengers" type="text" disabled>
+                <input class="form-control" disabled id="txtNOP" placeholder="No Of Passengers" type="text">
                 <span class="control-error" id="lblnop"></span>
             </div>
             <div class="p-2">
@@ -1052,7 +1059,7 @@
 
         <div class="d-flex flex-row mb-3" id="v3" style="position: absolute;top: 302px;left: 285px;">
             <div class="p-2">
-                <input class="form-control" id="txtCT" placeholder="Type" type="text" disabled>
+                <input class="form-control" disabled id="txtCT" placeholder="Type" type="text">
                 <span class="control-error" id="lblct"></span>
             </div>
             <div class="p-2">
@@ -1067,7 +1074,7 @@
 
         <div class="d-flex flex-row mb-3" id="v4" style="position: absolute;top: 363px;left: 285px;">
             <div class="p-2">
-                <input class="form-control" id="txtFT" placeholder="Fuel" type="text" disabled>
+                <input class="form-control" disabled id="txtFT" placeholder="Fuel" type="text">
                 <span class="control-error" id="lblft"></span>
             </div>
             <div class="p-2">
@@ -1104,8 +1111,8 @@
             <table class="table table-bordered text-white">
                 <thead class="bg-primary">
                 <tr>
+                    <th>Car_Number</th>
                     <th>Brand</th>
-                    <th>CarNum</th>
                     <th>Type</th>
                     <th>Fuel</th>
                     <th>Transmission</th>
@@ -1147,6 +1154,7 @@
 <script src="assets/JS/controllers/AdminController.js"></script>
 <script src="assets/JS/controllers/DriverController.js"></script>
 <script src="assets/JS/controllers/DashboardController.js"></script>
+<script src="assets/JS/controllers/RentalController.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.37/dist/sweetalert2.all.min.js"></script>
 <!--<script src="assets/JS/controllers/SignUpController.js"></script>-->
 </body>
