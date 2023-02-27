@@ -23,6 +23,7 @@ $("#btnAL").click(function (){
                 $("#vfeet").css('display','none');
                 $("#chO").css('display','none');
                 $("#ac").css('display','none');
+                $("#adminLogin").css('display','none');
                 $("#dash").css('display','block');
                 $("#dashSEM").css('display','block');
 
