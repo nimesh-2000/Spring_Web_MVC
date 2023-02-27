@@ -1318,7 +1318,7 @@
     top: 181px;
     left: 1000px;
     border-radius: 5px;
-    background-color: #F3BF06;
+    background-color: white;
     width: 150px;
 }
 
@@ -1501,7 +1501,7 @@
     width: 80.8vw;
     top: -800px;
     position: relative;
-    background-color: yellow;
+    background-color: white;
     right: -58px;
     left: 277px;
 }
@@ -1849,7 +1849,7 @@
 ==========================================================*/
 .carDash{
     position: relative;
-    background: bisque;
+    background: white;
     z-index: 1;
     height: 741px;
     width: 80.8vw;
@@ -1912,7 +1912,7 @@
     width: 80.8vw;
     top: -800px;
     position: relative;
-    background-color: deeppink;
+    background-color: white;
     right: -58px;
     left: 277px;
 }
@@ -1932,7 +1932,7 @@
     width: 80.8vw;
     top: -800px;
     position: relative;
-    background-color: lightblue;
+    background-color: white;
     right: -58px;
     left: 277px;
 }
@@ -1950,7 +1950,7 @@
 
 .payments{
     position: relative;
-    background: mediumpurple;
+    background: white;
     z-index: 5;
     height: 663px;
     width: 80.8vw;
@@ -2100,7 +2100,7 @@
 =========================================*/
 #employeeS{
     position: relative;
-    background: lightcoral;
+    background: white;
     z-index: 5;
     height: 663px;
     width: 80.8vw;
@@ -2146,7 +2146,7 @@
 
 .viewCar{
     position: relative;
-    background: antiquewhite;
+    background: white;
     z-index: 5;
     height: 663px;
     width: 80.8vw;
@@ -2438,6 +2438,6 @@
 #adminLogin{
 position: relative;
     top: 97px;
-    background-color: darkslategray;
+    background-color: white;
 }
 
