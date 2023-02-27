@@ -6,7 +6,7 @@ $("#btnLogIn").click(function (){
     let password = $("#txtPassword").val();
 
     $.ajax({
-        url: baseURL+"customerLogin?email="+email,
+        url: baseURL+"login?email="+email,
         method: "get",
         dataType:"json",
         success: function (res) {

@@ -1,6 +1,7 @@
 package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.AdminDTO;
+import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.entity.Admin;
 import lk.ijse.spring.entity.Car;
 import lk.ijse.spring.repo.AdminRepo;
@@ -33,5 +34,10 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public AdminDTO checkAdminLogIn(String id, String password) {
         return null;
+    }
+
+    @Override
+    public AdminDTO searchAdminByEmail(String email) {
+        return mapper.map( repo.getAdminByEmail(email), AdminDTO.class);
     }
 }

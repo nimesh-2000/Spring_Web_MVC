@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin
-@RequestMapping("/customerLogin")
+@RequestMapping("/login")
 @RestController
 public class LoginController {
 
