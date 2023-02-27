@@ -7,6 +7,7 @@ $("#h").click(function(){
     $("#ac").css('display','none');
     $("#dash").css('display','none');
     $("#dashSEM").css('display','none');
+    $("#adminLogin").css('display','none');
 });
 
 $("#vF").click(function(){
@@ -18,6 +19,7 @@ $("#vF").click(function(){
     $("#ac").css('display','none');
     $("#dash").css('display','none');
     $("#dashSEM").css('display','none');
+    $("#adminLogin").css('display','none');
 });
 
 $("#A").click(function(){
@@ -29,6 +31,7 @@ $("#A").click(function(){
     $("#ac").css('display','block');
     $("#dash").css('display','none');
     $("#dashSEM").css('display','none');
+    $("#adminLogin").css('display','none');
 });
 $("#getS").click(function (){
     $("#home").css('display','none');
@@ -39,6 +42,7 @@ $("#getS").click(function (){
     $("#ac").css('display','none');
     $("#dash").css('display','none');
     $("#dashSEM").css('display','none');
+    $("#adminLogin").css('display','none');
 });
 
 
@@ -51,6 +55,7 @@ $("#get").click(function (){
     $("#ac").css('display','none');
     $("#dash").css('display','none');
     $("#dashSEM").css('display','none');
+    $("#adminLogin").css('display','none');
 });
 
 $("#check").click(function (){
@@ -62,6 +67,7 @@ $("#check").click(function (){
     $("#ac").css('display','none');
     $("#dash").css('display','none');
     $("#dashSEM").css('display','none');
+    $("#adminLogin").css('display','none');
 });
 
 //
@@ -74,4 +80,17 @@ $("#btnSign").click(function(){
     $("#ac").css('display','none');
     $("#dash").css('display','none');
     $("#dashSEM").css('display','none');
+    $("#adminLogin").css('display','none');
+});
+
+$("#adminClick").click(function(){
+    $("#home").css('display','none');
+    $("#Clogin").css('display','none');
+    $("#Csign").css('display','none');
+    $("#vfeet").css('display','none');
+    $("#chO").css('display','none');
+    $("#ac").css('display','none');
+    $("#dash").css('display','none');
+    $("#dashSEM").css('display','none');
+    $("#adminLogin").css('display','block');
 });
