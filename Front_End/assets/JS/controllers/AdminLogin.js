@@ -17,6 +17,7 @@ $("#btnAL").click(function (){
                     timer: 1500
                 });
                 $("#home").css('display','none');
+                $("#header").css('display','none')
                 $("#Clogin").css('display','none');
                 $("#Csign").css('display','none');
                 $("#vfeet").css('display','none');
