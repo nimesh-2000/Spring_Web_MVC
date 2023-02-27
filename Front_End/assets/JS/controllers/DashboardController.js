@@ -65,6 +65,7 @@ $("#e").click(function(){
     $("#header").css('display','none');
 });
 $("#logOut").click(function(){
+    $("#dash").css('display','none');
     $("#dashSE").css('display','none');
     $("#carDash").css('display','none');
     $("#customerVerification").css('display','none');

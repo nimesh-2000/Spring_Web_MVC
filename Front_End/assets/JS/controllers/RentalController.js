@@ -13,7 +13,7 @@ function carAppend(){
 
 
                 var d = `<div class="mmclass">
-                    <div id="k10">
+                    <div id="k10"> 
                     </div>
                     <div id="details">
                         <h1 id="bName">${car.brand+"  "+car.model}</h1>
