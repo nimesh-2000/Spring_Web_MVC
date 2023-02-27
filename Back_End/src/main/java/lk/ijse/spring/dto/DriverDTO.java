@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Data
 @ToString
 public class DriverDTO {
-    private String driverId;
+    private String driver_id;
     private String name;
     private String dob;
     private String nic;

@@ -27,8 +27,8 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void saveDriver(DriverDTO driverDTO) {
-        if (repo.existsById(driverDTO.getDriverId())){
-            throw new RuntimeException("Driver "+driverDTO.getDriverId()+" Already Exist..!");
+        if (repo.existsById(driverDTO.getDriver_id())){
+            throw new RuntimeException("Driver "+driverDTO.getDriver_id()+" Already Exist..!");
         }
         Driver entity = mapper.map(driverDTO, Driver.class);
         repo.save(entity);

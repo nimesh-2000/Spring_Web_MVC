@@ -19,13 +19,24 @@ $("#btnAddAdmin").click(function () {
         data : JSON.stringify(Admin),
         contentType:"application/json",
         success: function (resp) {
-            console.log(resp);
-            alert(resp.message);
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: "Successfully Added",
+                showConfirmButton: false,
+                timer: 1500
+            });
 
         },
         error: function(error) {
             let prase = JSON.parse(error.responseText);
-            alert(prase.message);
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: "Failed",
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
     });
 });
