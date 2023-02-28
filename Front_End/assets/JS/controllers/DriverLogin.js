@@ -1,14 +1,14 @@
 $("#bB").click(function (){
 
-    let email = $("#dE").val();
-    let password = $("#dP").val();
+    let driver_id = $("#dE").val();
+    let name = $("#dP").val();
 
     $.ajax({
-        url: baseURL+"driver?email="+email,
+        url: baseURL+"driver?driver_id="+driver_id,
         method: "get",
         dataType:"json",
         success: function (res) {
-            if (res.data.password==password){
+            if (res.data.name==name){
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
@@ -32,7 +32,7 @@ $("#bB").click(function (){
                 Swal.fire({
                     position: 'center',
                     icon: 'error',
-                    title: "Invalid email or password",
+                    title: "Invalid name or id",
                     showConfirmButton: false,
                     timer: 1500
                 });
@@ -44,7 +44,7 @@ $("#bB").click(function (){
             Swal.fire({
                 position: 'center',
                 icon: 'error',
-                title: "Invalid email or password",
+                title: "Invalid name or id",
                 showConfirmButton: false,
                 timer: 1500
             });
