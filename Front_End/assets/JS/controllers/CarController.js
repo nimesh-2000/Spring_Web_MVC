@@ -123,6 +123,7 @@ $.ajax({
     processData: false,
     data: data,
     success: function (res) {
+
         console.log("Uploaded");
         Swal.fire({
             position: 'center',
@@ -174,6 +175,7 @@ function clearCarTextFields() {
 
 //Load all cars
 var i;
+
 function loadAllCars() {
     $("#carViewTable").empty();
     $.ajax({
@@ -188,7 +190,6 @@ function loadAllCars() {
             availability= resp.data.availability;
 
 
-            console.log(resp);
             for (let car of resp.data) {
                 var row = '<tr><td>' + car.registrationId + '</td><td>' + car.brand + '</td><td>' + car.type + '</td><td>' + car.fuelType + '</td><td>' + car.transmissionType + '</td><td>' + car.noOfPassengers + '</td><td>' + car.freeMileage + '</td><td>' + car.priceForExtraKm + '</td><td>' + car.dailyRate + '</td><td>' + car.monthlyRate + '</td></tr>';
                 $("#carViewTable").append(row);
@@ -257,6 +258,9 @@ var image1;
 // Update car details
 $("#btnUpdate").click(function () {
 
+
+
+
     let registrationId = $("#txtCNu").val();
     let brand = $("#txtVCbrnd").val();
     let type = $("#txtCT").val();
@@ -273,7 +277,8 @@ $("#btnUpdate").click(function () {
     let interiorView = $("#uploadUIImV").val();
 
 
-    var car = {
+
+    var carU = {
         registrationId: registrationId,
         brand: brand,
         type: type,
@@ -309,7 +314,7 @@ $("#btnUpdate").click(function () {
         url: baseURL+'car',
         method: 'put',
         contentType:"application/json",
-        data:JSON.stringify(car),
+        data:JSON.stringify(carU),
         dataType:"json",
         success: function (res) {
 
@@ -324,5 +329,6 @@ $("#btnUpdate").click(function () {
 
     });
 });
+
 
 

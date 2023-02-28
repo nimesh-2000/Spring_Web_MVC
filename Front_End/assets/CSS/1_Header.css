@@ -2441,3 +2441,165 @@ position: relative;
     background-color: white;
 }
 
+.driverSchedule{
+    position: relative;
+    background: #FFFFFF;
+    z-index: 5;
+    height: 663px;
+    width: 98.7vw;
+    margin: auto;
+    top: 0px;
+}
+
+#drivSch{
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    z-index: 2;
+    top: 33px;
+    left: 290px;
+    font-size: 25px;
+    font-family: 'IM Fell French Canon', serif;
+}
+
+.form-selectDI{
+    position: absolute;
+    left: 292px;
+    top: 110px;
+    width: 246px;
+    border-radius: 5px;
+    height: 31px;
+}
+
+#dri1{
+    position: absolute;
+    left: 591px;
+    top: 104px;
+    width: 246px;
+}
+
+#DN{
+    position: absolute;
+    font-size: 15px;
+}
+
+#CDNs{
+    position: absolute;
+    font-size: 15px;
+    font-weight: bold;
+    top: 21px;
+}
+
+/*////////////////////////////*/
+#dri2{
+    position: absolute;
+    left: 810px;
+    top: 104px;
+    width: 246px;
+}
+
+#DNI{
+    position: absolute;
+    font-size: 15px;
+}
+
+#DNIs{
+    position: absolute;
+    font-size: 15px;
+    font-weight: bold;
+    top: 21px;
+}
+
+/*////////////////////////////*/
+#dri3{
+    position: absolute;
+    left: 955px;
+    top: 104px;
+    width: 246px;
+}
+
+#DLN{
+    position: absolute;
+    font-size: 15px;
+}
+
+#DLNs{
+    position: absolute;
+    font-size: 15px;
+    font-weight: bold;
+    top: 21px;
+}
+
+#driSchedu{
+    position: absolute;
+    left: 293px;
+    width: 1036px;
+    top: 203px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.login-container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.login-logo{
+    position: relative;
+    margin-left: -41.5%;
+}
+.login-logo img{
+    position: absolute;
+    width: 20%;
+    margin-top: 19%;
+    background: #282726;
+    border-radius: 4.5rem;
+    padding: 5%;
+}
+.login-form-1{
+    padding: 9%;
+    background:lightblue;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-1 h3{
+    text-align: center;
+    margin-bottom:12%;
+    color:#fff;
+}
+.login-form-2{
+    padding: 9%;
+    background: skyblue;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-2 h3{
+    text-align: center;
+    margin-bottom:12%;
+    color: #fff;
+}
+.btnSubmit{
+    font-weight: 600;
+    width: 50%;
+    color: #282726;
+    background-color: #fff;
+    border: none;
+    border-radius: 1.5rem;
+    padding:2%;
+}
+.btnForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.btnForgetPwd:hover{
+    text-decoration:none;
+    color:#fff;
+}
+
+

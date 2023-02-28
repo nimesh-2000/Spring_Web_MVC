@@ -87,7 +87,7 @@ public ResponseUtil addVehicle(@RequestPart("vImageFile") MultipartFile[] file, 
     }
 
 
-    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping
     public ResponseUtil updateCar(@RequestBody CarDTO dto){
         service.updateCar(dto);
         return new ResponseUtil("200",dto.toString()+" Updated",null);

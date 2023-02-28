@@ -1185,94 +1185,102 @@
 </main>
 
 <main id="adminLogin" style="display: none">
-    <section class="vh-100">
-        <div class="container-fluid h-custom">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-md-9 col-lg-6 col-xl-5">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                         class="img-fluid" alt="Sample image">
+    <div class="container login-container">
+        <div class="row">
+            <div class="col-md-6 login-form-1">
+                <h3 style="color: #04414d">Admin Login</h3>
+
+                <div class="form-group" style="position: relative;
+    top: -24px;">
+                    <input type="text" id="form3Example3" class="form-control" placeholder=" Email *"  />
                 </div>
-                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                    <form>
-                        <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                            <p class="lead fw-normal mb-0 me-3">Sign in with</p>
-                            <button type="button" class="btn btn-primary btn-floating mx-1">
-                                <i class="fab fa-facebook-f"></i>
-                            </button>
-
-                            <button type="button" class="btn btn-primary btn-floating mx-1">
-                                <i class="fab fa-twitter"></i>
-                            </button>
-
-                            <button type="button" class="btn btn-primary btn-floating mx-1">
-                                <i class="fab fa-linkedin-in"></i>
-                            </button>
-                        </div>
-
-                        <div class="divider d-flex align-items-center my-4">
-                            <p class="text-center fw-bold mx-3 mb-0">Or</p>
-                        </div>
-
-                        <!-- Email input -->
-                        <div class="form-outline mb-4">
-                            <input type="email" id="form3Example3" class="form-control form-control-lg"
-                                   placeholder="Enter a valid email address" />
-                            <label class="form-label" for="form3Example3">Email address</label>
-                        </div>
-
-                        <!-- Password input -->
-                        <div class="form-outline mb-3">
-                            <input type="password" id="form3Example4" class="form-control form-control-lg"
-                                   placeholder="Enter password" />
-                            <label class="form-label" for="form3Example4">Password</label>
-                        </div>
-
-                        <div class="d-flex justify-content-between align-items-center">
-                            <!-- Checkbox -->
-                            <div class="form-check mb-0">
-                                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-                                <label class="form-check-label" for="form2Example3">
-                                    Remember me
-                                </label>
-                            </div>
-                            <a href="#!" class="text-body">Forgot password?</a>
-                        </div>
-
-                        <div class="text-center text-lg-start mt-4 pt-2">
-                            <button type="button" id="btnAL" class="btn btn-primary btn-lg"
-                                    style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-                            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
-                                                                                              class="link-danger">Register</a></p>
-                        </div>
-
-                    </form>
+                <div class="form-group">
+                    <input type="password" id="form3Example4" class="form-control" placeholder=" Password *"  />
                 </div>
+                <div class="form-group" style="position: relative;
+    top: 32px;">
+                    <input type="button" class="btnSubmit" id="btnAL" value="Login" />
+                </div>
+
+            </div>
+            <div class="col-md-6 login-form-2">
+
+                <h3 style="color: #04414d">Driver Login</h3>
+                <div class="form-group" style="position: relative;
+    top: -24px;">
+                    <input type="text" class="form-control" placeholder=" Email *"  />
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder=" Password *"  />
+                </div>
+                <div class="form-group" style="position: relative;
+    top: 32px;">
+                    <input type="button" class="btnSubmit" value="Login" />
+                </div>
+
+                </form>
             </div>
         </div>
-        <div
-                class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-            <!-- Copyright -->
-            <div class="text-white mb-3 mb-md-0">
-                ND © 2023. All rights reserved.
-            </div>
-            <!-- Copyright -->
+    </div>
+</main>
 
-            <!-- Right -->
-            <div>
-                <a href="#!" class="text-white me-4">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#!" class="text-white me-4">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#!" class="text-white me-4">
-                    <i class="fab fa-google"></i>
-                </a>
-                <a href="#!" class="text-white">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </div>
-            <!-- Right -->
+<main lass="driverShe" id="driverShedule" style="display:none;">
+    <section class="driverSchedule" id="DriverSche">
+        <h3 id="drivSch">Driver schedule</h3>
+
+        <button class="btn btn-primary" id="btnDSlogOut" style="position: absolute;left: 43px; top: 24px">LogOut</button>
+
+        <select class="form-selectDI" aria-label="Default select example" id="selectDriverId">
+            <option selected>Driver ID</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+
+        <div id="dri1">
+            <h4 id="DN">Name</h4>
+            <h4 id="CDNs">W.Nimesh Denuwan</h4>
+        </div>
+
+        <div id="dri2">
+            <h4 id="DNI">NIC</h4>
+            <h4 id="DNIs">200061301471</h4>
+        </div>
+
+        <div id="dri3">
+            <h4 id="DLN">Driver Licence Number</h4>
+            <h4 id="DLNs">B4516562</h4>
+        </div>
+
+        <!--Driver Schedules table-->
+        <div class="col-md-12 mt-4" id="driSchedu" style="height:180px; overflow-y: scroll">
+            <table class="table table-bordered text-white">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Customer</th>
+                    <th>Driver</th>
+                    <th>Car Num</th>
+                    <th>Brand</th>
+                    <th>Pick Up Date</th>
+                    <th>Return Date</th>
+                    <th>Pick Up Location</th>
+                    <th>Return Location</th>
+                </tr>
+                </thead>
+                <tbody class="bg-light text-dark" id="driScheduTable">
+                <tr>
+
+                    <td>C00-001</td>
+                    <td>D00-001</td>
+                    <td>NB-4523</td>
+                    <td>Suzuki Alto</td>
+                    <td>13/02/2023</td>
+                    <td>13/02/2023</td>
+                    <td>Store</td>
+                    <td>Kaluthara</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 </main>
