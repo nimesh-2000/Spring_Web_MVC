@@ -20,10 +20,10 @@ public class DriverController {
         return new ResponseUtil("200",dto.toString()+ " Added",null);
     }
 
-    @GetMapping(params = "email")
-    public ResponseUtil checkDriver(String email) {
-        System.out.println(email);
-        DriverDTO driverDTO = service.searchDriverByEmail(email);
+    @GetMapping(params = "driver_id")
+    public ResponseUtil checkDriver(String driver_id) {
+        System.out.println(driver_id);
+        DriverDTO driverDTO = service.searchDriverByEmail(driver_id);
         System.out.println(driverDTO);
         return new ResponseUtil("200", "Login Success", driverDTO);
     }
