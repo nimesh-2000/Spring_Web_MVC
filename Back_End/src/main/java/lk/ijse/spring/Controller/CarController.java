@@ -99,4 +99,9 @@ public ResponseUtil addVehicle(@RequestPart("vImageFile") MultipartFile[] file, 
         System.out.println(carDetail.toString());
         return new ResponseUtil("200","Get",carDetail);
     }
+    @DeleteMapping(params = "registrationId")
+    public ResponseUtil deleteCar(String registrationId){
+        service.deleteCar(registrationId);
+        return new ResponseUtil("200",registrationId+" Deleted",null);
+    }
 }

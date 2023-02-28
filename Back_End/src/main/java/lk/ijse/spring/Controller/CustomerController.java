@@ -2,6 +2,7 @@ package lk.ijse.spring.Controller;
 
 import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.service.CustomerService;
+import lk.ijse.spring.service.DriverService;
 import lk.ijse.spring.utill.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -19,6 +20,7 @@ public class CustomerController {
 
     @Autowired
     CustomerService service;
+
 
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
@@ -56,4 +58,6 @@ public class CustomerController {
         service.updateCustomer(dto);
         return new ResponseUtil("200",dto.toString()+" Updated",null);
     }
+
+
 }
