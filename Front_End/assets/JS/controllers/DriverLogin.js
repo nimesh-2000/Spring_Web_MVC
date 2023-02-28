@@ -1,7 +1,7 @@
-$("#btnAL").click(function (){
+$("#bB").click(function (){
 
-    let email = $("#form3Example3").val();
-    let password = $("#form3Example4").val();
+    let email = $("#dE").val();
+    let password = $("#dP").val();
 
     $.ajax({
         url: baseURL+"driver?email="+email,
@@ -53,6 +53,6 @@ $("#btnAL").click(function (){
 });
 
 function clearDriverLoginTextFields() {
-    $('#form3Example4').val("");
-    $('#form3Example3').val("");
+    $('#dE').val("");
+    $('#dP').val("");
 }
