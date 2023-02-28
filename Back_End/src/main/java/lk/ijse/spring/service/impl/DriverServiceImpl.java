@@ -61,7 +61,7 @@ public class DriverServiceImpl implements DriverService {
     }
 
     @Override
-    public DriverDTO searchDriverByEmail(String email) {
-        return mapper.map( repo.getDriverByEmail(email), DriverDTO.class);
+    public DriverDTO searchDriverById(String driver_id) {
+        return mapper.map( repo.getDriverById(driver_id), DriverDTO.class);
     }
 }

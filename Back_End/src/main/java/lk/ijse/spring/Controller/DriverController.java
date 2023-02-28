@@ -23,7 +23,7 @@ public class DriverController {
     @GetMapping(params = "driver_id")
     public ResponseUtil checkDriver(String driver_id) {
         System.out.println(driver_id);
-        DriverDTO driverDTO = service.searchDriverByEmail(driver_id);
+        DriverDTO driverDTO = service.searchDriverById(driver_id);
         System.out.println(driverDTO);
         return new ResponseUtil("200", "Login Success", driverDTO);
     }
