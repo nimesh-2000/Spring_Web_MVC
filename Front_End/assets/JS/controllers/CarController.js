@@ -330,5 +330,20 @@ $("#btnUpdate").click(function () {
     });
 });
 
-
+$("#btnDelete").click(function () {
+    let registrationId = $("#txtCNu").val();
+    $.ajax({
+        url: baseURL+"car?registrationId=" + registrationId + "",
+        method: "delete",
+        dataType:"json",
+        success: function (resp) {
+            alert(resp.message);
+            // resp.data.image_1;
+            loadAllCars();
+        },
+        error:function (error){
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+});
 
