@@ -19,4 +19,12 @@ public class DriverController {
         service.saveDriver(dto);
         return new ResponseUtil("200",dto.toString()+ " Added",null);
     }
+
+    @GetMapping(params = "email")
+    public ResponseUtil checkDriver(String email) {
+        System.out.println(email);
+        DriverDTO driverDTO = service.searchDriverByEmail(email);
+        System.out.println(driverDTO);
+        return new ResponseUtil("200", "Login Success", driverDTO);
+    }
 }
