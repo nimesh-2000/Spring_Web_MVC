@@ -28,6 +28,8 @@ $("#btnLogIn").click(function (){
                     $("#dashSEM").css('display','none');
                     $("#ae").text(email);
                     $("#an").text(res.data.cusName);
+                    $("#A").css('pointer-events','auto');
+                    $("#check").css('pointer-events','auto');
 
             }else {
                 Swal.fire({

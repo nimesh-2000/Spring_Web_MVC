@@ -155,7 +155,7 @@ $("#editIm2").click(function (){
     let email = $("#ae").text();
 
     $.ajax({
-        url: baseURL+"customerLogin?email="+email,
+        url: baseURL+"login?email="+email,
         method: "get",
         dataType:"json",
         success: function (res) {

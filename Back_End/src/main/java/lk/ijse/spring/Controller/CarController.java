@@ -51,18 +51,21 @@ public ResponseUtil addVehicle(@RequestPart("vImageFile") MultipartFile[] file, 
     public ResponseUtil uploadImagesAndPath(@RequestPart("image_1") MultipartFile image_1, @RequestPart("image_2") MultipartFile image_2, @RequestPart("image_3") MultipartFile image_3, @RequestPart("image_4") MultipartFile image_4, @PathVariable String registrationId) {
         try {
 
-            String projectPath = String.valueOf(new File("F:\\uploadImage\\uploads"));
-            File uploadsDir = new File(projectPath + "\\CarImage");
+
+            System.out.println(image_1.getOriginalFilename());
+            System.out.println("Upload Image");
+
+            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            File uploadsDir = new File(projectPath + "/uploads");
             uploadsDir.mkdir();
 
             image_1.transferTo(new File(uploadsDir.getAbsolutePath() + "\\" + image_1.getOriginalFilename()));
             image_2.transferTo(new File(uploadsDir.getAbsolutePath() + "\\" + image_2.getOriginalFilename()));
             image_3.transferTo(new File(uploadsDir.getAbsolutePath() + "\\" + image_3.getOriginalFilename()));
             image_4.transferTo(new File(uploadsDir.getAbsolutePath() + "\\" + image_4.getOriginalFilename()));
-
-            String carFrontViewPath =  image_1.getOriginalFilename();
-            String carBackViewPath =  image_2.getOriginalFilename();
-            String carSideViewPath =  image_3.getOriginalFilename();
+            String carFrontViewPath = image_1.getOriginalFilename();
+            String carBackViewPath = image_2.getOriginalFilename();
+            String carSideViewPath = image_3.getOriginalFilename();
             String carInteriorViewPath = image_4.getOriginalFilename();
 
             service.uploadCarImages(carFrontViewPath, carBackViewPath, carSideViewPath, carInteriorViewPath, registrationId);
@@ -71,8 +74,11 @@ public ResponseUtil addVehicle(@RequestPart("vImageFile") MultipartFile[] file, 
 
         } catch (IOException e) {
             e.printStackTrace();
-            return new ResponseUtil("500",e.getMessage(),null);
+            return new ResponseUtil("500", e.getMessage(), null);
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
         }
+        return null;
     }
     @GetMapping
     public ResponseUtil getAllCars(){

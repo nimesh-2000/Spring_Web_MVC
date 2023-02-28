@@ -5,6 +5,17 @@ $("#btnAddC2").click(function (){
 });
 
 function addCar() {
+    var Vdata = new FormData();
+
+    let frontViewFile = $("#uploadFVI")[0].files[0];
+    let backViewFile = $("#uploadBV")[0].files[0];
+    let sideViewFile = $("#uploadUSV")[0].files[0];
+    let interiorViewFile = $("#uploadUIV")[0].files[0];
+
+    let frontFileName =  $("#uploadFVI")[0].files[0].name;
+    let backFileName =  $("#uploadBV")[0].files[0].name;
+    let sideFileName =  $("#uploadUSV")[0].files[0].name;
+    let interiorFileName = $("#uploadUIV")[0].files[0].name;
 
     let registrationId = $("#txtRNber").val();
     let transmission = $("#txtTrnsm").val();
@@ -20,6 +31,11 @@ function addCar() {
     let colour = $("#txtClr").val();
     let model = $("#txtMdl").val();
     let availability = $("#selectAvailable").val();
+    let image_1=frontFileName;
+    let image_2=backFileName;
+    let image_3=sideFileName;
+    let image_4=interiorFileName;
+
 
     var car = {
         registrationId: registrationId,
@@ -36,13 +52,23 @@ function addCar() {
         monthlyRate: monthlyRate,
         priceForExtraKm: prizeForExtrakm,
         availability: availability,
+        image_1:"uploads/"+ image_1,
+        image_2:"uploads/"+ image_2,
+        image_3:"uploads/"+ image_3,
+        image_4:"uploads/"+ image_4,
     }
-
+    Vdata.append("vImageFile" , frontViewFile)
+    Vdata.append("vImageFile" , backViewFile)
+    Vdata.append("vImageFile" , sideViewFile)
+    Vdata.append("vImageFile" , interiorViewFile)
+    Vdata.append("vehicle", new Blob([JSON.stringify(car)], {type: "application/json"}))
     $.ajax({
         url: baseURL + "car",
         method: "POST",
-        contentType: "application/json",
-        data: JSON.stringify(car),
+        async: true,
+        contentType: false,
+        processData: false,
+        data:Vdata,
         success: function (resp) {
 
             uploadCarImages(registrationId);
@@ -80,11 +106,9 @@ function uploadCarImages(registrationId) {
     let backFileName = registrationId + "-image_2-" + $("#uploadBV")[0].files[0].name;
     let sideFileName = registrationId + "-image_3-" + $("#uploadUSV")[0].files[0].name;
     let interiorFileName = registrationId + "-image_4-" + $("#uploadUIV")[0].files[0].name;
-    image_u1=registrationId+"-image_1-"+$("#uploadFVI")[0].files[0].name;
 
 
     var data = new FormData();
-
     data.append("image_1", frontViewFile, frontFileName);
     data.append("image_2", backViewFile, backFileName);
     data.append("image_3", sideViewFile, sideFileName);
@@ -93,7 +117,7 @@ function uploadCarImages(registrationId) {
 
 $.ajax({
     url: baseURL + "car/uploadImg/" + registrationId,
-    method: "PUT",
+    method: "Post",
     async: true,
     contentType: false,
     processData: false,
@@ -243,10 +267,10 @@ $("#btnUpdate").click(function () {
     let priceForExtraKm = $("#txtVCcperex").val();
     let dailyRate =  $("#txtDai").val();
     let monthlyRate = $("#txtMn").val();
-    // let frontView = $("#uploadUImFV").val();
-    // let backView = $("#uploadUImBV").val();
-    // let sideView =  $("#uploadUImSV").val();
-    // let interiorView = $("#uploadUIImV").val();
+    let frontView = $("#uploadUImFV").val();
+    let backView = $("#uploadUImBV").val();
+    let sideView =  $("#uploadUImSV").val();
+    let interiorView = $("#uploadUIImV").val();
 
 
     var car = {
@@ -265,6 +289,11 @@ $("#btnUpdate").click(function () {
         colour: colour,
         lastServiceMileage: lastServiceMileage,
         availability: availability,
+        image_1:frontView,
+        image_2: backView,
+        image_3: sideView,
+        image_4: interiorView,
+
 
 
 

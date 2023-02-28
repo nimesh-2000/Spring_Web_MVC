@@ -13,7 +13,9 @@ function carAppend(){
 
 
                 var d = `<div class="mmclass">
-                    <div id="k10"> 
+                    <div id="k10">
+                   <img src=${"http://localhost:8080/Back_End_war/uploads/"+car.image_1}
+                    class="testimonial-img" alt=""> 
                     </div>
                     <div id="details">
                         <h1 id="bName">${car.brand+"  "+car.model}</h1>
