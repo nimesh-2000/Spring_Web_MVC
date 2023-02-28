@@ -14,6 +14,8 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 @Service
 @Transactional
 public class CarServiceImpl implements CarService {
@@ -34,7 +36,16 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void updateCar(CarDTO carDTO) {
-
+        if (!repo.existsById(carDTO.getRegistrationId())){
+            throw new RuntimeException("Car "+carDTO.getRegistrationId()+" Not Available to Update..!");
+        }
+        Optional<Car> updateCar = repo.findById(carDTO.getRegistrationId());
+        Car car = updateCar.get();
+        car.setPriceForExtraKm(carDTO.getPriceForExtraKm());
+        car.setDailyRate(carDTO.getDailyRate());
+        car.setMonthlyRate(carDTO.getMonthlyRate());
+        car.setFreeMileage(carDTO.getFreeMileage());
+        repo.save(updateCar.get());
     }
 
     @Override

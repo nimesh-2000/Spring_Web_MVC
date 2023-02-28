@@ -188,6 +188,10 @@ function loadAllCars() {
             colour= resp.data.colour;
             lastServiceMileage= resp.data.lastServiceMileage;
             availability= resp.data.availability;
+                 image1= resp.data.image_1;
+                  image2=resp.data.image_2;
+                       image3=resp.data.image_3;
+                       image4=resp.data.image_4;
 
 
             for (let car of resp.data) {
@@ -255,6 +259,9 @@ var colour;
 var lastServiceMileage;
 var availability;
 var image1;
+var image2;
+var image3;
+var image4;
 // Update car details
 $("#btnUpdate").click(function () {
 
@@ -271,10 +278,10 @@ $("#btnUpdate").click(function () {
     let priceForExtraKm = $("#txtVCcperex").val();
     let dailyRate =  $("#txtDai").val();
     let monthlyRate = $("#txtMn").val();
-    let frontView = $("#uploadUImFV").val();
-    let backView = $("#uploadUImBV").val();
-    let sideView =  $("#uploadUImSV").val();
-    let interiorView = $("#uploadUIImV").val();
+    // let frontView = $("#uploadUImFV").val();
+    // let backView = $("#uploadUImBV").val();
+    // let sideView =  $("#uploadUImSV").val();
+    // let interiorView = $("#uploadUIImV").val();
 
 
 
@@ -294,10 +301,10 @@ $("#btnUpdate").click(function () {
         colour: colour,
         lastServiceMileage: lastServiceMileage,
         availability: availability,
-        image_1:frontView,
-        image_2: backView,
-        image_3: sideView,
-        image_4: interiorView,
+        image_1:image1,
+        image_2: image2,
+        image_3: image3,
+        image_4: image4,
 
 
 
