@@ -39,7 +39,10 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void deleteCar(String id) {
-
+        if (!repo.existsById(id)){
+            throw new RuntimeException("Car "+id+" Not Available to Delete..!");
+        }
+        repo.deleteById(id);
     }
 
     @Override
