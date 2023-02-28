@@ -1,10 +1,10 @@
-$("#bB").click(function (){
+$("#dB").click(function (){
 
-    let driver_id = $("#dE").val();
+    let drivingLicenceNum = $("#dE").val();
     let name = $("#dP").val();
 
     $.ajax({
-        url: baseURL+"driver?driver_id="+driver_id,
+        url: baseURL+"driver?drivingLicenceNum="+drivingLicenceNum,
         method: "get",
         dataType:"json",
         success: function (res) {

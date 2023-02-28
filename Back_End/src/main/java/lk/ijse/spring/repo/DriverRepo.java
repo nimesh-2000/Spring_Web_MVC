@@ -5,5 +5,5 @@ import lk.ijse.spring.entity.Driver;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface DriverRepo extends JpaRepository<Driver,String> {
-    Driver getDriverById(String driver_id);
+    Driver getDriverByDrivingLicenceNum(String drivingLicenceNum);
 }
