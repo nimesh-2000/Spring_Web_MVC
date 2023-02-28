@@ -1,5 +1,6 @@
 package lk.ijse.spring.service.impl;
 
+import lk.ijse.spring.dto.AdminDTO;
 import lk.ijse.spring.dto.DriverDTO;
 import lk.ijse.spring.entity.Admin;
 import lk.ijse.spring.entity.Driver;
@@ -57,5 +58,10 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public List<DriverDTO> getTodayAvailableAndOccupiedDrivers(String status) {
         return null;
+    }
+
+    @Override
+    public DriverDTO searchDriverByEmail(String email) {
+        return mapper.map( repo.getDriverByEmail(email), DriverDTO.class);
     }
 }
