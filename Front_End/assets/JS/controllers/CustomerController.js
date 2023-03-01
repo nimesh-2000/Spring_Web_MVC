@@ -329,7 +329,7 @@ $("#txtFullName").on('keydown', function (event) {
 
 $("#txtUName").on('keydown', function (event) {
     if (event.key == "Enter" && check(cusUserNameRegEx, $("#txtUName"))) {
-        focusText($("#txtSignPassword"));
+        focusText($("#txtPassword"));
     }
 });
 

@@ -354,3 +354,197 @@ $("#btnDelete").click(function () {
     });
 });
 
+
+
+
+
+
+
+
+
+const carBrandRegEx = /^[A-z ]{3,10}$/;
+const carTrans = /^[A-z ]{4,7}$/;
+const carType = /^[A-z ]{5,10}$/;
+const carNoP = /^[0-9]{1,2}$/;
+const carFuel = /^[A-z ]{5,8}$/;
+const carMonthlyRate = /^[0-9]{1,}$/;
+const carDailyRate = /^[0-9]{1,}$/;
+const priceExtraKm = /^[0-9]{1,}$/;
+const freeMile = /^[0-9]{1,}$/;
+const lastMile = /^[0-9]{1,}$/;
+const registrationNo = /^[A-z]{2}-[0-9]{4}$/;
+const carColour = /^[A-z ]{3,10}$/;
+const carModel = /^[A-z ]{3,10}$/;
+
+let carValidations = [];
+carValidations.push({reg: carBrandRegEx, field: $('#txtCbrnd'),error:'Car Brand Pattern is Wrong' });
+carValidations.push({reg: carTrans, field: $('#txtTrnsm'),error:'Car Transmission Pattern is Wrong'});
+carValidations.push({reg: carType, field: $('#txtType'),error:'Car Type Pattern is Wrong'});
+carValidations.push({reg: carNoP, field: $('#txtNoOPass'),error:'Car Number Of Passengers Pattern is Wrong'});
+carValidations.push({reg: carFuel, field: $('#txtFuel'),error:'Car Fuel Pattern is Wrong'});
+carValidations.push({reg: carMonthlyRate, field: $('#txtMRt'),error:'Car Monthly Rate Pattern is Wrong'});
+carValidations.push({reg: carDailyRate, field: $('#txtMnthlyR'),error:'Car Daily Rate Pattern is Wrong'});
+carValidations.push({reg: priceExtraKm, field: $('#txtPfExk'),error:'Car  Price Extra Km Pattern is Wrong'});
+carValidations.push({reg: freeMile, field: $('#txtFmlg'),error:'Car Free Mile  Pattern is Wrong'});
+carValidations.push({reg: lastMile, field: $('#txtLSrm'),error:'Car Last Mile  Pattern is Wrong'});
+carValidations.push({reg: registrationNo, field: $('#txtRNber'),error:'Car Registration Number Pattern is Wrong'});
+carValidations.push({reg: carColour, field: $('#txtClr'),error:'Car Colour Pattern is Wrong'});
+carValidations.push({reg: carModel, field: $('#txtMdl'),error:'Car Model Pattern is Wrong'});
+
+
+//disable tab key of all four text fields using grouping selector in CSS
+$("#txtCbrnd,#txtTrnsm,#txtType,#txtNoOPass,#txtFuel,#txtMRt,#txtMnthlyR,#txtPfExk,#txtFmlg,#txtLSrm,#txtRNber,#txtClr,#txtMdl").on('keydown', function (event) {
+    if (event.key == "Tab") {
+        event.preventDefault();
+    }
+});
+
+
+$("#txtCbrnd,#txtTrnsm,#txtType,#txtNoOPass,#txtFuel,#txtMRt,#txtMnthlyR,#txtPfExk,#txtFmlg,#txtLSrm,#txtRNber,#txtClr,#txtMdl").on('keyup', function (event) {
+    checkCValidity();
+});
+
+$("#txtCbrnd,#txtTrnsm,#txtType,#txtNoOPass,#txtFuel,#txtMRt,#txtMnthlyR,#txtPfExk,#txtFmlg,#txtLSrm,#txtRNber,#txtClr,#txtMdl").on('blur', function (event) {
+    checkCValidity();
+});
+
+
+$("#txtCbrnd").on('keydown', function (event) {
+    if (event.key == "Enter" && checkC(carBrandRegEx, $("#txtCbrnd"))) {
+        $("#txtTrnsm").focus();
+    } else {
+        focusTextC($("#txtCbrnd"));
+    }
+});
+
+
+$("#txtTrnsm").on('keydown', function (event) {
+    if (event.key == "Enter" && checkC(carTrans, $("#txtTrnsm"))) {
+        focusTextC($("#txtType"));
+    }
+});
+
+
+$("#txtType").on('keydown', function (event) {
+    if (event.key == "Enter" && checkC(carType, $("#txtType"))) {
+        focusTextC($("#txtNoOPass"));
+    }
+});
+
+$("#txtNoOPass").on('keydown', function (event) {
+    if (event.key == "Enter" && checkC(carNoP, $("#txtNoOPass"))) {
+        focusTextC($("#txtFuel"));
+    }
+});
+
+
+$("#txtFuel").on('keydown', function (event) {
+    if (event.key == "Enter" && checkC(carFuel, $("#txtFuel"))) {
+        focusTextC($("#txtMRt"));
+    }
+});
+
+$("#txtMRt").on('keydown', function (event) {
+    if (event.key == "Enter" && checkC(carMonthlyRate, $("#txtMRt"))) {
+        focusTextC($("#txtMnthlyR"));
+    }
+});
+
+$("#txtMnthlyR").on('keydown', function (event) {
+    if (event.key == "Enter" && checkC(carDailyRate, $("#txtMnthlyR"))) {
+        focusTextC($("#txtPfExk"));
+    }
+});
+$("#txtPfExk").on('keydown', function (event) {
+    if (event.key == "Enter" && checkC(carDailyRate, $("#txtPfExk"))) {
+        focusText($("#txtFmlg"));
+    }
+});
+$("#txtFmlg").on('keydown', function (event) {
+    if (event.key == "Enter" && checkC(freeMile, $("#txtFmlg"))) {
+        focusTextC($("#txtLSrm"));
+    }
+});
+$("#txtLSrm").on('keydown', function (event) {
+    if (event.key == "Enter" && checkC(lastMile, $("#txtLSrm"))) {
+        focusTextC($("#txtRNber"));
+    }
+});
+$("#txtRNber").on('keydown', function (event) {
+    if (event.key == "Enter" && checkC(registrationNo, $("#txtRNber"))) {
+        focusTextC($("#txtClr"));
+    }
+});
+$("#txtClr").on('keydown', function (event) {
+    if (event.key == "Enter" && checkC(colour, $("#txtClr"))) {
+        focusTextC($("#txtMdl"));
+    }
+});
+
+$("#txtMdl").on('keydown', function (event) {
+    if (event.key == "Enter" && checkC(model, $("#txtMdl"))) {
+        let res = confirm("Do you want to create.?");
+        if (res) {
+            clearAllTextsC();
+        }
+    }
+});
+
+function checkCValidity() {
+    let errorCount=0;
+    for (let validation of carValidations) {
+        if (checkC(validation.reg,validation.field)) {
+            textSuccessC(validation.field,"");
+        } else {
+            errorCount=errorCount+1;
+            setTextErrorC(validation.field,validation.error);
+        }
+    }
+    setButtonStateC(errorCount);
+}
+
+function checkC(regex, txtField) {
+    let inputValue = txtField.val();
+    return regex.test(inputValue) ? true : false;
+}
+
+function setTextErrorC(txtField,error) {
+    if (txtField.val().length <= 0) {
+        defaultTextC(txtField,"");
+    } else {
+        txtField.css('border', '2px solid red');
+        txtField.parent().children('span').text(error);
+    }
+}
+
+function textSuccessC(txtField,error) {
+    if (txtField.val().length <= 0) {
+        defaultTextC(txtField,"");
+    } else {
+        txtField.css('border', '2px solid green');
+        txtField.parent().children('span').text(error);
+    }
+}
+
+function defaultTextC(txtField,error) {
+    txtField.css("border", "1px solid #ced4da");
+    txtField.parent().children('span').text(error);
+}
+
+function focusTextC(txtField) {
+    txtField.focus();
+}
+
+function setButtonStateC(value){
+    if (value>0){
+        $("#btnAddC2").attr('disabled',true);
+    }else{
+        $("#btnAddC2").attr('disabled',false);
+    }
+}
+
+function clearAllTextsC() {
+    $("#txtCbrnd").focus();
+    $("#txtCbrnd,#txtTrnsm,#txtType,#txtNoOPass,#txtFuel,#txtMRt,#txtMnthlyR,#txtPfExk,#txtFmlg,#txtLSrm,#txtRNber,#txtClr,#txtMdl").val("");
+    checkCValidity();
+}
