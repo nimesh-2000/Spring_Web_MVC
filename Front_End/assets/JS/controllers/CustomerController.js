@@ -302,47 +302,47 @@ customerValidations.push({reg: cusDrivingLicNumdRegEx, field: $('#txtDl'),error:
 
 
 //disable tab key of all four text fields using grouping selector in CSS
-$("#txtFullName,#txtUrName,#txtNIC,#txtSignPassword,#txtEmail,#txtPhone,#txtAddress,#txtDl,#txtDate").on('keydown', function (event) {
+$("#txtFullName,#txtUName,#txtSignPassword,#txtNIC,#txtDl,#txtEmail,#txtAddress,#txtPhone,#txtDate").on('keydown', function (event) {
     if (event.key == "Tab") {
         event.preventDefault();
     }
 });
 
 
-$("#txtFullName,#txtUrName,#txtNIC,#txtSignPassword,#txtEmail,#txtPhone,#txtAddress,#txtDl").on('keyup', function (event) {
+$("#txtFullName,#txtUName,#txtSignPassword,#txtNIC,#txtDl,#txtEmail,#txtAddress,#txtPhone").on('keyup', function (event) {
     checkValidity();
 });
 
-$("#txtFullName,#txtUrName,#txtNIC,#txtSignPassword,#txtEmail,#txtPhone,#txtAddress,#txtDl").on('blur', function (event) {
+$("#txtFullName,#txtUName,#txtSignPassword,#txtNIC,#txtDl,#txtEmail,#txtAddress,#txtPhone").on('blur', function (event) {
     checkValidity();
 });
 
 
 $("#txtFullName").on('keydown', function (event) {
     if (event.key == "Enter" && check(cusNameRegEx, $("#txtFullName"))) {
-        $("#txtNIC").focus();
+        $("#txtUName").focus();
     } else {
         focusText($("#txtFullName"));
     }
 });
 
 
+$("#txtUName").on('keydown', function (event) {
+    if (event.key == "Enter" && check(cusUserNameRegEx, $("#txtUName"))) {
+        focusText($("#txtSignPassword"));
+    }
+});
+
+
+$("#txtSignPassword").on('keydown', function (event) {
+    if (event.key == "Enter" && check(cusPasswordRegEx, $("#txtSignPassword"))) {
+        focusText($("#txtNIC"));
+    }
+});
+
 $("#txtNIC").on('keydown', function (event) {
     if (event.key == "Enter" && check(cusnicRegEx, $("#txtNIC"))) {
-        focusText($("#txtEmail"));
-    }
-});
-
-
-$("#txtEmail").on('keydown', function (event) {
-    if (event.key == "Enter" && check(cusEmailRegEx, $("#txtEmail"))) {
-        focusText($("#txtAddress"));
-    }
-});
-
-$("#txtAddress").on('keydown', function (event) {
-    if (event.key == "Enter" && check(cusAddressRegEx, $("#txtAddress"))) {
-        focusText($("#txtUName"));
+        focusText($("#txtDl"));
     }
 });
 
@@ -352,27 +352,27 @@ $("#txtAddress").on('keydown', function (event) {
 //     }
 // });
 
-$("#txtUName").on('keydown', function (event) {
-    if (event.key == "Enter" && check(cusUserNameRegEx, $("#txtUName"))) {
-        focusText($("#txtSignPassword"));
+$("#txtDl").on('keydown', function (event) {
+    if (event.key == "Enter" && check(cusDrivingLicNumdRegEx, $("#txtDl"))) {
+        focusText($("#txtEmail"));
     }
 });
 
-$("#txtSignPassword").on('keydown', function (event) {
-    if (event.key == "Enter" && check(cusPasswordRegEx, $("#txtSignPassword"))) {
+$("#txtEmail").on('keydown', function (event) {
+    if (event.key == "Enter" && check(cusEmailRegEx, $("#txtEmail"))) {
+        focusText($("#txtAddress"));
+    }
+});
+
+$("#txtAddress").on('keydown', function (event) {
+    if (event.key == "Enter" && check(cusAddressRegEx, $("#txtAddress"))) {
         focusText($("#txtPhone"));
     }
 });
 
+
 $("#txtPhone").on('keydown', function (event) {
     if (event.key == "Enter" && check(cusPhoneRegEx, $("#txtPhone"))) {
-        focusText($("#txtDl"));
-    }
-});
-
-
-$("#txtDl").on('keydown', function (event) {
-    if (event.key == "Enter" && check(cusDrivingLicNumdRegEx, $("#txtDl"))) {
         let res = confirm("Do you want to create.?");
         if (res) {
             clearAllTexts();
