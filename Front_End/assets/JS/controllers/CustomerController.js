@@ -450,6 +450,3 @@ function clearAllTexts() {
 
 
 
-
-
-

@@ -1,6 +1,5 @@
-
 loadAllCars();
-$("#btnAddC2").click(function (){
+$("#btnAddC2").click(function () {
     addCar();
 });
 
@@ -12,9 +11,9 @@ function addCar() {
     let sideViewFile = $("#uploadUSV")[0].files[0];
     let interiorViewFile = $("#uploadUIV")[0].files[0];
 
-    let frontFileName =  $("#uploadFVI")[0].files[0].name;
-    let backFileName =  $("#uploadBV")[0].files[0].name;
-    let sideFileName =  $("#uploadUSV")[0].files[0].name;
+    let frontFileName = $("#uploadFVI")[0].files[0].name;
+    let backFileName = $("#uploadBV")[0].files[0].name;
+    let sideFileName = $("#uploadUSV")[0].files[0].name;
     let interiorFileName = $("#uploadUIV")[0].files[0].name;
 
     let registrationId = $("#txtRNber").val();
@@ -31,10 +30,10 @@ function addCar() {
     let colour = $("#txtClr").val();
     let model = $("#txtMdl").val();
     let availability = $("#selectAvailable").val();
-    let image_1=frontFileName;
-    let image_2=backFileName;
-    let image_3=sideFileName;
-    let image_4=interiorFileName;
+    let image_1 = frontFileName;
+    let image_2 = backFileName;
+    let image_3 = sideFileName;
+    let image_4 = interiorFileName;
 
 
     var car = {
@@ -52,15 +51,15 @@ function addCar() {
         monthlyRate: monthlyRate,
         priceForExtraKm: prizeForExtrakm,
         availability: availability,
-        image_1:"uploads/"+ image_1,
-        image_2:"uploads/"+ image_2,
-        image_3:"uploads/"+ image_3,
-        image_4:"uploads/"+ image_4,
+        image_1: "uploads/" + image_1,
+        image_2: "uploads/" + image_2,
+        image_3: "uploads/" + image_3,
+        image_4: "uploads/" + image_4,
     }
-    Vdata.append("vImageFile" , frontViewFile)
-    Vdata.append("vImageFile" , backViewFile)
-    Vdata.append("vImageFile" , sideViewFile)
-    Vdata.append("vImageFile" , interiorViewFile)
+    Vdata.append("vImageFile", frontViewFile)
+    Vdata.append("vImageFile", backViewFile)
+    Vdata.append("vImageFile", sideViewFile)
+    Vdata.append("vImageFile", interiorViewFile)
     Vdata.append("vehicle", new Blob([JSON.stringify(car)], {type: "application/json"}))
     $.ajax({
         url: baseURL + "car",
@@ -68,7 +67,7 @@ function addCar() {
         async: true,
         contentType: false,
         processData: false,
-        data:Vdata,
+        data: Vdata,
         success: function (resp) {
 
             uploadCarImages(registrationId);
@@ -94,7 +93,9 @@ function addCar() {
         }
     })
 }
+
 var image_u1;
+
 function uploadCarImages(registrationId) {
 
     let frontViewFile = $("#uploadFVI")[0].files[0];
@@ -115,35 +116,35 @@ function uploadCarImages(registrationId) {
     data.append("image_4", interiorViewFile, interiorFileName);
 
 
-$.ajax({
-    url: baseURL + "car/uploadImg/" + registrationId,
-    method: "Post",
-    async: true,
-    contentType: false,
-    processData: false,
-    data: data,
-    success: function (res) {
+    $.ajax({
+        url: baseURL + "car/uploadImg/" + registrationId,
+        method: "Post",
+        async: true,
+        contentType: false,
+        processData: false,
+        data: data,
+        success: function (res) {
 
-        console.log("Uploaded");
-        Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: "Images Upload Successfully",
-            showConfirmButton: false,
-            timer: 1500
-        });
-    },
-    error: function (error) {
-        let errorReason = JSON.parse(error.responseText);
-        Swal.fire({
-            position: 'center',
-            icon: 'error',
-            title: "Images Not Upload Successfully",
-            showConfirmButton: false,
-            timer: 1500
-        });
-    }
-});
+            console.log("Uploaded");
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: "Images Upload Successfully",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        },
+        error: function (error) {
+            let errorReason = JSON.parse(error.responseText);
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: "Images Not Upload Successfully",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+    });
 }
 
 function clearCarTextFields() {
@@ -168,30 +169,25 @@ function clearCarTextFields() {
 }
 
 
-
-
-
-
-
 //Load all cars
 var i;
 
 function loadAllCars() {
     $("#carViewTable").empty();
     $.ajax({
-        url: baseURL+"car",
+        url: baseURL + "car",
         dataType: "json",
         success: function (resp) {
 
 
-            model=resp.data.model;
-            colour= resp.data.colour;
-            lastServiceMileage= resp.data.lastServiceMileage;
-            availability= resp.data.availability;
-                 image1= resp.data.image_1;
-                  image2=resp.data.image_2;
-                       image3=resp.data.image_3;
-                       image4=resp.data.image_4;
+            model = resp.data.model;
+            colour = resp.data.colour;
+            lastServiceMileage = resp.data.lastServiceMileage;
+            availability = resp.data.availability;
+            image1 = resp.data.image_1;
+            image2 = resp.data.image_2;
+            image3 = resp.data.image_3;
+            image4 = resp.data.image_4;
 
 
             for (let car of resp.data) {
@@ -199,7 +195,7 @@ function loadAllCars() {
                 $("#carViewTable").append(row);
             }
             bindCarRowClickEvents();
-            setCarTextFieldValues("","","","","","","","","","");
+            setCarTextFieldValues("", "", "", "", "", "", "", "", "", "");
             // $("#txtCustomerID").focus();
         }
     });
@@ -236,7 +232,7 @@ function bindCarRowClickEvents() {
     });
 }
 
-function setCarTextFieldValues(registrationId, brand, type, fuelType,transmissionType,noOfPassengers,freeMileage,priceForExtraKm,dailyRate,monthlyRate) {
+function setCarTextFieldValues(registrationId, brand, type, fuelType, transmissionType, noOfPassengers, freeMileage, priceForExtraKm, dailyRate, monthlyRate) {
     $("#txtVCbrnd").val(brand);
     $("#txtVCTrans").val(transmissionType);
     $("#txtVCcperex").val(priceForExtraKm);
@@ -266,23 +262,20 @@ var image4;
 $("#btnUpdate").click(function () {
 
 
-
-
     let registrationId = $("#txtCNu").val();
     let brand = $("#txtVCbrnd").val();
     let type = $("#txtCT").val();
-    let fuelType =$("#txtFT").val();
+    let fuelType = $("#txtFT").val();
     let transmissionType = $("#txtVCTrans").val();
     let noOfPassengers = $("#txtNOP").val();
     let freeMileage = $("#txtFM").val();
     let priceForExtraKm = $("#txtVCcperex").val();
-    let dailyRate =  $("#txtDai").val();
+    let dailyRate = $("#txtDai").val();
     let monthlyRate = $("#txtMn").val();
     // let frontView = $("#uploadUImFV").val();
     // let backView = $("#uploadUImBV").val();
     // let sideView =  $("#uploadUImSV").val();
     // let interiorView = $("#uploadUIImV").val();
-
 
 
     var carU = {
@@ -301,14 +294,10 @@ $("#btnUpdate").click(function () {
         colour: colour,
         lastServiceMileage: lastServiceMileage,
         availability: availability,
-        image_1:image1,
+        image_1: image1,
         image_2: image2,
         image_3: image3,
         image_4: image4,
-
-
-
-
 
 
         // cusName:name,
@@ -318,19 +307,19 @@ $("#btnUpdate").click(function () {
     }
 
     $.ajax({
-        url: baseURL+'car',
+        url: baseURL + 'car',
         method: 'put',
-        contentType:"application/json",
-        data:JSON.stringify(carU),
-        dataType:"json",
+        contentType: "application/json",
+        data: JSON.stringify(carU),
+        dataType: "json",
         success: function (res) {
 
 
             alert(res.message);
             loadAllCars();
         },
-        error:function (error){
-            let cause= JSON.parse(error.responseText).message;
+        error: function (error) {
+            let cause = JSON.parse(error.responseText).message;
             alert(cause);
         }
 
@@ -340,26 +329,19 @@ $("#btnUpdate").click(function () {
 $("#btnDelete").click(function () {
     let registrationId = $("#txtCNu").val();
     $.ajax({
-        url: baseURL+"car?registrationId=" + registrationId + "",
+        url: baseURL + "car?registrationId=" + registrationId + "",
         method: "delete",
-        dataType:"json",
+        dataType: "json",
         success: function (resp) {
             alert(resp.message);
             // resp.data.image_1;
             loadAllCars();
         },
-        error:function (error){
+        error: function (error) {
             alert(JSON.parse(error.responseText).message);
         }
     });
 });
-
-
-
-
-
-
-
 
 
 const carBrandRegEx = /^[A-z ]{3,10}$/;
@@ -377,19 +359,19 @@ const carColour = /^[A-z ]{3,10}$/;
 const carModel = /^[A-z ]{3,10}$/;
 
 let carValidations = [];
-carValidations.push({reg: carBrandRegEx, field: $('#txtCbrnd'),error:'Car Brand Pattern is Wrong' });
-carValidations.push({reg: carTrans, field: $('#txtTrnsm'),error:'Car Transmission Pattern is Wrong'});
-carValidations.push({reg: carType, field: $('#txtType'),error:'Car Type Pattern is Wrong'});
-carValidations.push({reg: carNoP, field: $('#txtNoOPass'),error:'Car Number Of Passengers Pattern is Wrong'});
-carValidations.push({reg: carFuel, field: $('#txtFuel'),error:'Car Fuel Pattern is Wrong'});
-carValidations.push({reg: carMonthlyRate, field: $('#txtMRt'),error:'Car Monthly Rate Pattern is Wrong'});
-carValidations.push({reg: carDailyRate, field: $('#txtMnthlyR'),error:'Car Daily Rate Pattern is Wrong'});
-carValidations.push({reg: priceExtraKm, field: $('#txtPfExk'),error:'Car  Price Extra Km Pattern is Wrong'});
-carValidations.push({reg: freeMile, field: $('#txtFmlg'),error:'Car Free Mile  Pattern is Wrong'});
-carValidations.push({reg: lastMile, field: $('#txtLSrm'),error:'Car Last Mile  Pattern is Wrong'});
-carValidations.push({reg: registrationNo, field: $('#txtRNber'),error:'Car Registration Number Pattern is Wrong'});
-carValidations.push({reg: carColour, field: $('#txtClr'),error:'Car Colour Pattern is Wrong'});
-carValidations.push({reg: carModel, field: $('#txtMdl'),error:'Car Model Pattern is Wrong'});
+carValidations.push({reg: carBrandRegEx, field: $('#txtCbrnd'), error: 'Car Brand Pattern is Wrong'});
+carValidations.push({reg: carTrans, field: $('#txtTrnsm'), error: 'Car Transmission Pattern is Wrong'});
+carValidations.push({reg: carType, field: $('#txtType'), error: 'Car Type Pattern is Wrong'});
+carValidations.push({reg: carNoP, field: $('#txtNoOPass'), error: 'Car Number Of Passengers Pattern is Wrong'});
+carValidations.push({reg: carFuel, field: $('#txtFuel'), error: 'Car Fuel Pattern is Wrong'});
+carValidations.push({reg: carMonthlyRate, field: $('#txtMRt'), error: 'Car Monthly Rate Pattern is Wrong'});
+carValidations.push({reg: carDailyRate, field: $('#txtMnthlyR'), error: 'Car Daily Rate Pattern is Wrong'});
+carValidations.push({reg: priceExtraKm, field: $('#txtPfExk'), error: 'Car  Price Extra Km Pattern is Wrong'});
+carValidations.push({reg: freeMile, field: $('#txtFmlg'), error: 'Car Free Mile  Pattern is Wrong'});
+carValidations.push({reg: lastMile, field: $('#txtLSrm'), error: 'Car Last Mile  Pattern is Wrong'});
+carValidations.push({reg: registrationNo, field: $('#txtRNber'), error: 'Car Registration Number Pattern is Wrong'});
+carValidations.push({reg: carColour, field: $('#txtClr'), error: 'Car Colour Pattern is Wrong'});
+carValidations.push({reg: carModel, field: $('#txtMdl'), error: 'Car Model Pattern is Wrong'});
 
 
 //disable tab key of all four text fields using grouping selector in CSS
@@ -491,13 +473,13 @@ $("#txtMdl").on('keydown', function (event) {
 });
 
 function checkCValidity() {
-    let errorCount=0;
+    let errorCount = 0;
     for (let validation of carValidations) {
-        if (checkC(validation.reg,validation.field)) {
-            textSuccessC(validation.field,"");
+        if (checkC(validation.reg, validation.field)) {
+            textSuccessC(validation.field, "");
         } else {
-            errorCount=errorCount+1;
-            setTextErrorC(validation.field,validation.error);
+            errorCount = errorCount + 1;
+            setTextErrorC(validation.field, validation.error);
         }
     }
     setButtonStateC(errorCount);
@@ -508,25 +490,25 @@ function checkC(regex, txtField) {
     return regex.test(inputValue) ? true : false;
 }
 
-function setTextErrorC(txtField,error) {
+function setTextErrorC(txtField, error) {
     if (txtField.val().length <= 0) {
-        defaultTextC(txtField,"");
+        defaultTextC(txtField, "");
     } else {
         txtField.css('border', '2px solid red');
         txtField.parent().children('span').text(error);
     }
 }
 
-function textSuccessC(txtField,error) {
+function textSuccessC(txtField, error) {
     if (txtField.val().length <= 0) {
-        defaultTextC(txtField,"");
+        defaultTextC(txtField, "");
     } else {
         txtField.css('border', '2px solid green');
         txtField.parent().children('span').text(error);
     }
 }
 
-function defaultTextC(txtField,error) {
+function defaultTextC(txtField, error) {
     txtField.css("border", "1px solid #ced4da");
     txtField.parent().children('span').text(error);
 }
@@ -535,11 +517,11 @@ function focusTextC(txtField) {
     txtField.focus();
 }
 
-function setButtonStateC(value){
-    if (value>0){
-        $("#btnAddC2").attr('disabled',true);
-    }else{
-        $("#btnAddC2").attr('disabled',false);
+function setButtonStateC(value) {
+    if (value > 0) {
+        $("#btnAddC2").attr('disabled', true);
+    } else {
+        $("#btnAddC2").attr('disabled', false);
     }
 }
 
