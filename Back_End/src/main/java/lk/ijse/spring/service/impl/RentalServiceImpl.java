@@ -7,7 +7,12 @@ import lk.ijse.spring.repo.RentalRepo;
 import lk.ijse.spring.service.RentalService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
+@Service
+@Transactional
 public class RentalServiceImpl implements RentalService {
 
     @Autowired
