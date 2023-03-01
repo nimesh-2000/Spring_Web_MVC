@@ -1,6 +1,6 @@
 package lk.ijse.spring.service.impl;
 
-import lk.ijse.spring.dto.ReservationDTO;
+import lk.ijse.spring.dto.RentalDTO;
 import lk.ijse.spring.service.ReservationService;
 
 import java.util.List;
@@ -12,7 +12,7 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
-    public void requestReservation(ReservationDTO ReservationDTO) {
+    public void requestReservation(RentalDTO ReservationDTO) {
 
     }
 
@@ -22,27 +22,27 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
-    public List<ReservationDTO> getAllPendingReservation() {
+    public List<RentalDTO> getAllPendingReservation() {
         return null;
     }
 
     @Override
-    public ReservationDTO getReservationDetail(String id) {
+    public RentalDTO getReservationDetail(String id) {
         return null;
     }
 
     @Override
-    public List<ReservationDTO> getAllTodayReservation() {
+    public List<RentalDTO> getAllTodayReservation() {
         return null;
     }
 
     @Override
-    public List<ReservationDTO> getAllTodayPickUps() {
+    public List<RentalDTO> getAllTodayPickUps() {
         return null;
     }
 
     @Override
-    public List<ReservationDTO> getCustomerReservationByStatus(String id, String status) {
+    public List<RentalDTO> getCustomerReservationByStatus(String id, String status) {
         return null;
     }
 }

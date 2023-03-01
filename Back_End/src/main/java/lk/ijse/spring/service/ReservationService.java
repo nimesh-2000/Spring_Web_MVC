@@ -1,6 +1,6 @@
 package lk.ijse.spring.service;
 
-import lk.ijse.spring.dto.ReservationDTO;
+import lk.ijse.spring.dto.RentalDTO;
 
 import java.util.List;
 
@@ -8,17 +8,17 @@ public interface ReservationService {
 
     String generateReservationId();
 
-    void requestReservation(ReservationDTO ReservationDTO);
+    void requestReservation(RentalDTO ReservationDTO);
 
     void updateReservationStatus(String reserve_id, String driver_id, String status);
 
-    List<ReservationDTO> getAllPendingReservation();
+    List<RentalDTO> getAllPendingReservation();
 
-    ReservationDTO getReservationDetail(String id);
+    RentalDTO getReservationDetail(String id);
 
-    List<ReservationDTO> getAllTodayReservation();
+    List<RentalDTO> getAllTodayReservation();
 
-    List<ReservationDTO> getAllTodayPickUps();
+    List<RentalDTO> getAllTodayPickUps();
 
-    List<ReservationDTO> getCustomerReservationByStatus(String id, String status);
+    List<RentalDTO> getCustomerReservationByStatus(String id, String status);
 }
