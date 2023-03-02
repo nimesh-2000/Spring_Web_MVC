@@ -20,6 +20,7 @@ $("#vF").click(function(){
     $("#dash").css('display','none');
     $("#dashSEM").css('display','none');
     $("#adminLogin").css('display','none');
+    loadAllCars();
 });
 
 $("#A").click(function(){
