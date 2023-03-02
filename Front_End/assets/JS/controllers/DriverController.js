@@ -55,25 +55,25 @@ const driverNicRegEx = /^[0-9/A-z. ,]{7,}$/;
 const driverLicenseRegEx = /^[0-9]{1,}$/;
 
 let DriverValidations = [];
-DriverValidations.push({reg: driverIdRegEx, field: $('#txtDId'),error:'Admin ID Pattern is Wrong' });
-DriverValidations.push({reg: driverNameRegEx, field: $('#txtDNa'),error:'Admin Email Pattern is Wrong'});
-DriverValidations.push({reg: driverLicenseRegEx, field: $('#txtDLN'),error:'Admin Password Pattern is Wrong'});
-DriverValidations.push({reg: driverNicRegEx, field: $('#txtDNIC'),error:'Admin User Name Pattern is Wrong'});
+DriverValidations.push({reg: driverIdRegEx, field: $('#txtDId'),error:'Driver ID Pattern is Wrong' });
+DriverValidations.push({reg: driverNameRegEx, field: $('#txtDNa'),error:'Driver Name Pattern is Wrong'});
+DriverValidations.push({reg: driverLicenseRegEx, field: $('#txtDLN'),error:'Driver License Number Pattern is Wrong'});
+DriverValidations.push({reg: driverNicRegEx, field: $('#txtDNIC'),error:'Driver NIC  Pattern is Wrong'});
 
 
-$("#txtAId,#txtE,#txtU,#txtUP").on('keydown', function (event) {
+$("#txtDId,#txtDNa,#txtDLN,#txtDNIC").on('keydown', function (event) {
     if (event.key == "Tab") {
         event.preventDefault();
     }
 });
 
 
-$("#txtAId,#txtE,#txtU,#txtUP").on('keyup', function (event) {
-    checkAValidity();
+$("#txtDId,#txtDNa,#txtDLN,#txtDNIC").on('keyup', function (event) {
+    checkDValidity();
 });
 
-$("#txtAId,#txtE,#txtU,#txtUP").on('blur', function (event) {
-    checkAValidity();
+$("#txtDId,#txtDNa,#txtDLN,#txtDNIC").on('blur', function (event) {
+    checkDValidity();
 });
 
 
