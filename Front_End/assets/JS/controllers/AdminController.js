@@ -147,9 +147,9 @@ function focusTextA(txtField) {
 
 function setButtonStateA(value){
     if (value>0){
-        $("#btnSignL").attr('disabled',true);
+        $("#btnAddAdmin").attr('disabled',true);
     }else{
-        $("#btnSignL").attr('disabled',false);
+        $("#btnAddAdmin").attr('disabled',false);
     }
 }
 
