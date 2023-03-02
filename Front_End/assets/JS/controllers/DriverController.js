@@ -78,83 +78,83 @@ $("#txtDId,#txtDNa,#txtDLN,#txtDNIC").on('blur', function (event) {
 
 
 $("#txtDId").on('keydown', function (event) {
-    if (event.key == "Enter" && checkA(driverIdRegEx, $("#txtDId"))) {
+    if (event.key == "Enter" && checkD(driverIdRegEx, $("#txtDId"))) {
         $("#txtDNa").focus();
     } else {
-        focusTextA($("#txtDId"));
+        focusTextD($("#txtDId"));
     }
 });
 
 
 $("#txtDNa").on('keydown', function (event) {
-    if (event.key == "Enter" && checkA(driverNameRegEx, $("#txtDNa"))) {
-        focusTextA($("#txtDLN"));
+    if (event.key == "Enter" && checkD(driverNameRegEx, $("#txtDNa"))) {
+        focusTextD($("#txtDLN"));
     }
 });
 
 
 $("#txtDLN").on('keydown', function (event) {
-    if (event.key == "Enter" && checkA(driverLicenseRegEx, $("#txtDLN"))) {
-        focusTextA($("#txtDNIC"));
+    if (event.key == "Enter" && checkD(driverLicenseRegEx, $("#txtDLN"))) {
+        focusTextD($("#txtDNIC"));
     }
 });
 $("#txtDNIC").on('keydown', function (event) {
-    if (event.key == "Enter" && checkA(driverNicRegEx, $("#txtDNIC"))) {
+    if (event.key == "Enter" && checkD(driverNicRegEx, $("#txtDNIC"))) {
         let res = confirm("Do you want to create.?");
         if (res) {
-            clearAllTextsA();
+            clearAllTextsD();
         }
     }
 });
 
 
 
-function checkAValidity() {
+function checkDValidity() {
     let errorCount=0;
     for (let validation of AdminValidations) {
-        if (check(validation.reg,validation.field)) {
-            textSuccessA(validation.field,"");
+        if (checkD(validation.reg,validation.field)) {
+            textSuccessD(validation.field,"");
         } else {
             errorCount=errorCount+1;
-            setTextErrorA(validation.field,validation.error);
+            setTextErrorD(validation.field,validation.error);
         }
     }
-    setButtonStateA(errorCount);
+    setButtonStateD(errorCount);
 }
 
-function checkA(regex, txtField) {
+function checkD(regex, txtField) {
     let inputValue = txtField.val();
     return regex.test(inputValue) ? true : false;
 }
 
-function setTextErrorA(txtField,error) {
+function setTextErrorD(txtField,error) {
     if (txtField.val().length <= 0) {
-        defaultTextA(txtField,"");
+        defaultTextD(txtField,"");
     } else {
         txtField.css('border', '2px solid red');
         txtField.parent().children('span').text(error);
     }
 }
 
-function textSuccessA(txtField,error) {
+function textSuccessD(txtField,error) {
     if (txtField.val().length <= 0) {
-        defaultTextA(txtField,"");
+        defaultTextD(txtField,"");
     } else {
         txtField.css('border', '2px solid green');
         txtField.parent().children('span').text(error);
     }
 }
 
-function defaultTextA(txtField,error) {
+function defaultTextD(txtField,error) {
     txtField.css("border", "1px solid #ced4da");
     txtField.parent().children('span').text(error);
 }
 
-function focusTextA(txtField) {
+function focusTextD(txtField) {
     txtField.focus();
 }
 
-function setButtonStateA(value){
+function setButtonStateD(value){
     if (value>0){
         $("#btnAddAdmin").attr('disabled',true);
     }else{
@@ -162,7 +162,7 @@ function setButtonStateA(value){
     }
 }
 
-function clearAllTextsA() {
+function clearAllTextsD() {
     $("#txtAId").focus();
     $("#txtAId,#txtE,#txtU,#txtUP").val("");
     checkAValidity();
