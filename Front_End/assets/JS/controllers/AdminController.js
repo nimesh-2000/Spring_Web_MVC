@@ -102,7 +102,7 @@ $("#txtUP").on('keydown', function (event) {
 
 function checkAValidity() {
     let errorCount=0;
-    for (let validation of customerValidations) {
+    for (let validation of AdminValidations) {
         if (check(validation.reg,validation.field)) {
             textSuccessA(validation.field,"");
         } else {
