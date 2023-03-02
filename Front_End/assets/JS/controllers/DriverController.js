@@ -86,20 +86,20 @@ $("#txtDId").on('keydown', function (event) {
 });
 
 
-$("#txtE").on('keydown', function (event) {
-    if (event.key == "Enter" && checkA(AdminEmailRegEx, $("#txtE"))) {
-        focusTextA($("#txtU"));
+$("#txtDNa").on('keydown', function (event) {
+    if (event.key == "Enter" && checkA(driverNameRegEx, $("#txtDNa"))) {
+        focusTextA($("#txtDLN"));
     }
 });
 
 
-$("#txtU").on('keydown', function (event) {
-    if (event.key == "Enter" && checkA(AdminUserNameRegEx, $("#txtU"))) {
-        focusTextA($("#txtUP"));
+$("#txtDLN").on('keydown', function (event) {
+    if (event.key == "Enter" && checkA(driverLicenseRegEx, $("#txtDLN"))) {
+        focusTextA($("#txtDNIC"));
     }
 });
-$("#txtUP").on('keydown', function (event) {
-    if (event.key == "Enter" && checkA(AdminPasswordRegEx, $("#txtUP"))) {
+$("#txtDNIC").on('keydown', function (event) {
+    if (event.key == "Enter" && checkA(driverNicRegEx, $("#txtDNIC"))) {
         let res = confirm("Do you want to create.?");
         if (res) {
             clearAllTextsA();
