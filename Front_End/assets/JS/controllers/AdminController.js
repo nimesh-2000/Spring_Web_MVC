@@ -41,7 +41,7 @@ $("#btnAddAdmin").click(function () {
     });
 });
 
-const AdminIDRegEx = /^(C00-)[0-9]{1,3}$/;
+const AdminIDRegEx = /^(A00-)[0-9]{1,3}$/;
 const AdminEmailRegEx = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
 const AdminUserNameRegEx = /^[a-z ]{5,10}$/;
 const AdminPasswordRegEx = /^[0-9/A-z. ,]{3,}$/;
