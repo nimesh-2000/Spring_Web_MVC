@@ -11,6 +11,8 @@ $("#h").click(function(){
 });
 
 $("#vF").click(function(){
+    loadAllCars();
+    carAppend();
     $("#home").css('display','none');
     $("#Clogin").css('display','none');
     $("#Csign").css('display','none');
@@ -20,7 +22,6 @@ $("#vF").click(function(){
     $("#dash").css('display','none');
     $("#dashSEM").css('display','none');
     $("#adminLogin").css('display','none');
-    loadAllCars();
 });
 
 $("#A").click(function(){
