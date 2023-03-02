@@ -44,3 +44,126 @@ $("#btnAddDriver").click(function () {
         }
     });
 });
+
+
+
+
+
+const driverIdRegEx = /^(D00-)[0-9]{1,3}$/;
+const driverNameRegEx = /^[A-z ]{5,20}$/;
+const driverNicRegEx = /^[0-9/A-z. ,]{7,}$/;
+const driverLicenseRegEx = /^[0-9]{1,}$/;
+
+let DriverValidations = [];
+DriverValidations.push({reg: driverIdRegEx, field: $('#txtDId'),error:'Admin ID Pattern is Wrong' });
+DriverValidations.push({reg: driverNameRegEx, field: $('#txtDNa'),error:'Admin Email Pattern is Wrong'});
+DriverValidations.push({reg: driverLicenseRegEx, field: $('#txtDLN'),error:'Admin Password Pattern is Wrong'});
+DriverValidations.push({reg: driverNicRegEx, field: $('#txtDNIC'),error:'Admin User Name Pattern is Wrong'});
+
+
+$("#txtAId,#txtE,#txtU,#txtUP").on('keydown', function (event) {
+    if (event.key == "Tab") {
+        event.preventDefault();
+    }
+});
+
+
+$("#txtAId,#txtE,#txtU,#txtUP").on('keyup', function (event) {
+    checkAValidity();
+});
+
+$("#txtAId,#txtE,#txtU,#txtUP").on('blur', function (event) {
+    checkAValidity();
+});
+
+
+$("#txtAId").on('keydown', function (event) {
+    if (event.key == "Enter" && checkA(AdminIDRegEx, $("#txtAId"))) {
+        $("#txtE").focus();
+    } else {
+        focusTextA($("#txtAId"));
+    }
+});
+
+
+$("#txtE").on('keydown', function (event) {
+    if (event.key == "Enter" && checkA(AdminEmailRegEx, $("#txtE"))) {
+        focusTextA($("#txtU"));
+    }
+});
+
+
+$("#txtU").on('keydown', function (event) {
+    if (event.key == "Enter" && checkA(AdminUserNameRegEx, $("#txtU"))) {
+        focusTextA($("#txtUP"));
+    }
+});
+$("#txtUP").on('keydown', function (event) {
+    if (event.key == "Enter" && checkA(AdminPasswordRegEx, $("#txtUP"))) {
+        let res = confirm("Do you want to create.?");
+        if (res) {
+            clearAllTextsA();
+        }
+    }
+});
+
+
+
+function checkAValidity() {
+    let errorCount=0;
+    for (let validation of AdminValidations) {
+        if (check(validation.reg,validation.field)) {
+            textSuccessA(validation.field,"");
+        } else {
+            errorCount=errorCount+1;
+            setTextErrorA(validation.field,validation.error);
+        }
+    }
+    setButtonStateA(errorCount);
+}
+
+function checkA(regex, txtField) {
+    let inputValue = txtField.val();
+    return regex.test(inputValue) ? true : false;
+}
+
+function setTextErrorA(txtField,error) {
+    if (txtField.val().length <= 0) {
+        defaultTextA(txtField,"");
+    } else {
+        txtField.css('border', '2px solid red');
+        txtField.parent().children('span').text(error);
+    }
+}
+
+function textSuccessA(txtField,error) {
+    if (txtField.val().length <= 0) {
+        defaultTextA(txtField,"");
+    } else {
+        txtField.css('border', '2px solid green');
+        txtField.parent().children('span').text(error);
+    }
+}
+
+function defaultTextA(txtField,error) {
+    txtField.css("border", "1px solid #ced4da");
+    txtField.parent().children('span').text(error);
+}
+
+function focusTextA(txtField) {
+    txtField.focus();
+}
+
+function setButtonStateA(value){
+    if (value>0){
+        $("#btnAddAdmin").attr('disabled',true);
+    }else{
+        $("#btnAddAdmin").attr('disabled',false);
+    }
+}
+
+function clearAllTextsA() {
+    $("#txtAId").focus();
+    $("#txtAId,#txtE,#txtU,#txtUP").val("");
+    checkAValidity();
+}
