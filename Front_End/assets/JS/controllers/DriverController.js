@@ -111,7 +111,7 @@ $("#txtDNIC").on('keydown', function (event) {
 
 function checkDValidity() {
     let errorCount=0;
-    for (let validation of AdminValidations) {
+    for (let validation of DriverValidations) {
         if (checkD(validation.reg,validation.field)) {
             textSuccessD(validation.field,"");
         } else {
@@ -156,14 +156,14 @@ function focusTextD(txtField) {
 
 function setButtonStateD(value){
     if (value>0){
-        $("#btnAddAdmin").attr('disabled',true);
+        $("#btnAddDriver").attr('disabled',true);
     }else{
-        $("#btnAddAdmin").attr('disabled',false);
+        $("#btnAddDriver").attr('disabled',false);
     }
 }
 
 function clearAllTextsD() {
-    $("#txtAId").focus();
-    $("#txtAId,#txtE,#txtU,#txtUP").val("");
-    checkAValidity();
+    $("#txtDId").focus();
+    $("#txtDId,#txtDNa,#txtDLN,#txtDNIC").val("");
+    checkDValidity();
 }
