@@ -77,11 +77,11 @@ $("#txtDId,#txtDNa,#txtDLN,#txtDNIC").on('blur', function (event) {
 });
 
 
-$("#txtAId").on('keydown', function (event) {
-    if (event.key == "Enter" && checkA(AdminIDRegEx, $("#txtAId"))) {
-        $("#txtE").focus();
+$("#txtDId").on('keydown', function (event) {
+    if (event.key == "Enter" && checkA(driverIdRegEx, $("#txtDId"))) {
+        $("#txtDNa").focus();
     } else {
-        focusTextA($("#txtAId"));
+        focusTextA($("#txtDId"));
     }
 });
 
