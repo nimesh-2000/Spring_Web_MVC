@@ -86,7 +86,8 @@ function loadCheckCars(id){
                 lossDamagePrice=20000;
             }
 
-            $("#CheckReTable").append("<tr><td>"+resp.data.registrationId+"</td><td>"+resp.data.brand+" "+resp.data.model+"</td><td>"+resp.data.dailyRate+"</td><td>"+resp.data.monthlyRate+"</td><td>"+lossDamagePrice+"</td><td>"+from+"</td><td>"+to+"</td><td>"+selectDri+"</td></tr>")
+            $("#CheckReTable").append("<tr><td>"+resp.data.registrationId+"</td><td>"+resp.data.brand+" "+resp.data.model+"</td><td>"+resp.data.dailyRate+"</td><td>"+resp.data.monthlyRate+"</td><td>"+lossDamagePrice+"</td><td>"+from+"</td><td>"+to+"</td><td>"+selectDri+"</td>" +
+                "</tr>")
 
         },
         error: function(error) {
@@ -94,6 +95,9 @@ function loadCheckCars(id){
         }
     });
 }
+$('body').on('dblclick','#CheckReTable>tr', function () {
+    $(this).remove();
+});
 
 $('body').on('click', '.addTo', function() {
     alert("Add to cart "+this.id);
