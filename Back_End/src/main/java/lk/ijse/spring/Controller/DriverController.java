@@ -6,6 +6,7 @@ import lk.ijse.spring.service.AdminService;
 import lk.ijse.spring.service.DriverService;
 import lk.ijse.spring.utill.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
@@ -33,6 +34,12 @@ public class DriverController {
         System.out.println(availability);
         DriverDTO driverDTO = service.searchDriverByAvailability(availability);
         return new ResponseUtil("200", "Success", driverDTO);
+    }
+
+    @GetMapping(path = "/randomDriver",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getDriverRandom(){
+        DriverDTO driverDTO = service.generateDriver();
+        return new ResponseUtil("200","OK",driverDTO);
     }
 
 }
