@@ -31,7 +31,7 @@ public class DriverController {
     @GetMapping(params = "availability")
     public ResponseUtil checkDriverAvailability(String availability) {
         System.out.println(availability);
-        DriverDTO driverDTO = service.searchDriverByAvailabilty(availability);
+        DriverDTO driverDTO = service.searchDriverByAvailability(availability);
         return new ResponseUtil("200", "Success", driverDTO);
     }
 

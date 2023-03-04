@@ -78,9 +78,14 @@ public class DriverServiceImpl implements DriverService {
 //    }
 
     @Override
-    public DriverDTO searchDriverByAvailabilty(String availability) {
+    public DriverDTO searchDriverByAvailability(String availability) {
         Driver d = repo.getDriverByAvailability(availability);
         return new DriverDTO(d.getDriverId(),d.getName(),d.getNic(),d.getDrivingLicenceNum(),d.getAvailability());
+    }
+
+    @Override
+    public DriverDTO generateDriver() {
+        return mapper.map(repo.findDriverRandomly(),DriverDTO.class);
     }
 }
 
