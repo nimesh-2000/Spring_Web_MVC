@@ -2,12 +2,16 @@ package lk.ijse.spring.service;
 
 import lk.ijse.spring.dto.RentalDTO;
 
+import java.util.ArrayList;
+
 public interface RentalService {
-    public String generateRentalId();
+     String generateRentalId();
 
 
-    public void saveRental(RentalDTO rentalDTO);
+     void saveRental(RentalDTO rentalDTO);
 
-    public void uploadRentalImages(String payment_slip, String rentalId) ;
+     void uploadRentalImages(String payment_slip, String rentalId) ;
+
+     ArrayList<RentalDTO> getAllRentals();
 
 }

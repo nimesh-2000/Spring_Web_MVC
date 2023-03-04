@@ -5,10 +5,12 @@ import lk.ijse.spring.entity.Rental;
 import lk.ijse.spring.repo.RentalRepo;
 import lk.ijse.spring.service.RentalService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 
 @Service
 @Transactional
@@ -60,6 +62,11 @@ public class RentalServiceImpl implements RentalService {
         } else {
             throw new RuntimeException("Customer Not Found");
         }
+    }
+
+    @Override
+    public ArrayList<RentalDTO> getAllRentals() {
+        return mapper.map(repo.findAll(),new TypeToken<ArrayList<RentalDTO>>(){}.getType());
     }
 
 }
