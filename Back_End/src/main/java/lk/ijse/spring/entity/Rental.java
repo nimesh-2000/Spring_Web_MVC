@@ -33,10 +33,10 @@ public class Rental {
     private Customer cusNic;
 
     @ManyToOne
-    @JoinColumn(name = "driverId",referencedColumnName = "driverId",insertable = false,updatable = false)
+    @JoinColumn(name = "driverId",referencedColumnName = "driverId")
     private Driver driverId;
 
     @ManyToOne
-    @JoinColumn(name = "registrationId",referencedColumnName = "registrationId",insertable = false,updatable = false)
+    @JoinColumn(name = "registrationId",referencedColumnName = "registrationId")
     private Car registrationId;
 }

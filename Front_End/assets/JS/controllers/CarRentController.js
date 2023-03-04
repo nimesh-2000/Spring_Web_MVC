@@ -1,4 +1,4 @@
-
+generateRentId();
 var p;
 var r;
 
@@ -9,10 +9,10 @@ $("#btnsendReq").click(function () {
 
 function addRental() {
 
-    let driverOption = $("#selectDriver").val();
+    let driverOption = $("#selectDrive").val();
 
-    p = $("#txtFromDate").val();
-    r = $("#txtToDate").val();
+    p = $("#txtFD").val();
+    r = $("#txtTD").val();
 
 
     let paymentSlipName = $("#lossDP2")[0].files[0].name;
@@ -42,7 +42,7 @@ function addRental() {
         total_damage_waiver_payment: onHold,
         cusNic: cusId,
         driverId: driverId,
-        registrationID: registrationId
+        registrationId: registrationId
     }
     console.log(JSON.stringify(rent))
 
@@ -115,8 +115,8 @@ function sendRentImagePath(rentId) {
 
 
 
-$('#selectDriver').change(function () {
-    let driverOption = $('#selectDriver').find('option:selected').text();
+$('#selectDrive').change(function () {
+    let driverOption = $('#selectDrive').find('option:selected').text();
     // console.log(driverOption);
     if (driverOption == "Driver"){
         // randomDriver();
@@ -132,8 +132,20 @@ function randomDriver(){
         dataType:"json",
         success: function (resp) {
             // console.log(resp.data.driver_id)
-            $("#driverID").val(resp.data.driverId);
+            $("#txtDriverId").val(resp.data.driverId);
         }
 
     });
+}
+function generateRentId() {
+    $.ajax({
+        url: baseURL + "rental/generateRentalId",
+        dataType: "json",
+        success: function (res) {
+            for (let rent of res.data) {
+                $('#txtRentalId').val(res.data);
+            }
+
+        }
+    })
 }

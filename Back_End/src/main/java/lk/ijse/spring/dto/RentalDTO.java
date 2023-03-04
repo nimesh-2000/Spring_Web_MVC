@@ -15,13 +15,15 @@ import java.util.List;
 @ToString
 public class RentalDTO {
     private String rentalId;
-    private Customer nic;
+    private String cusNic;
     private LocalDate pickUpDate;
     private LocalDate returnDate;
     private String rental_status;
     private String payment_slip;
-    private double amount;
     private double total_damage_waiver_payment;
     private String pickupLocation;
     private String returnLocation;
+    private String driverId;
+    private String registrationId;
+    private String driverOption;
 }
