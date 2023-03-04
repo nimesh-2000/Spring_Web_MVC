@@ -12,10 +12,23 @@ import java.time.LocalDate;
 @Data
 @ToString
 public class DriverDTO {
-    private String driver_id;
+    private String driverId;
     private String name;
     private String dob;
     private String nic;
     private String drivingLicenceNum;
     private String availability;
+
+    public DriverDTO(String driverId) {
+        this.driverId = driverId;
+    }
+
+    public DriverDTO(String driverId, String name, String nic, String drivingLicenceNum, String availability) {
+        this.driverId = driverId;
+        this.name = name;
+        this.nic = nic;
+        this.drivingLicenceNum = drivingLicenceNum;
+        this.availability = availability;
+    }
+
 }

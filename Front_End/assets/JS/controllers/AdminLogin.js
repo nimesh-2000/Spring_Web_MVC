@@ -55,4 +55,3 @@ function clearAdminLoginTextFields() {
     $('#form3Example4').val("");
     $('#form3Example3').val("");
 }
-

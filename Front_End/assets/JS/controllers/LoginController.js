@@ -27,6 +27,7 @@ $("#btnLogIn").click(function (){
                     $("#dash").css('display','none');
                     $("#dashSEM").css('display','none');
                     $("#ae").text(email);
+                    $("#anic").text(res.data.nic);
                     $("#an").text(res.data.cusName);
                     $("#A").css('pointer-events','auto');
                     $("#check").css('pointer-events','auto');

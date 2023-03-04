@@ -17,19 +17,26 @@ import java.util.List;
 public class Rental {
     @Id
     private String rentalId;
-    private LocalDate date;
     private LocalDate pickUpDate;
     private LocalDate returnDate;
-    private double amount;
+    private String payment_slip;
+    //    private double amount;
+    private String rental_status;
     private double total_damage_waiver_payment;
     private String pickupLocation;
     private String returnLocation;
+    private String driverOption;
+
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "nic",referencedColumnName = "nic",nullable = false)
     private Customer cusNic;
 
-    @OneToMany(mappedBy = "rental",cascade = CascadeType.ALL)
-    private List<RentDetails> rentDetails;
+    @ManyToOne
+    @JoinColumn(name = "driverId",referencedColumnName = "driverId",insertable = false,updatable = false)
+    private Driver driverId;
 
+    @ManyToOne
+    @JoinColumn(name = "registrationId",referencedColumnName = "registrationId",insertable = false,updatable = false)
+    private Car registrationId;
 }

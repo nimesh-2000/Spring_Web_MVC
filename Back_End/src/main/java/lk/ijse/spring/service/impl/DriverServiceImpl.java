@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 @Service
 @Transactional
@@ -28,8 +29,8 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void saveDriver(DriverDTO driverDTO) {
-        if (repo.existsById(driverDTO.getDriver_id())){
-            throw new RuntimeException("Driver "+driverDTO.getDriver_id()+" Already Exist..!");
+        if (repo.existsById(driverDTO.getDriverId())){
+            throw new RuntimeException("Driver "+driverDTO.getDriverId()+" Already Exist..!");
         }
         Driver entity = mapper.map(driverDTO, Driver.class);
         repo.save(entity);
@@ -52,7 +53,13 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public List<DriverDTO> getAllDriverDetail() {
-        return null;
+        List<DriverDTO> list = new ArrayList<>();
+        List<Driver> all = repo.findAll();
+        for (Driver d : all) {
+            list.add( new DriverDTO(d.getDriverId(),d.getName(),d.getNic(),d.getDrivingLicenceNum(),d.getAvailability()));
+        }
+        return list;
+        // return mapper.map(repo.findAll(),new TypeToken<List<DriverDTO>>(){}.getType());
     }
 
     @Override
@@ -69,4 +76,13 @@ public class DriverServiceImpl implements DriverService {
 //    public DriverDTO searchDriverByDriver_id(String driver_id) {
 //        return mapper.map( repo.getDriverByDriver_id(driver_id), DriverDTO.class);
 //    }
+
+    @Override
+    public DriverDTO searchDriverByAvailabilty(String availability) {
+        Driver d = repo.getDriverByAvailability(availability);
+        return new DriverDTO(d.getDriverId(),d.getName(),d.getNic(),d.getDrivingLicenceNum(),d.getAvailability());
+    }
 }
+
+
+

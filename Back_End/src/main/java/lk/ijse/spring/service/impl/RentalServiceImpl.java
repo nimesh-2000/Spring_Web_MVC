@@ -2,7 +2,6 @@ package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.RentalDTO;
 import lk.ijse.spring.entity.Rental;
-import lk.ijse.spring.repo.DriverRepo;
 import lk.ijse.spring.repo.RentalRepo;
 import lk.ijse.spring.service.RentalService;
 import org.modelmapper.ModelMapper;

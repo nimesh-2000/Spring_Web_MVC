@@ -1,195 +1,225 @@
-let customerId = null;
-var driverId = "D005";
-// var Driver ={};
-var driverIds= [];
+var p;
+var r;
 
-getAllAvailableDriver();
-
-function getRentDetail(rentId) {
-    let rows = $("#tblAddToCart").children().length;
-
-    let array =[];
-    /* let vid = "V001";*/
-    let pickUpDate = $("#DatPickDate").val();
-    let pickUpTime = $("#DatPickUpTime").val();
-    let returnDate = $("#DatReturnDate").val();
-    let driverOption = $("#driverOpSelector").val();
-    console.log(driverOption);
-
-
-    if(driverOption == "With Driver"){
-        for (let i = 0; i < rows; i++) {
-            let vid = $("#tblAddToCart").children().eq(i).children(":eq(0)").text();
-            array.push({rentId:rentId,vid:vid,pickDate:pickUpDate,pickTime:pickUpTime,returnDate:returnDate,driverId:driverIds[i]});
-            a(driverIds[i]);
-
-        }
-
-    }else {
-        driverId= "with out Driver";
-        for (let i = 0; i < rows; i++) {
-            let vid = $("#tblAddToCart").children().eq(i).children(":eq(0)").text();
-            array.push({rentId:rentId,vid:vid,pickDate:pickUpDate,pickTime:pickUpTime,returnDate:returnDate,driverId:driverId});
-
-        }
-    }
-
-
-    return array;
-}
-
-
-$("#btnRentSubmit").click(function (){
-    let rentId = "R001"
-    let lossDamageWaiver = 30000.00;
-    let duration = $("#txtDuration").val();
-    let pickUpDate = $("#DatPickDate").val();
-    let pickUpTime = $("#DatPickUpTime").val();
-    let returnDate = $("#DatReturnDate").val();
-    let pickUpVenue = $("#txtPickUpLocation").val();
-    let returnVenue = $("#txtReturnLocation").val()
-    let slipImgPath = $("#formLossDamage")[0].files[0].name;
-    let statusOfReq = "Pending";
-    let total = 50000.00;
-    let cusId = "200130282939";
-    let rentDetail = getRentDetail(rentId);
-    console.log("date "+$("#DatPickDate").val())
-
-    let rent ={
-        rentId : rentId,
-        pickUpDate : pickUpDate,
-        returnDate : returnDate,
-        pickUpVenue :pickUpVenue,
-        returnVenue :returnVenue,
-        pickUpTime : pickUpTime,
-        statusOfReq : statusOfReq,
-        total : total,
-        lossDamageWaiver : lossDamageWaiver,
-        duration : duration,
-        slipImgPath : slipImgPath,
-        cusId : cusId,
-        rentDetail:rentDetail
-
-    }
-
-    $.ajax({
-        url: baseUrl + "Rent",
-        method:"post",
-        dataType: "json",
-        data:JSON.stringify(rent),
-        contentType:"application/json",
-        success: function (resp) {
-            sendRentImagePath();
-            alert(resp.message);
-        },
-        error:function (error){
-            alert(JSON.parse(error.responseText).message);
-        }
-    });
-
+$("#btnsendReq").click(function () {
+    addRental();
 });
 
-function getCustomerId(id){
-    customerId = id;
-    console.log("b"+customerId);
-}
-function sendRentImagePath() {
-    var data = new FormData();
-    let file = $("#formLossDamage")[0].files[0];
-    let fileName = $("#formLossDamage")[0].files[0].name;
-    data.append("myFile", file, fileName);
-    console.log("file name " + fileName);
+function addRental(driver) {
+
+    let driverOption = $("#selectDriver").val();
+
+
+    p = $("#txtFromDate").val();
+    r = $("#txtToDate").val();
+
+
+    var Rdata = new FormData();
+
+    let paymentSlipName = $("#lossDP2")[0].files[0].name;
+    let paymentSlipFile = $("#lossDP2")[0].files[0];
+
+
+    let registrationId = $("#CheckReTable").children().eq(0).children(":eq(0)").text();
+    let onHold = $("#CheckReTable").children().eq(0).children(":eq(4)").text();
+
+    console.log(registrationId);
+
+    let rentId = $("#txtRentalId").val();
+    let pickupLocation = $("#txtFPickL").val();
+    let returnLocation = $("#txtReturnL").val();
+    let slipImgPath = paymentSlipName;
+    let statusOfReq = "Pending";
+    let cusId =   $("#anic").text();
+    // let getDriverId = getDriverId(rentId);
+// console.log(driver);
+
+    let rent = {
+        rentalId: rentId,
+        driverOption: driverOption,
+        payment_slip: "uploads/" + slipImgPath,
+        pickUpDate: p,
+        returnDate: r,
+        pickupLocation: pickupLocation,
+        returnLocation: returnLocation,
+        rental_status: statusOfReq,
+        total_damage_waiver_payment: onHold,
+        cusNic: cusId,
+        driver_id: driver,
+        registrationId: registrationId
+    }
+
+    Rdata.append("rImageFile", paymentSlipFile);
+    Rdata.append("carRental", new Blob([JSON.stringify(rent)], {type: "application/json"}))
 
     $.ajax({
-        url: baseUrl + "api/v1/upload",
+        url: baseURL + "rental",
+        method: "POST",
+        async: true,
+        contentType: false,
+        processData: false,
+        data: Rdata,
+        success: function (resp) {
+            sendRentImagePath(rentId);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: "Rental Added Successfully",
+                showConfirmButton: false,
+                timer: 1500
+            });
+
+        },
+        error: function (error) {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: "Rental Not Added Successfully",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+    })
+}
+
+
+// =====================================================================
+
+function sendRentImagePath(rentId) {
+    var data = new FormData();
+
+    // let file = $("#lossDP2")[0].files[0];
+    // let fileName = rentId + "-payment_slip-" + $("#lossDP2")[0].files[0].name;
+    // data.append("payment_slip", file, fileName);
+
+    let file = $("#lossDP2")[0].files[0];
+    let fileName = rentId + "-payment_slip-" +  $("#lossDP2")[0].files[0].name;
+
+    data.append("payment_slip", file, fileName);
+
+    $.ajax({
+        url: baseURL + "rental/uploadImg" + rentId,
         method: 'post',
         async: true,
         contentType: false,
         processData: false,
         data: data,
         success: function (resp) {
-            alert(resp);
-            alert("Successfully Uploaded");
-            /* loadTheLastUploadedImage();*/
+            console.log("Uploaded");
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: "Images Upload Successfully",
+                showConfirmButton: false,
+                timer: 1500
+            });
         },
         error: function (err) {
-            console.log(err);
-        }
-    });
-}
-//get added driver ids and updated driver availability
-function a(id){
-    alert(id);
-    $.ajax({
-        url: baseUrl + "Driver?driverId="+id,
-        dataType:"Json",
-        method: "get",
-        success: function (resp) {
-            alert(resp.message);
-            alert(resp.data);
-
-            console.log("did"+resp.data.driverId);
-            let Driver = {
-                driverId: resp.data.driverId,
-                driverName:resp.data.driverName,
-                driverContactNo:resp.data.driverContactNo,
-                availability: "unAvailable"
-
-            }
-
-            $.ajax({
-                url: baseUrl + "Driver",
-                method: "put",
-                data: JSON.stringify(Driver),
-                contentType: "application/json",
-                success: function (resp) {
-
-                    alert(resp.message);
-
-                },
-                error: function (error) {
-                    let prase = JSON.parse(error.responseText);
-                    alert(prase.message);
-
-                }
-
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: "Images Not Upload Successfully",
+                showConfirmButton: false,
+                timer: 1500
             });
-
-        },
-        error: function (error) {
-            let prase = JSON.parse(error.responseText);
-            alert(prase.message);
-
         }
-
     });
-
-
 }
 
+//get added driver ids and updated driver availability
+// function a(id) {
+//     alert(id);
+//     $.ajax({
+//         url: baseURL + "driver",
+//         dataType: "Json",
+//         method: "get",
+//         async:false,
+//         success: function (resp) {
+//             let driver;
+//             for (const d of resp.data) {
+//                 if (id == d.driver_id) {
+//                     driver = {
+//                         driver_id:d.driver_id,
+//                         nic: d.nic,
+//                         name: d.name,
+//                         drivingLicenceNum:d.drivingLicenceNum,
+//                         availability: "Unavailable"
+//                     }
+//                 }
+//             }
+//
+//
+//             //update driver
+//             $.ajax({
+//                 url: baseURL + "driver",
+//                 method: "put",
+//                 data: JSON.stringify(driver),
+//                 contentType: "application/json",
+//                 async:false,
+//                 success: function (resp) {
+//                     alert(resp.message);
+//                 },
+//                 error: function (error) {
+//                     let prase = JSON.parse(error.responseText);
+//                     alert(prase.message);
+//
+//                 }
+//
+//             });
+//         },
+//         error: function (error) {
+//             let prase = JSON.parse(error.responseText);
+//             alert(prase.message);
+//
+//         }
+//     });
+// }
 
-function getAllAvailableDriver(){
+
+// =========================================================
+
+
+// function getAllAvailableDriver(){
+// let available="Available";
+// $.ajax({
+//     url: baseURL+"driver/availability/drivers",
+//     dataType:"json",
+//     method: "get",
+//     success: function (resp) {
+//         console.log(resp)
+//        alert(resp);
+//             driverId = resp.data.driver_id;
+//             driverIds.push(driverId);
+//             //set all available drivers to array
+//
+//     }
+//
+// });
+
+// ========================================
+
+$('#selectDriver').change(function () {
+    let driverOption = $('#selectDriver').find('option:selected').text();
+    console.log(driverOption);
+    if (driverOption==="Driver"){
+        randomDriver();
+    }
+    else {
+        addRental("None");
+    }
+})
+
+function randomDriver(){
     $.ajax({
-        url: baseUrl+"Driver?availability="+"Available",
-        dataType:"Json",
+        url: baseURL + "driver/randomDriver",
         method: "get",
         success: function (resp) {
-            console.log(resp)
-            for (const r of resp.data) {
-                console.log(r.driverId);
-                /* alert(r.driverId);
-                 alert(r.driverName);*/
-                driverId = r.driverId;
-                driverIds.push(r.driverId);
-
-                //set all available drivers to array
-
+            for (let driver of resp.data){
+                console.log(driver);
+                addRental(driver);
             }
 
         }
 
     });
-
-
-
 }

@@ -1,7 +1,7 @@
 package lk.ijse.spring.dto;
 
 import lk.ijse.spring.entity.Customer;
-import lk.ijse.spring.entity.RentDetails;
+import lk.ijse.spring.entity.Rental;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,5 +24,4 @@ public class RentalDTO {
     private double total_damage_waiver_payment;
     private String pickupLocation;
     private String returnLocation;
-    private List<RentDetails> rentDetails;
 }

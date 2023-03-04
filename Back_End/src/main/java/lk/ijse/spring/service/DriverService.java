@@ -22,4 +22,5 @@ public interface DriverService {
     List<DriverDTO> getTodayAvailableAndOccupiedDrivers(String status);
 
     DriverDTO searchDriverByLicense(String license);
+    DriverDTO searchDriverByAvailabilty(String availability);
 }

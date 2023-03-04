@@ -106,9 +106,6 @@ $('body').on('click', '.addTo', function() {
 
 
 
-
-
-
 // $("#CheckReTable").append("<tr><td>"+resp.data.brand+"</td><td>"+resp.data.dailyRate+"</td><td>"+resp.data.monthlyRate+
 //     "</td><td>"+lossDamagePrice+"</td><td>"+from+"</td><td>"+to+"</td><td>"+selectDri+"</td></tr>")
 
