@@ -14,6 +14,8 @@ function addRental() {
 
     p = $("#txtFD").val();
     r = $("#txtTD").val();
+    // $("#txtPickUpDate").val(p);
+    // $("#txtReturnDate").val(r);
 
 
     let paymentSlipName = $("#lossDP2")[0].files[0].name;
@@ -153,12 +155,8 @@ function generateRentId() {
 
 // =================================================================
 
-var driverOption;
-var payment_slip;
-var rental_status;
-var total_damage_waiver_payment;
-var driverId;
-var registrationId;
+
+
 
 function customerAccount(){
     $("#orderTable").empty();
@@ -167,15 +165,9 @@ function customerAccount(){
         dataType: "json",
         success: function (resp) {
 
-            driverOption=resp.data.driverOption;
-            payment_slip=resp.data.payment_slip;
-            rental_status=resp.data.rental_status;
-            total_damage_waiver_payment=resp.data.total_damage_waiver_payment;
-            driverId=resp.data.driverId;
-            registrationId=resp.data.registrationId;
 
             for (let acc of resp.data) {
-                var row = '<tr><td>' + acc.rentalId + '</td><td>' + acc.registrationId + '</td><td>' + acc.driverId + '</td><td>' + acc.total_damage_waiver_payment + '</td><td>' + acc.pickUpDate + '</td><td>' + acc.returnDate + '</td><td>' + acc.pickupLocation + '</td><td>' + acc.returnLocation + '</td><td>' + acc.rental_status + '</td></tr>';
+                var row = '<tr><td>' + acc.rentalId + '</td><td>' + acc.registrationId + '</td><td>' + acc.driverId + '</td><td>' + acc.total_damage_waiver_payment + '</td><td>' + acc.pickUpDate + '</td><td>' + acc.returnDate + '</td><td>' + acc.pickupLocation + '</td><td>' + acc.returnLocation + '</td><td>' + acc.rental_status + '</td><td>' + acc.payment_slip + '</td></tr>';
                 $("#orderTable").append(row);
 
             }
@@ -230,5 +222,70 @@ $("#btnRentalDelete").click(function () {
         error: function (error) {
             alert(JSON.parse(error.responseText).message);
         }
+    });
+});
+
+$("#btnRentalUpdate").click(function (){
+
+    let rentalId = $("#txtRental").val();
+    let pickUpDate = $("#txtPickUpDate").val();
+    let returnDate = $("#txtReturnDate").val();
+    let driverOption = $("#aDOption").val();
+    let pickUpLocation = $("#txtPickLocation").val();
+    let returnLocation = $("#txtReturnLocation").val();
+    let nic=$("#anic").text();
+
+    let registration = $("#orderTable").children().eq(0).children(":eq(1)").text();
+    let driver = $("#orderTable").children().eq(0).children(":eq(2)").text();
+    let totalDamage = $("#orderTable").children().eq(0).children(":eq(3)").text();
+    let s = $("#orderTable").children().eq(0).children(":eq(8)").text();
+    let p = $("#orderTable").children().eq(0).children(":eq(9)").text();
+    // let pD = $("#orderTable").children().eq(0).children(":eq(4)").text();
+    // let rD = $("#orderTable").children().eq(0).children(":eq(5)").text();
+
+
+    let rental={
+        rentalId: rentalId,
+        driverOption: driverOption,
+        payment_slip:p,
+        pickUpDate: pickUpDate,
+        returnDate: returnDate,
+        pickupLocation: pickUpLocation,
+        returnLocation: returnLocation,
+        rental_status: s,
+        total_damage_waiver_payment: totalDamage,
+        cusNic: nic,
+        driverId: driver,
+        registrationId: registration
+
+    }
+
+    $.ajax({
+        url: baseURL+'rental',
+        method: 'put',
+        contentType:"application/json",
+        data:JSON.stringify(rental),
+        dataType:"json",
+        success: function (res) {
+
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: " Successfully Updated",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        },
+        error:function (error){
+            let cause= JSON.parse(error.responseText).message;
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: "Update Failed",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+
     });
 });
