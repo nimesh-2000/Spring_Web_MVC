@@ -1,6 +1,7 @@
 package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.RentalDTO;
+import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.entity.Rental;
 import lk.ijse.spring.repo.RentalRepo;
 import lk.ijse.spring.service.RentalService;
@@ -75,6 +76,15 @@ public class RentalServiceImpl implements RentalService {
             throw new RuntimeException("Rental "+id+" Not Available to Delete..!");
         }
         repo.deleteById(id);
+    }
+
+    @Override
+    public void updateRental(RentalDTO rentalDTO) {
+        if (!repo.existsById(rentalDTO.getRentalId())){
+            throw new RuntimeException("Rental "+rentalDTO.getRentalId()+" Not Available to Update..!");
+        }
+        Rental entity = mapper.map(rentalDTO, Rental.class);
+        repo.save(entity);
     }
 
 }
