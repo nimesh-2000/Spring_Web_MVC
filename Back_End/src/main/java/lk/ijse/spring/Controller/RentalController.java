@@ -61,4 +61,9 @@ public class RentalController {
         ArrayList<RentalDTO> allRentals = service.getAllRentals();
         return new ResponseUtil("200"," Success",allRentals);
     }
+    @DeleteMapping(params = "rentalId")
+    public ResponseUtil deleteCar(String rentalId){
+        service.deleteCar(registrationId);
+        return new ResponseUtil("200",registrationId+" Deleted",null);
+    }
 }

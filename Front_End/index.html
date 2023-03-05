@@ -392,17 +392,77 @@
     </section>
 </main>
 <!--===================================================-->
-<main class="account" id="ac" style="display: none">
+<main class="account" id="ac" style="display: block">
     <section class="account1">
         <div id="adminlg"></div>
         <h3 id="an">Nimesh Denuwan</h3>
         <h3 id="ae"><a>nimeshdenuwan2000@gmail.com</a></h3>
-        <h3 id="anic">28373773737</h3>
+        <h3 id="anic" style="position: absolute;
+    color: skyblue;
+    z-index: 1;
+    top: 83px;
+    left: 140px;
+    font-size: 18px;">28373773737</h3>
         <h2 id="account2">Rentals</h2>
         <div id="editIm"></div>
-        <button data-bs-target="#exampleModal" data-bs-toggle="modal" id="editIm2" type="button">Edit User Information
+        <button data-bs-target="#exampleModal" style="position: absolute;
+    color: black;
+    z-index: 1;
+    top: 110px;
+    left: 141px;
+    font-size: 18px;
+    background-color: aqua;
+    border: none;" data-bs-toggle="modal" id="editIm2" type="button">Edit User Information
         </button>
+        <div class="row">
+                                <div class="col-6">
+                                    <div class="form-groupTR" style=" position: relative;
+                                         top: -79px;
+                                         left: 1042px;">
+                                        <label for="txtPickLocation">Pick Up Location</label>
+                                        <input class="form-control" id="txtPickLocation" type="text"  >
+                                        <span class="control-error" id="lblPickLocation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-groupLDA" style="position: relative;
+    top: -11px;
+    left: -291px;">
+                                        <label for="txtReturnLocation">Return Location</label>
+                                        <input class="form-control" id="txtReturnLocation" type="text">
+                                        <span class="control-error" id="lblReturnLocation"></span>
+                                    </div>
+                                </div>
+            <div class="col-6">
+                <div class="form-groupTR" style="position: relative;
+    top: -140px;
+    left: 480px;">
+                    <label for="txtPickUpDate">Pick Up Date</label>
+                    <input class="form-control" id="txtPickUpDate" type="text"  >
+                    <span class="control-error" id="lblPickUpDate"></span>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-groupLDA" style="position: relative;
+    top: -140px;
+    left: -9px;">
+                    <label for="txtReturnDate">Return Date</label>
+                    <input class="form-control" id="txtReturnDate" type="text">
+                    <span class="control-error" id="lblReturnDate"></span>
+                </div>
+            </div>
 
+
+
+                            </div>
+        <select aria-label="Default select example" style="position: relative;
+    top: -109px;
+    left: 774px;
+    width: 143px;
+    height: 36px;" class="form-brand" id="aDOption">
+            <option selected>Driver</option>
+            <option>None</option>
+        </select>
         <button class="btnUpdate" type="submit">Update</button>
         <button class="btnCancel" type="submit">Cancel</button>
         <!--account details table-->

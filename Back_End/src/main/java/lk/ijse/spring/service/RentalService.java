@@ -14,4 +14,6 @@ public interface RentalService {
 
      ArrayList<RentalDTO> getAllRentals();
 
+     void deleteRental(String id);
+
 }
