@@ -63,7 +63,7 @@ public class RentalController {
     }
     @DeleteMapping(params = "rentalId")
     public ResponseUtil deleteCar(String rentalId){
-        service.deleteCar(registrationId);
-        return new ResponseUtil("200",registrationId+" Deleted",null);
+        service.deleteRental(rentalId);
+        return new ResponseUtil("200",rentalId+" Deleted",null);
     }
 }
