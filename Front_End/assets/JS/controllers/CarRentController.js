@@ -1,4 +1,5 @@
 generateRentId();
+customerAccount();
 var p;
 var r;
 
@@ -157,9 +158,9 @@ var payment_slip;
 var rental_status;
 var total_damage_waiver_payment;
 var driverId;
-var registrationId
+var registrationId;
 
-function CustomerAccount(){
+function customerAccount(){
     $("#orderTable").empty();
     $.ajax({
         url: baseURL+"rental",
@@ -185,9 +186,9 @@ function CustomerAccount(){
 
 function bindRentalRowClickEvents() {
     $("#orderTable>tr").click(function () {
-        let rentId = $(this).children(":eq(0)").text();
+        let rentalId = $(this).children(":eq(0)").text();
         let registrationId = $(this).children(":eq(1)").text();
-        let driverOption = $(this).children(":eq(2)").text();
+         let driverId = $(this).children(":eq(2)").text();
         let pendingPayment = $(this).children(":eq(3)").text();
         let from = $(this).children(":eq(4)").text();
         let to = $(this).children(":eq(5)").text();
@@ -197,6 +198,7 @@ function bindRentalRowClickEvents() {
 
 
         //setting table details values to text fields
+        $("#txtRental").val(rentalId);
         $("#txtPickUpDate").val(from);
         $("#txtReturnDate").val(to);
         $("#txtPickLocation").val(pickUpLocation);
@@ -205,3 +207,21 @@ function bindRentalRowClickEvents() {
 
     });
 }
+
+
+$("#btnRentalDelete").click(function () {
+    let rentalId = $("#txtRental").val();
+    $.ajax({
+        url: baseURL + "rental?rentalId=" + rentalId+ "",
+        method: "delete",
+        dataType: "json",
+        success: function (resp) {
+            alert(resp.message);
+            // resp.data.image_1;
+            customerAccount();
+        },
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+});
