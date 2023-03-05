@@ -208,7 +208,13 @@ function bindRentalRowClickEvents() {
     });
 }
 
-
+function clearTextField(){
+    $("#txtRental").val("");
+    $("#txtPickUpDate").val("");
+    $("#txtReturnDate").val("");
+    $("#txtPickLocation").val("");
+    $("#txtReturnLocation").val("");
+}
 $("#btnRentalDelete").click(function () {
     let rentalId = $("#txtRental").val();
     $.ajax({
@@ -219,6 +225,7 @@ $("#btnRentalDelete").click(function () {
             alert(resp.message);
             // resp.data.image_1;
             customerAccount();
+            clearTextField();
         },
         error: function (error) {
             alert(JSON.parse(error.responseText).message);

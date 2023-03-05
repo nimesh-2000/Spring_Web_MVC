@@ -25,6 +25,7 @@ $("#vF").click(function(){
 });
 
 $("#A").click(function(){
+    customerAccount();
     $("#home").css('display','none');
     $("#Clogin").css('display','none');
     $("#Csign").css('display','none');
