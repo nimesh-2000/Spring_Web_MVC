@@ -149,3 +149,28 @@ function generateRentId() {
         }
     })
 }
+
+// =================================================================
+
+function bindRentalRowClickEvents() {
+    $("#orderTable>tr").click(function () {
+        let rentId = $(this).children(":eq(0)").text();
+        let registrationId = $(this).children(":eq(1)").text();
+        let driverOption = $(this).children(":eq(2)").text();
+        let pendingPayment = $(this).children(":eq(3)").text();
+        let from = $(this).children(":eq(4)").text();
+        let to = $(this).children(":eq(5)").text();
+        let pickUpLocation = $(this).children(":eq(6)").text();
+        let returnLocation = $(this).children(":eq(7)").text();
+        let status = $(this).children(":eq(8)").text();
+
+
+        //setting table details values to text fields
+        $("#txtPickUpDate").val(from);
+        $("#txtReturnDate").val(to);
+        $("#txtPickLocation").val(pickUpLocation);
+        $("#txtReturnLocation").val(returnLocation);
+        $("#aDOption").val(driverOption);
+
+    });
+}
