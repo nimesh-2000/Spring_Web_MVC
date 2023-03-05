@@ -152,6 +152,37 @@ function generateRentId() {
 
 // =================================================================
 
+var driverOption;
+var payment_slip;
+var rental_status;
+var total_damage_waiver_payment;
+var driverId;
+var registrationId
+
+function CustomerAccount(){
+    $("#orderTable").empty();
+    $.ajax({
+        url: baseURL+"rental",
+        dataType: "json",
+        success: function (resp) {
+
+            driverOption=resp.data.driverOption;
+            payment_slip=resp.data.payment_slip;
+            rental_status=resp.data.rental_status;
+            total_damage_waiver_payment=resp.data.total_damage_waiver_payment;
+            driverId=resp.data.driverId;
+            registrationId=resp.data.registrationId;
+
+            for (let acc of resp.data) {
+                var row = '<tr><td>' + acc.rentalId + '</td><td>' + acc.registrationId + '</td><td>' + acc.driverId + '</td><td>' + acc.total_damage_waiver_payment + '</td><td>' + acc.pickUpDate + '</td><td>' + acc.returnDate + '</td><td>' + acc.pickupLocation + '</td><td>' + acc.returnLocation + '</td><td>' + acc.rental_status + '</td></tr>';
+                $("#orderTable").append(row);
+
+            }
+            bindRentalRowClickEvents();
+        }
+    });
+}
+
 function bindRentalRowClickEvents() {
     $("#orderTable>tr").click(function () {
         let rentId = $(this).children(":eq(0)").text();
