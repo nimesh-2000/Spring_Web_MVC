@@ -1,5 +1,6 @@
 package lk.ijse.spring.Controller;
 
+import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.dto.RentalDTO;
 import lk.ijse.spring.service.CustomerService;
 import lk.ijse.spring.service.RentalService;
@@ -65,5 +66,11 @@ public class RentalController {
     public ResponseUtil deleteRental(String rentalId){
         service.deleteRental(rentalId);
         return new ResponseUtil("200",rentalId+" Deleted",null);
+    }
+
+    @PutMapping
+    public ResponseUtil updateRental(@RequestBody RentalDTO dto){
+        service.updateRental(dto);
+        return new ResponseUtil("200",dto.toString()+" Updated",null);
     }
 }
