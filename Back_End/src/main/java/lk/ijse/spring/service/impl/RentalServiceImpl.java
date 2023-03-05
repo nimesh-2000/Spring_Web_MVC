@@ -69,4 +69,12 @@ public class RentalServiceImpl implements RentalService {
         return mapper.map(repo.findAll(),new TypeToken<ArrayList<RentalDTO>>(){}.getType());
     }
 
+    @Override
+    public void deleteRental(String id) {
+        if (!repo.existsById(id)){
+            throw new RuntimeException("Rental "+id+" Not Available to Delete..!");
+        }
+        repo.deleteById(id);
+    }
+
 }
