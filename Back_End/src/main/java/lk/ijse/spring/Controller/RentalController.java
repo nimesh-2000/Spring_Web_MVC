@@ -73,4 +73,23 @@ public class RentalController {
         service.updateRental(dto);
         return new ResponseUtil("200",dto.toString()+" Updated",null);
     }
+
+
+    @GetMapping(path = "/search/{rentalId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil searchRent(@PathVariable String rentalId) {
+        return new ResponseUtil("200", "Done", service.searchRent(rentalId));
+    }
+
+    @PutMapping(path = "/{rentId}/{status}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateRentStatus(@PathVariable String rentId, @PathVariable String status) {
+        service.updateCarRentStatus(rentId, status);
+        return new ResponseUtil("200", "Done", null);
+    }
+
+
+    @DeleteMapping(path = "rentalId/{rentId}")
+    public ResponseUtil denyRental(String rentId){
+        service.denyRental(rentId);
+        return new ResponseUtil("200",rentId+" Canceled",null);
+    }
 }
