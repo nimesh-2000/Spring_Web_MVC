@@ -87,4 +87,23 @@ public class RentalServiceImpl implements RentalService {
         repo.save(entity);
     }
 
+    @Override
+    public RentalDTO searchRent(String rentalId) {
+        if (repo.existsById(rentalId)) {
+            return mapper.map(repo.findById(rentalId).get(), RentalDTO.class);
+        } else {
+            throw new RuntimeException("Rent "+rentalId+" Not Exist....!");
+        }
+    }
+
+    @Override
+    public void updateCarRentStatus(String rentID, String status) {
+
+    }
+
+    @Override
+    public void denyRental(String rentId) {
+
+    }
+
 }
