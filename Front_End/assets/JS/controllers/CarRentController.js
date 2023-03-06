@@ -6,6 +6,7 @@ var r;
 $("#btnsendReq").click(function () {
 
     addRental();
+    loadPendingRentals();
 });
 
 function addRental() {

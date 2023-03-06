@@ -39,10 +39,10 @@ function findRentReq(rentalId) {
             let rent = resp.data;
 
             let driverId;
-            let driverName;
+            // let driverName;
             if (rent.driverOption === "None") {
                 driverId = "No Driver";
-                driverName ="No Driver";
+                // driverName ="No Driver";
             } else {
                 driverId = rent.driverId;
                 // driverName = rent.driverID.name

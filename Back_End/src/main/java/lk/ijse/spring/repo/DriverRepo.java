@@ -29,6 +29,6 @@ Driver findDriverRandomly();
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE Driver SET availability=:availability WHERE driverID=:driverID", nativeQuery = true)
+    @Query(value = "UPDATE Driver SET availability=:availability WHERE driverId=:driverId", nativeQuery = true)
     void updateDriverAvailabilityStatus(@Param("driverId") String driverID, @Param("availability") String availability);
 }

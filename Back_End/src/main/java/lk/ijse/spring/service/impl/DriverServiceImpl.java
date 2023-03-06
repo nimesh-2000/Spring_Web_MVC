@@ -22,6 +22,7 @@ public class DriverServiceImpl implements DriverService {
 
     @Autowired
     ModelMapper mapper;
+
     @Override
     public DriverDTO checkDriverLogIn(String name, String password) {
         return null;
@@ -29,8 +30,8 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void saveDriver(DriverDTO driverDTO) {
-        if (repo.existsById(driverDTO.getDriverId())){
-            throw new RuntimeException("Driver "+driverDTO.getDriverId()+" Already Exist..!");
+        if (repo.existsById(driverDTO.getDriverId())) {
+            throw new RuntimeException("Driver " + driverDTO.getDriverId() + " Already Exist..!");
         }
         Driver entity = mapper.map(driverDTO, Driver.class);
         repo.save(entity);
@@ -56,7 +57,7 @@ public class DriverServiceImpl implements DriverService {
         List<DriverDTO> list = new ArrayList<>();
         List<Driver> all = repo.findAll();
         for (Driver d : all) {
-            list.add( new DriverDTO(d.getDriverId(),d.getName(),d.getNic(),d.getDrivingLicenceNum(),d.getAvailability()));
+            list.add(new DriverDTO(d.getDriverId(), d.getName(), d.getNic(), d.getDrivingLicenceNum(), d.getAvailability()));
         }
         return list;
         // return mapper.map(repo.findAll(),new TypeToken<List<DriverDTO>>(){}.getType());
@@ -69,7 +70,7 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public DriverDTO searchDriverByLicense(String license) {
-        return mapper.map( repo.getDriverByDrivingLicenceNum(license), DriverDTO.class);
+        return mapper.map(repo.getDriverByDrivingLicenceNum(license), DriverDTO.class);
     }
 
 //    @Override
@@ -80,12 +81,21 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public DriverDTO searchDriverByAvailability(String availability) {
         Driver d = repo.getDriverByAvailability(availability);
-        return new DriverDTO(d.getDriverId(),d.getName(),d.getNic(),d.getDrivingLicenceNum(),d.getAvailability());
+        return new DriverDTO(d.getDriverId(), d.getName(), d.getNic(), d.getDrivingLicenceNum(), d.getAvailability());
     }
 
     @Override
     public DriverDTO generateDriver() {
-        return mapper.map(repo.findDriverRandomly(),DriverDTO.class);
+        return mapper.map(repo.findDriverRandomly(), DriverDTO.class);
+    }
+
+    @Override
+    public void updateDriverRentStatus(String driverID, String status) {
+        if (repo.existsById(driverID)) {
+            repo.updateDriverAvailabilityStatus(driverID, status);
+        } else {
+            throw new RuntimeException("Driver " + driverID + " Not Exist to Update Status....!");
+        }
     }
 }
 
