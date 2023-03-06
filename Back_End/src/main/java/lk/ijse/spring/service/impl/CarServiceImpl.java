@@ -113,4 +113,13 @@ public class CarServiceImpl implements CarService {
             throw new RuntimeException("User Not Found");
         }
     }
+
+    @Override
+    public void updateCarRentStatus(String registrationNo, String status) {
+        if (repo.existsById(registrationNo)) {
+            repo.updateCarAvailabilityStatus(registrationNo, status);
+        } else {
+            throw new RuntimeException("Car "+registrationNo+" Not Exist to Update Status....!");
+        }
+    }
 }
