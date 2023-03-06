@@ -104,4 +104,10 @@ public ResponseUtil addVehicle(@RequestPart("vImageFile") MultipartFile[] file, 
         service.deleteCar(registrationId);
         return new ResponseUtil("200",registrationId+" Deleted",null);
     }
+
+    @PutMapping(path = "/updateCarAvailability/{registrationNo}/{status}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateCarStatus(@PathVariable String registrationNo, @PathVariable String status) {
+        service.updateCarRentStatus(registrationNo, status);
+        return new ResponseUtil("200", "Done", null);
+    }
 }
