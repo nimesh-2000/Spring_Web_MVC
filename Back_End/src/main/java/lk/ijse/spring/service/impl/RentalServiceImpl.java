@@ -107,7 +107,10 @@ public class RentalServiceImpl implements RentalService {
 
     @Override
     public void denyRental(String rentId) {
-
+        if (!repo.existsById(rentId)){
+            throw new RuntimeException("Rental "+rentId+" Not Available to Delete..!");
+        }
+        repo.deleteById(rentId);
     }
 
 }
