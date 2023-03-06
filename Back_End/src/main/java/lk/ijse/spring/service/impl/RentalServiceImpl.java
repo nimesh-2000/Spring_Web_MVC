@@ -98,7 +98,11 @@ public class RentalServiceImpl implements RentalService {
 
     @Override
     public void updateCarRentStatus(String rentID, String status) {
-
+        if (repo.existsById(rentID)) {
+            repo.updateCarRentStatus(rentID, status);
+        } else {
+            throw new RuntimeException("Rent "+rentID+" Not Exist to Update Status....!");
+        }
     }
 
     @Override

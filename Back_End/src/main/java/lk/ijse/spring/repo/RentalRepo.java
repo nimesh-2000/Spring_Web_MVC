@@ -18,5 +18,8 @@ public interface RentalRepo extends JpaRepository<Rental,String> {
     @Query(value = "UPDATE Rental SET payment_slip=:payment_slip WHERE rentalId=:rentalId", nativeQuery = true)
     void updatePaymentSlipFilePaths(@Param("payment_slip") String payment_slip, @Param("rentalId") String rentalId);
 
-
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE Rental SET rental_status=:rental_status WHERE rentalId=:rentalId", nativeQuery = true)
+    void updateCarRentStatus(@Param("rentalId") String rentalId, @Param("rental_status") String rental_status);
 }
