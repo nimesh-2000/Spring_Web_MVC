@@ -356,7 +356,7 @@ const freeMile = /^[0-9]{1,}$/;
 const lastMile = /^[0-9]{1,}$/;
 const registrationNo = /^[A-z]{2}-[0-9]{4}$/;
 const carColour = /^[A-z ]{3,10}$/;
-const carModel = /^[A-z ]{3,10}$/;
+const carModel = /^[A-z0-9 ,/]{2,20}$/;
 
 let carValidations = [];
 carValidations.push({reg: carBrandRegEx, field: $('#txtCbrnd'), error: 'Car Brand Pattern is Wrong'});

@@ -866,20 +866,64 @@
             </table>
         </div>
     </section>
-    <section id="rentVerification" style="display: none">
+    <section id="rentVerification" style="display: none;">
         <h1 id="rvH">Rent Verification</h1>
-        <div class="col-md-12 mt-4" id="erhj" style="height:180px; overflow-y: scroll">
+        <div id="q" style="position: relative;
+    top: -358px;">
+        <div style="position: relative;
+    /* left: 464px; */
+    left: 478px;
+    top: 431px;">
+            <label for="registrationId" class="form-label">Car Number</label>
+            <input type="email" style="width: 200px;position: relative" class="form-control" id="registrationId" disabled >
+        </div>
+        <div style="position: relative;
+    left: 851px;
+    left: 896px;
+    top: 291px;">
+            <label for="status" class="form-label">Status</label>
+            <input type="email" style="width: 200px;position: relative" class="form-control" id="status" disabled >
+        </div>
+        <div style="position: relative;
+    left: 685px;
+    top: 222px;">
+            <label for="nic" class="form-label">Customer NIC</label>
+            <input type="email" style="width: 200px;position: relative" class="form-control" id="nic" disabled >
+        </div>
+
+        <div style="position: relative;
+    left: 685px;
+    top: 222px;">
+            <label for="RentalId" class="form-label">Rental Id</label>
+            <input type="email" style="width: 200px;position: relative" class="form-control" id="RentalId" disabled >
+        </div>
+        <div style="position: relative;
+    left: 900px;
+    top: 152px;">
+            <label for="driverId" class="form-label">Driver Id</label>
+            <input type="email" style="width: 200px;position: relative" class="form-control" id="driverId" disabled>
+        </div>
+        <div class="btn-group" role="group" style="position: relative;top: 206px; left: 1056px;" aria-label="Basic mixed styles example">
+            <button type="button" id="btnAacceptReq" class="btn btn-danger">Accept</button>
+            <button type="button" id="btnAdenyReq" class="btn btn-success">Denny</button>
+        </div>
+        </div>
+        <div class="col-md-12 mt-4" id="erhj" style="height: 181px;
+    overflow-y: scroll;
+    top: -148px;
+    position: relative;">
             <table class="table table-bordered text-white">
                 <thead class="bg-primary">
                 <tr>
-                    <th>Customer</th>
-                    <th>Vehicle</th>
-                    <th>Driver</th>
-                    <th>Pickup Date</th>
-                    <th> Return Date</th>
-                    <th> Pickup Location</th>
+                    <th>Rental Id</th>
+                    <th>Customer Nic</th>
+                    <th>Registration Id</th>
+                    <th>Pick Up Date</th>
+                    <th>Return Date</th>
+                    <th>Pick Up Location</th>
                     <th>Return Location</th>
-                    <th>Images</th>
+                    <th>Loss Damage Amount</th>
+                    <th>Image</th>
                     <th>Status</th>
                 </tr>
                 </thead>
@@ -895,6 +939,7 @@
                     <td>Kalutharafagsfg</td>
                     <td>pending</td>
                     <td>ghjkk</td>
+                    <td>Kalutharafagsfg</td>
                 </tr>
                 </tbody>
             </table>
