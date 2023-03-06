@@ -31,4 +31,6 @@ public interface CarService {
 
     void uploadCarImages(String frontPath, String backPath, String sidePath, String InteriorPath, String registrationId);
 
+    void updateCarRentStatus(String registrationNo, String status);
+
 }
