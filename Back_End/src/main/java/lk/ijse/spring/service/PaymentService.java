@@ -6,11 +6,23 @@ import java.util.List;
 
 public interface PaymentService {
 
-    String generateReservationBillIdId();
+    String generatePaymentId();
 
     void makePaymentForReservation(PaymentDTO paymentDTO);
 
     String getIncomeByDate(String type, String start_date, String end_date);
 
     List<PaymentDTO> getTodayIncomeList();
+
+    void savePayment(PaymentDTO dto);
+
+    long count();
+
+    //=======================================================================================
+
+    double getDailyIncome(String date);
+
+    String getMonthlyIncome();
+
+    String getAnnuallyIncome();
 }
