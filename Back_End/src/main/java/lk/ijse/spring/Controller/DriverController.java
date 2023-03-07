@@ -41,5 +41,10 @@ public class DriverController {
         DriverDTO driverDTO = service.generateDriver();
         return new ResponseUtil("200","OK",driverDTO);
     }
+    @PutMapping(path = "/updateNonAvailable/{driverID}/{status}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateDriverStatus(@PathVariable String driverID, @PathVariable String status) {
+        service.updateDriverRentStatus(driverID, status);
+        return new ResponseUtil("200", "Done", null);
+    }
 
 }

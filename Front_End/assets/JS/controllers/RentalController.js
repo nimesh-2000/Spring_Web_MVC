@@ -1,5 +1,4 @@
 carAppend();
-
 function carAppend(){
     $("#rentA").empty();
 
@@ -14,6 +13,7 @@ function carAppend(){
 
                 var d = `<div class="mmclass">
                     <div id="k10" >
+                    <h1 id="colur" style="color:lightskyblue;">${car.availability}</h1>
                    <img style="height: 190px;
     background-position: center;
     background-size: cover;width: 359px;" src=${"http://localhost:8080/Back_End_war/uploads/"+car.image_1}
