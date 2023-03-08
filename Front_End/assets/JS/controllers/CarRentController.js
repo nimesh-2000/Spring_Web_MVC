@@ -1,5 +1,6 @@
 generateRentId();
 customerAccount();
+rentCount();
 var p;
 var r;
 
@@ -290,3 +291,13 @@ $("#btnRentalUpdate").click(function (){
 
     });
 });
+
+function rentCount(){
+    $.ajax({
+        url: baseURL+"rental/rentalCount",
+        dataType: "json",
+        success: function (res) {
+            $("#bookingV").text(res.data);
+        }
+    })
+}
