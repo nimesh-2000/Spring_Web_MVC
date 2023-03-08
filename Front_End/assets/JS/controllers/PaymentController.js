@@ -200,7 +200,7 @@ function paymentsCount(){
 //Daily
 $("#btnChooseD").click(function () {
     $("#dailyIncomeViewTable").empty();
-    let incomeDate = $("#txtAdIncDate").val();
+    let incomeDate = $("#dailyDate").val();
     $.ajax({
         url: baseURL + "payment?date=" + incomeDate,
         dataType: "json",
