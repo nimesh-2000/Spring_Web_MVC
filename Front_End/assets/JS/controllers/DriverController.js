@@ -1,5 +1,6 @@
 loadDriverSchedule();
 driverCount();
+generateDriverId();
 $("#btnAddDriver").click(function () {
 
     let driverId =  $("#txtDId").val();
@@ -49,7 +50,7 @@ $("#btnAddDriver").click(function () {
 
 function generateDriverId() {
     $.ajax({
-        url: baseURL + "rental/generateRentalId",
+        url: baseURL + "driver/generateDriverId",
         dataType: "json",
         success: function (res) {
             for (let rent of res.data) {
