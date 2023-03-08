@@ -1,6 +1,7 @@
 
 let baseURL="http://localhost:8080/Back_End_war/";
 customerCount();
+viewAllUsers();
 $("#btnSignL").click(function (){
     addCustomer();
     $("#home").css('display','none');
