@@ -28,4 +28,7 @@ public interface RentalRepo extends JpaRepository<Rental,String> {
 
     @Override
     long count();
+
+    @Query(value = "SELECT * from Rental where nic=:nic", nativeQuery = true)
+    List<Rental> getAllByCusNic(@Param("nic") String nic);
 }

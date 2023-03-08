@@ -161,13 +161,32 @@ function generateRentId() {
 
 
 
-function customerAccount(){
+// function customerAccount(){
+//     $("#orderTable").empty();
+//     $.ajax({
+//         url: baseURL+"rental",
+//         dataType: "json",
+//         success: function (resp) {
+//
+//
+//             for (let acc of resp.data) {
+//                 var row = '<tr><td>' + acc.rentalId + '</td><td>' + acc.registrationId + '</td><td>' + acc.driverId + '</td><td>' + acc.total_damage_waiver_payment + '</td><td>' + acc.pickUpDate + '</td><td>' + acc.returnDate + '</td><td>' + acc.pickupLocation + '</td><td>' + acc.returnLocation + '</td><td>' + acc.rental_status + '</td><td>' + acc.payment_slip + '</td></tr>';
+//                 $("#orderTable").append(row);
+//
+//             }
+//             bindRentalRowClickEvents();
+//         }
+//     });
+// }
+
+function customerAccount() {
     $("#orderTable").empty();
+    let nic = $("#anic").text();
+
     $.ajax({
-        url: baseURL+"rental",
+        url:baseURL+"rental/getCustomerRents/" + nic,
         dataType: "json",
         success: function (resp) {
-
 
             for (let acc of resp.data) {
                 var row = '<tr><td>' + acc.rentalId + '</td><td>' + acc.registrationId + '</td><td>' + acc.driverId + '</td><td>' + acc.total_damage_waiver_payment + '</td><td>' + acc.pickUpDate + '</td><td>' + acc.returnDate + '</td><td>' + acc.pickupLocation + '</td><td>' + acc.returnLocation + '</td><td>' + acc.rental_status + '</td><td>' + acc.payment_slip + '</td></tr>';
@@ -176,6 +195,7 @@ function customerAccount(){
             }
             bindRentalRowClickEvents();
         }
+
     });
 }
 

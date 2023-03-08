@@ -124,5 +124,10 @@ public class RentalServiceImpl implements RentalService {
         return mapper.map(repo.getAllByDriverId(status, driverId), new TypeToken<List<RentalDTO>>() {
         }.getType());
     }
+    @Override
+    public List<RentalDTO> getAllByCusNic(String nic) {
+        return mapper.map(repo.getAllByCusNic(nic), new TypeToken<List<RentalDTO>>() {
+        }.getType());
+    }
 
 }

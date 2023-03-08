@@ -29,5 +29,6 @@ public interface RentalService {
      long count();
 
      List<RentalDTO> getAllByDriverId(String status, String driverId);
+     List<RentalDTO> getAllByCusNic(String nic);
 
 }
