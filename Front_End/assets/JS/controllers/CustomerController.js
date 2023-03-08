@@ -271,7 +271,7 @@ function viewAllUsers(){
         success: function (resp) {
             console.log(resp);
             for (let user of resp.data) {
-                var row = '<tr><td>' + user.cusName + '</td><td>' + user.address + '</td><td>' + user.nic + '</td><td>' + user.email + '</td><td>' + user.contactNo + '</td><td>' + user.drivingLicenceNumber + '</td></tr>';
+                var row = '<tr><td>' + user.cusName + '</td><td>' + user.address + '</td><td>' + user.nic + '</td><td>' + user.email + '</td><td>' + user.contactNo + '</td><td>' + user.drivingLicenceNumber + '</td><td>' + user.imageLocation + '</td></tr>';
                 $("#verificationTable").append(row);
 
             }
