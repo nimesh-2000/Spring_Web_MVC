@@ -1,4 +1,5 @@
 loadAllCars();
+carsCount();
 $("#btnAddC2").click(function () {
     addCar();
 });
@@ -342,6 +343,16 @@ $("#btnDelete").click(function () {
         }
     });
 });
+
+function carsCount(){
+    $.ajax({
+        url: baseURL+"car/carCount",
+        dataType: "json",
+        success: function (res) {
+            $("#availableV").text(res.data);
+        }
+    })
+}
 
 
 const carBrandRegEx = /^[A-z ]{3,10}$/;
