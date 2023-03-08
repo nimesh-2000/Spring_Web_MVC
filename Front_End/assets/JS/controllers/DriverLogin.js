@@ -27,6 +27,9 @@ $("#dB").click(function (){
                 $("#dash").css('display','none');
                 $("#dashSEM").css('display','none');
                 $("#driverShedule").css('display','block');
+                $("#CDNs").text(res.data.name);
+                $("#DNIs").text(res.data.nic);
+                $("#DLNs").text(res.data.drivingLicenceNum);
 
             }else {
                 Swal.fire({
