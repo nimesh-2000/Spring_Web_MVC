@@ -160,6 +160,8 @@ function makePayment(){
                                         showConfirmButton: false,
                                         timer: 1500
                                     });
+                                    monthlyIncome();
+                                    annuallyIncome();
                                     // clearDriverTextFields();
                                 },
                                 error: function(error) {
