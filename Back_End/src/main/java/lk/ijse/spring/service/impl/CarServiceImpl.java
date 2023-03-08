@@ -122,4 +122,9 @@ public class CarServiceImpl implements CarService {
             throw new RuntimeException("Car "+registrationNo+" Not Exist to Update Status....!");
         }
     }
+
+    @Override
+    public long count() {
+        return repo.count();
+    }
 }
