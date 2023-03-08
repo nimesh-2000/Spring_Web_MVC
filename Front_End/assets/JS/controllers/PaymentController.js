@@ -1,7 +1,7 @@
 generatePaymentId();
 loadAllRentalsId();
 // selectReservation();
-// paymentsCount();
+paymentsCount();
 monthlyIncome();
 annuallyIncome();
 
@@ -190,15 +190,15 @@ function makePayment(){
 
 //======================================================
 //
-// function paymentsCount(){
-//     $.ajax({
-//         url: baseURL+"payment/paymentCount",
-//         dataType: "json",
-//         success: function (res) {
-//             $("#lblTotalPayments").text(res.data);
-//         }
-//     })
-// }
+function paymentsCount(){
+    $.ajax({
+        url: baseURL+"payment/paymentCount",
+        dataType: "json",
+        success: function (res) {
+            $("#reserveV").text(res.data);
+        }
+    })
+}
 
 
 //Daily
