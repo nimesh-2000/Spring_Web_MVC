@@ -64,6 +64,10 @@ public class CustomerController {
         long count = service.count();
         return new ResponseUtil("200"," Success",count);
     }
-
+    @GetMapping
+    public ResponseUtil getAllCustomer(){
+        List<CustomerDTO> allCustomers = service.getAllCustomerDetail();
+        return new ResponseUtil("200"," Success",allCustomers);
+    }
 
 }
