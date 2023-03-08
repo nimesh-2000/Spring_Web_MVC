@@ -1,6 +1,7 @@
 generateRentId();
 customerAccount();
 rentCount();
+activeBookingsCount()
 var p;
 var r;
 
@@ -298,6 +299,29 @@ function rentCount(){
         dataType: "json",
         success: function (res) {
             $("#bookingV").text(res.data);
+        }
+    })
+}
+
+function activeBookingsCount(){
+    $.ajax({
+        url: baseURL+"rental/rentalCount",
+        dataType: "json",
+        success: function (res) {
+
+            let allRentals=res.data;
+            let payCount=null;
+
+            $.ajax({
+                url: baseURL+"payment/paymentCount",
+                dataType: "json",
+                success: function (res) {
+                    payCount=res.data;
+                }
+            })
+            let sumTot=allRentals-payCount;
+            $("#activeV").text(sumTot);
+
         }
     })
 }
