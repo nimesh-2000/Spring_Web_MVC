@@ -33,7 +33,8 @@ $("#btnAddDriver").click(function () {
                 showConfirmButton: false,
                 timer: 1500
             });
-
+            clearDriverTextFields();
+            generateDriverId();
         },
         error: function(error) {
             let prase = JSON.parse(error.responseText);
@@ -84,6 +85,13 @@ function loadDriverSchedule() {
             }
         }
     })
+}
+function clearDriverTextFields() {
+    $('#txtDId').val("");
+    $('#txtDNa').val("");
+    $('#txtDLN').val("");
+    $('#txtDNIC').val("");
+    $('#selectDriver').val("");
 }
 
 const driverNameRegEx = /^[A-z ]{5,20}$/;
