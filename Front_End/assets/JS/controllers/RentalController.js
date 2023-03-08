@@ -102,6 +102,15 @@ $('body').on('dblclick','#CheckReTable>tr', function () {
 $('body').on('click', '.addTo', function() {
     alert("Add to cart "+this.id);
     loadCheckCars(this.id);
+    $("#home").css('display','none');
+    $("#Clogin").css('display','none');
+    $("#Csign").css('display','none');
+    $("#vfeet").css('display','none');
+    $("#chO").css('display','block');
+    $("#ac").css('display','none');
+    $("#dash").css('display','none');
+    $("#dashSEM").css('display','none');
+    $("#adminLogin").css('display','none');
 });
 
 
