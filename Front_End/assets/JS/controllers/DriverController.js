@@ -47,7 +47,18 @@ $("#btnAddDriver").click(function () {
     });
 });
 
+function generateDriverId() {
+    $.ajax({
+        url: baseURL + "rental/generateRentalId",
+        dataType: "json",
+        success: function (res) {
+            for (let rent of res.data) {
+                $('#txtRentalId').val(res.data);
+            }
 
+        }
+    })
+}
 function driverCount(){
     $.ajax({
         url: baseURL+"driver/driverCount",
