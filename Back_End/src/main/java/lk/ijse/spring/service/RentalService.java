@@ -28,6 +28,6 @@ public interface RentalService {
 
      long count();
 
-     List<RentalDTO> getAllByDriverID(String status, String driverId);
+     List<RentalDTO> getAllByDriverId(String status, String driverId);
 
 }

@@ -120,7 +120,7 @@ public class RentalServiceImpl implements RentalService {
     }
 
     @Override
-    public List<RentalDTO> getAllByDriverID(String status, String driverId) {
+    public List<RentalDTO> getAllByDriverId(String status, String driverId) {
         return mapper.map(repo.getAllByDriverId(status, driverId), new TypeToken<List<RentalDTO>>() {
         }.getType());
     }

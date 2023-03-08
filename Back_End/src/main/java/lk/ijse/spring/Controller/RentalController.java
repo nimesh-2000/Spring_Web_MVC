@@ -92,4 +92,16 @@ public class RentalController {
         service.denyRental(rentId);
         return new ResponseUtil("200",rentId+" Canceled",null);
     }
+
+    @GetMapping(path = "/getCarRents/{status}/{driverId}")
+    public ResponseUtil getAllCarRentsByDrivingId(@PathVariable String status, @PathVariable String driverId) {
+        return new ResponseUtil("200", "Done", service.getAllByDriverId(status, driverId));
+    }
+
+
+    @GetMapping(path = "/rentalCount")
+    public ResponseUtil getAllRentalCount(){
+        long count = service.count();
+        return new ResponseUtil("200"," Success",count);
+    }
 }
