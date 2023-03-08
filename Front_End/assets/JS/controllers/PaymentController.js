@@ -152,6 +152,8 @@ function makePayment(){
                                 data : JSON.stringify(payment),
                                 contentType:"application/json",
                                 success: function (resp) {
+                                    $("#rentPayTable").append(`<tr><td>${paymentId}</td><td>${rentalId}</td><td>${damageDes}</td><td>${damageCost}</td><td>${date}
+                                    </td><td>${extraKmCost}</td><td>${rentAmount}</td><td>${total}</td><td>${paymentStatus}</td></tr>`);
                                     console.log(resp);
                                     Swal.fire({
                                         position: 'top-end',
@@ -162,6 +164,7 @@ function makePayment(){
                                     });
                                     monthlyIncome();
                                     annuallyIncome();
+
                                     // clearDriverTextFields();
                                 },
                                 error: function(error) {
