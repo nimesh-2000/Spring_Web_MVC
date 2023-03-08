@@ -110,4 +110,10 @@ public ResponseUtil addVehicle(@RequestPart("vImageFile") MultipartFile[] file, 
         service.updateCarRentStatus(registrationNo, status);
         return new ResponseUtil("200", "Done", null);
     }
+
+    @GetMapping(path = "/carCount")
+    public ResponseUtil getAllCarCount(){
+        long count = service.count();
+        return new ResponseUtil("200"," Success",count);
+    }
 }
