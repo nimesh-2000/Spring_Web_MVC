@@ -60,7 +60,7 @@ function driverCount(){
 function loadDriverSchedule() {
     $('#driScheduTable').empty();
     let status = "Accepted";
-    let driverId = $("#dId").text();
+    let driverId = $("#DID").text();
     $.ajax({
         url:baseURL+"rental/getCarRents/" + status + "/" + driverId,
         dataType: "json",

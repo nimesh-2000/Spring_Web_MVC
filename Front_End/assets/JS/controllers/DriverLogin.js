@@ -30,6 +30,7 @@ $("#dB").click(function (){
                 $("#CDNs").text(res.data.name);
                 $("#DNIs").text(res.data.nic);
                 $("#DLNs").text(res.data.drivingLicenceNum);
+                $("#DID").text(res.data.driverId);
 
             }else {
                 Swal.fire({
