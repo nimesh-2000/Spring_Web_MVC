@@ -33,4 +33,7 @@ Driver findDriverRandomly();
     void updateDriverAvailabilityStatus(@Param("driverId") String driverID, @Param("availability") String availability);
     @Override
     long count();
+
+    @Query(value = "SELECT driverId FROM Driver ORDER BY driverId DESC LIMIT 1", nativeQuery = true)
+    String generateDriverId();
 }
