@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Transactional
@@ -111,6 +112,17 @@ public class RentalServiceImpl implements RentalService {
             throw new RuntimeException("Rental "+rentId+" Not Available to Delete..!");
         }
         repo.deleteById(rentId);
+    }
+
+    @Override
+    public long count() {
+        return repo.count();
+    }
+
+    @Override
+    public List<RentalDTO> getAllByDriverID(String status, String driverId) {
+        return mapper.map(repo.getAllByDriverId(status, driverId), new TypeToken<List<RentalDTO>>() {
+        }.getType());
     }
 
 }
