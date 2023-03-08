@@ -1,4 +1,4 @@
-
+loadDriverSchedule();
 driverCount();
 $("#btnAddDriver").click(function () {
 
