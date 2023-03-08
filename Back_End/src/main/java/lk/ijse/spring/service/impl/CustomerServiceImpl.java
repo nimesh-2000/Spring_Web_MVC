@@ -76,4 +76,9 @@ public class CustomerServiceImpl implements CustomerService {
     public CustomerDTO searchCustomerByEmail(String email) {
         return mapper.map( repo.getCustomerByEmail(email),CustomerDTO.class);
     }
+
+    @Override
+    public long count() {
+        return repo.count();
+    }
 }
