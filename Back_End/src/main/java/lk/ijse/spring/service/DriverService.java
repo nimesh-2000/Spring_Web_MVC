@@ -28,4 +28,5 @@ public interface DriverService {
 
     long count();
 
+     String generateDriverId();
 }
