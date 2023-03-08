@@ -22,7 +22,6 @@ public class Payment {
     private LocalDate date;
     private double rent_amount;
     private double extra_mileage;
-    private double cost_per_extra_km;
     private double damage_cost;
     private String damageDescription;
     private String payment_status;

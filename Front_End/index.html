@@ -61,7 +61,7 @@
                     <div><a class="btn-get-started scrollto" id="getS" style="cursor: pointer">Get Started</a></div>
                 </div>
                 <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
-                    <img alt="" class="img-fluid animated" src="assets/img/smallCar-removebg-preview.png">
+                    <img alt=""  class="img-fluid animated" src="assets/img/smallCar-removebg-preview.png">
                 </div>
             </div>
         </div>
@@ -587,7 +587,7 @@
 </main>
 
 <main id="dashSEM" style="display: none">
-    <section id="dashSE">
+    <section id="dashSE" style="display: none;">
         <div class="d-flex flex-row mb-3">
             <div id="bookingDiv"></div>
             <div>
@@ -596,12 +596,12 @@
             </div>
             <div id="availableDiv"></div>
             <div>
-                <h1 id="availableH">Available Cars</h1>
+                <h1 id="availableH">All Cars</h1>
                 <h1 id="availableV">150</h1>
             </div>
             <div id="reserveDiv"></div>
             <div>
-                <h1 id="reserveH">Reserved Cars</h1>
+                <h1 id="reserveH">Total Payments</h1>
                 <h1 id="reserveV">150</h1>
             </div>
             <div id="activeBDiv"></div>
@@ -625,49 +625,103 @@
             </div>
             <div id="occupiedDiv"></div>
             <div>
-                <h1 id="occupiedH">Occupied Drivers</h1>
+                <h1 id="occupiedH">All Drivers</h1>
                 <h1 id="occupiedV">150</h1>
             </div>
-            <div id="availableDriverDiv"></div>
-            <div>
-                <h1 id="availableDriverH">Available Drivers</h1>
-                <h1 id="availableDriverV">156</h1>
-            </div>
+
         </div>
 
 
         <!--    =========================================================-->
-        <div class="d-flex flex-row mb-3">
-            <div id="incomeDiv"></div>
-            <div>
-                <h1 id="dailyH">Daily Income</h1>
-                <h1 id="dailyV">15000.00</h1>
-                <h1 id="lk1">LKR</h1>
-            </div>
-            <div id="weeklyDiv"></div>
-            <div>
-                <h1 id="weeklyH">Weekly Income</h1>
-                <h1 id="weeklyV">15000.00</h1>
-                <h1 id="lk2">LKR</h1>
-            </div>
-            <div id="monthlyDiv"></div>
-            <div>
-                <h1 id="monthlyH">Monthly Income</h1>
-                <h1 id="monthV">15000.00</h1>
-                <h1 id="lk3">LKR</h1>
-            </div>
-            <div id="annuallyDiv"></div>
-            <div>
-                <h1 id="annuallyH">Annually Income</h1>
-                <h1 id="annuallyV">15000.00</h1>
-                <h1 id="lk4">LKR</h1>
-            </div>
+        <h4 id="anually1" style="position: absolute;left: 93px;top: 461px;">Annual Income</h4>
+        <div class="col-md-12 mt-4" id="annuallyIncomeViewTb" style="height: 83px;overflow-y: scroll;left: 31px;position: absolute;width: 300px;top: 475px;">
+            <table class="table table-bordered text-white">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Year</th>
+                    <th>Total</th>
+                </tr>
+                </thead>
+                <tbody class="bg-light text-dark" id="annuallyIncomeViewTable">
+
+                </tbody>
+            </table>
         </div>
+
+
+        <h4 id="monthly" style="position: absolute;left: 539px;top: 461px;">Monthly Income</h4>
+        <div class="col-md-12 mt-4" id="monthlyIncomeViewTb" style="height: 83px;overflow-y: scroll;left: 455px;position: absolute;width: 300px;top: 475px;">
+            <table class="table table-bordered text-white">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Year</th>
+                    <th>Month</th>
+                    <th>Total</th>
+                </tr>
+                </thead>
+                <tbody class="bg-light text-dark" id="monthlyIncomeViewTable">
+
+                </tbody>
+            </table>
+        </div>
+        <h4 id="daily" style="position: absolute;left: 827px;top: 461px;">Daily Income</h4>
+        <div class="col-md-12 mt-4" id="dailyIncomeViewTb" style="height: 83px;overflow-y: scroll;left: 828px;position: absolute;width: 164px;top: 475px;">
+            <table class="table table-bordered text-white">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <tbody class="bg-light text-dark" id="dailyIncomeViewTable">
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-6" id="dailyD" style="position: relative;
+    top: 294px;
+    left: 1043px;">
+            <label for="register-form-NIC-image" class="form-label ">Choose Date</label>
+            <input style="width: 150px;border: 1px solid gray" class="form-control  " type="date" id="dailyDate">
+        </div>
+
+        <button class="btnChooseD" style="position: relative;
+    left: 1075px;
+    top: 311px;
+    width: 79px;
+    background-color: lightblue;
+    border: none;" id="btnChooseD" type="button">Done</button>
+<!--        <div class="d-flex flex-row mb-3">-->
+<!--            <div id="incomeDiv"></div>-->
+<!--            <div>-->
+<!--                <h1 id="dailyH">Daily Income</h1>-->
+<!--                <h1 id="dailyV">15000.00</h1>-->
+<!--                <h1 id="lk1">LKR</h1>-->
+<!--            </div>-->
+<!--            <div id="weeklyDiv"></div>-->
+<!--            <div>-->
+<!--                <h1 id="weeklyH">Weekly Income</h1>-->
+<!--                <h1 id="weeklyV">15000.00</h1>-->
+<!--                <h1 id="lk2">LKR</h1>-->
+<!--            </div>-->
+<!--            <div id="monthlyDiv"></div>-->
+<!--            <div>-->
+<!--                <h1 id="monthlyH">Monthly Income</h1>-->
+<!--                <h1 id="monthV">15000.00</h1>-->
+<!--                <h1 id="lk3">LKR</h1>-->
+<!--            </div>-->
+<!--            <div id="annuallyDiv"></div>-->
+<!--            <div>-->
+<!--                <h1 id="annuallyH">Annually Income</h1>-->
+<!--                <h1 id="annuallyV">15000.00</h1>-->
+<!--                <h1 id="lk4">LKR</h1>-->
+<!--            </div>-->
+<!--        </div>-->
     </section>
 
     <!--    ==============================================================
     =====================================================================-->
-    <section class="carDash" id="carDash" style="display: none">
+    <section class="carDash" id="carDash" style="display: block">
         <h3 id="carh">Cars</h3>
         <div id="carhl"></div>
 

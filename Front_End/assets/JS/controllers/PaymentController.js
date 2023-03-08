@@ -18,7 +18,7 @@ function generatePaymentId() {
 
 function loadAllRentalsId() {
     $("#selectReservation").empty();
-    $("#selectReservation").prepend(<option>---Select Id---</option>)
+    $("#selectReservation").prepend(`<option>---Select Id---</option>`)
     $.ajax({
         url: baseURL + "rental",
         dataType: "json",
@@ -26,7 +26,7 @@ function loadAllRentalsId() {
             console.log(resp);
             for (let rent of resp.data) {
                 if(rent.rental_status=="Accepted") {
-                    $("#selectReservation").append(<option value="${rent.rentalId}">${rent.rentalId}</option>);
+                    $("#selectReservation").append(`<option value="${rent.rentalId}">${rent.rentalId}</option>`);
                 }
             }
 
@@ -122,7 +122,7 @@ function makePayment(){
                                 }
                             }
 
-                            var rentAmount = -(differenceIndays*dailyRate);
+                            var rentAmount = (differenceIndays*dailyRate);
                             console.log(rentAmount)
 
                             let total=rentAmount+(totalDamageWaiwerAmount-damageCost)+extraKmCost;
@@ -130,7 +130,7 @@ function makePayment(){
 
                             $('#txtRetDamA').val(rentAmount);
                             $('#txtPTot').val(total);
-
+                            console.log(extraKmCost);
                             var payment = {
                                 paymentId: paymentId,
                                 date: date,

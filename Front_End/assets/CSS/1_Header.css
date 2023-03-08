@@ -1546,7 +1546,7 @@
 #availableH{
     position: absolute;
     top: 89px;
-    left: 300px;
+    left: 332px;
     font-size: 20px;
     color: black;
     font-weight: normal;
@@ -1672,8 +1672,8 @@
 }
 #occupiedH{
     position: absolute;
-    top: 292px;
-    left: 532px;
+    top: 294px;
+    left: 562px;
     font-size: 20px;
     color: black;
     font-weight: normal;
@@ -2601,4 +2601,5 @@ position: relative;
     text-decoration:none;
     color:#fff;
 }
+
 
