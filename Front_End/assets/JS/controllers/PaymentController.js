@@ -195,3 +195,73 @@ function paymentsCount(){
         }
     })
 }
+
+
+//Daily
+$("#btnCheckDaily").click(function () {
+    $("#dailyIncomeViewTable").empty();
+    let incomeDate = $("#txtAdIncDate").val();
+    $.ajax({
+        url: baseURL + "payment?date=" + incomeDate,
+        dataType: "json",
+        success: function (resp) {
+            let total = resp.data;
+            var row = '<tr><td> ' + total + '.00</td></tr>';
+            $("#dailyIncomeViewTable").append(row);
+        }
+    });
+});
+
+//Monthly
+function monthlyIncome() {
+    $("#monthlyIncomeViewTable").empty();
+    $.ajax({
+        url: baseURL + "payment/monthlyIncome",
+        dataType: "json",
+        success: function (resp) {
+            let year1 = null;
+            let month1 = null;
+            let total1 = null;
+
+            let data = resp.data;
+            let split = data.split(",", 3);
+            for (var i = 0; i < split.length; i++) {
+                let year = split[i, 0];
+                let month = split[i, 1];
+                let total = split[i, 2];
+                year1 = year;
+                month1 = month;
+                total1 = total;
+            }
+            var row = '<tr><td>' + year1 + '</td><td>' + month1 + '</td><td> ' + total1 + '0</td></tr>';
+            $("#monthlyIncomeViewTable").append(row);
+
+
+        }
+    });
+}
+
+//Annually
+function annuallyIncome() {
+    $("#annuallyIncomeViewTable").empty();
+    $.ajax({
+        url: baseURL + "payment/annuallyIncome",
+        dataType: "json",
+        success: function (resp) {
+            let year2 = null;
+            let total2 = null;
+
+            let data = resp.data;
+            let split = data.split(",", 2);
+            for (var i = 0; i < split.length; i++) {
+                let year = split[i, 0];
+                let total = split[i, 1];
+                year2 = year;
+                total2 = total;
+            }
+            var row = '<tr><td>' + year2 + '</td><td>' + total2 + '0</td></tr>';
+            $("#annuallyIncomeViewTable").append(row);
+        }
+
+    });
+}
