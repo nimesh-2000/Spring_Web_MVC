@@ -76,8 +76,19 @@ $("#logOut").click(function(){
     $("#viewCar").css('display','none');
     $("#home").css('display','block');
     $("#header").css('display','block');
-
-
+});
+    $("#btnDSlogOut").click(function(){
+        $("#dash").css('display','none');
+        $("#dashSE").css('display','none');
+        $("#carDash").css('display','none');
+        $("#customerVerification").css('display','none');
+        $("#rentVerification").css('display','none');
+        $("#payment").css('display','none');
+        $("#employeeS").css('display','none');
+        $("#viewCar").css('display','none');
+        $("#driverShedule").css('display','none');
+        $("#home").css('display','block');
+        $("#header").css('display','block');
     // $("#carDash").css('display','none');
     // $("#customerVerification").css('display','none');
     // $("#rentVerification").css('display','none');
