@@ -66,7 +66,7 @@ function loadDriverSchedule() {
         dataType: "json",
         success:function (res) {
             for (let carRent of res.data) {
-                var row = '<tr><td>' + carRent.driverID + '</td><td>' + carRent.rentalId + '</td><td>' + carRent.registrationID + '</td><td>' + carRent.cusNic + '</td><td>' + carRent.pickUpDate + '</td><td>' + carRent.returnDate + '</td><td>' + carRent.pickupLocation + '</td><td>' + carRent.returnLocation + '</td></tr>';
+                var row = '<tr><td>' + carRent.driverId + '</td><td>' + carRent.rentalId + '</td><td>' + carRent.registrationId + '</td><td>' + carRent.cusNic + '</td><td>' + carRent.pickUpDate + '</td><td>' + carRent.returnDate + '</td><td>' + carRent.pickupLocation + '</td><td>' + carRent.returnLocation + '</td></tr>';
                 $("#driScheduTable").append(row);
                 console.log(carRent);
             }
