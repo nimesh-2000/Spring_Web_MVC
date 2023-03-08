@@ -57,7 +57,22 @@ function driverCount(){
         }
     })
 }
-
+function loadDriverSchedule() {
+    $('#driScheduTable').empty();
+    let status = "Accepted";
+    let driverId = $("#dId").text();
+    $.ajax({
+        url:baseURL+"rental/getCarRents/" + status + "/" + driverId,
+        dataType: "json",
+        success:function (res) {
+            for (let carRent of res.data) {
+                var row = '<tr><td>' + carRent.driverID + '</td><td>' + carRent.rentalId + '</td><td>' + carRent.registrationID + '</td><td>' + carRent.cusNic + '</td><td>' + carRent.pickUpDate + '</td><td>' + carRent.returnDate + '</td><td>' + carRent.pickupLocation + '</td><td>' + carRent.returnLocation + '</td></tr>';
+                $("#driScheduTable").append(row);
+                console.log(carRent);
+            }
+        }
+    })
+}
 
 const driverIdRegEx = /^(D00-)[0-9]{1,3}$/;
 const driverNameRegEx = /^[A-z ]{5,20}$/;
