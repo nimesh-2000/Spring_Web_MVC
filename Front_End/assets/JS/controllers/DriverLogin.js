@@ -31,6 +31,7 @@ $("#dB").click(function (){
                 $("#DNIs").text(res.data.nic);
                 $("#DLNs").text(res.data.drivingLicenceNum);
                 $("#DID").text(res.data.driverId);
+                loadDriverSchedule();
 
             }else {
                 Swal.fire({
