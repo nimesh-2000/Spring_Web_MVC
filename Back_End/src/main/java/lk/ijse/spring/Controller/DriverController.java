@@ -47,4 +47,10 @@ public class DriverController {
         return new ResponseUtil("200", "Done", null);
     }
 
+    @GetMapping(path = "/generateDriverId", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil generateDriverId() {
+        String s = service.generateDriverId();
+        return new ResponseUtil("200", "Ok", s);
+    }
+
 }
