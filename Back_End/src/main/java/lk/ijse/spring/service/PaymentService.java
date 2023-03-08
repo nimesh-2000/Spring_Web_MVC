@@ -25,4 +25,6 @@ public interface PaymentService {
     String getMonthlyIncome();
 
     String getAnnuallyIncome();
+
+
 }

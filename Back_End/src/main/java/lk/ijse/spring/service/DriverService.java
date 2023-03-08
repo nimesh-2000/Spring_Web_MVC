@@ -25,4 +25,7 @@ public interface DriverService {
     DriverDTO searchDriverByAvailability(String availability);
     DriverDTO generateDriver();
      void updateDriverRentStatus(String driverID, String status);
+
+    long count();
+
 }

@@ -4,6 +4,7 @@ import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.dto.RentalDTO;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface RentalService {
      String generateRentalId();
@@ -24,5 +25,9 @@ public interface RentalService {
      void updateCarRentStatus(String rentID, String status);
 
      void denyRental(String rentId);
+
+     long count();
+
+     List<RentalDTO> getAllByDriverID(String status, String driverId);
 
 }

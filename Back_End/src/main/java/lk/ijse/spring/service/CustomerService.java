@@ -21,4 +21,7 @@ public interface CustomerService {
     void uploadCustomerImages(String imageLocation, String nic);
 
     CustomerDTO searchCustomerByEmail(String email);
+
+    long count();
+
 }

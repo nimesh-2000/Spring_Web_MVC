@@ -33,4 +33,7 @@ public interface CarService {
 
     void updateCarRentStatus(String registrationNo, String status);
 
+    long count();
+
+
 }
