@@ -1,3 +1,5 @@
+
+driverCount();
 $("#btnAddDriver").click(function () {
 
     let driverId =  $("#txtDId").val();
@@ -46,7 +48,15 @@ $("#btnAddDriver").click(function () {
 });
 
 
-
+function driverCount(){
+    $.ajax({
+        url: baseURL+"driver/driverCount",
+        dataType: "json",
+        success: function (res) {
+            $("#occupiedV").text(res.data);
+        }
+    })
+}
 
 
 const driverIdRegEx = /^(D00-)[0-9]{1,3}$/;
