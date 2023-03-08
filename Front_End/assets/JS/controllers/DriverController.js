@@ -54,7 +54,7 @@ function generateDriverId() {
         dataType: "json",
         success: function (res) {
             for (let rent of res.data) {
-                $('#txtRentalId').val(res.data);
+                $('#txtDId').val(res.data);
             }
 
         }
