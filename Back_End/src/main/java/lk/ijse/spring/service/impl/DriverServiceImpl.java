@@ -97,6 +97,16 @@ public class DriverServiceImpl implements DriverService {
             throw new RuntimeException("Driver " + driverID + " Not Exist to Update Status....!");
         }
     }
+
+    @Override
+    public long count() {
+        return repo.count();
+    }
+
+    @Override
+    public String generateDriverId() {
+        return null;
+    }
 }
 
 
