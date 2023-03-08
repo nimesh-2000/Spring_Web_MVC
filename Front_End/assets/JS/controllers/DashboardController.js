@@ -10,6 +10,7 @@ $("#d").click(function(){
     $("#header").css('display','none');
 });
 $("#c").click(function(){
+    viewAllUsers();
     $("#dashSE").css('display','none');
     $("#carDash").css('display','none');
     $("#customerVerification").css('display','block');
