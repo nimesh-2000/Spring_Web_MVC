@@ -198,7 +198,7 @@ function paymentsCount(){
 
 
 //Daily
-$("#btnCheckDaily").click(function () {
+$("#btnChooseD").click(function () {
     $("#dailyIncomeViewTable").empty();
     let incomeDate = $("#txtAdIncDate").val();
     $.ajax({
