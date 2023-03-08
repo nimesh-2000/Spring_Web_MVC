@@ -86,13 +86,11 @@ function loadDriverSchedule() {
     })
 }
 
-const driverIdRegEx = /^(D00-)[0-9]{1,3}$/;
 const driverNameRegEx = /^[A-z ]{5,20}$/;
 const driverNicRegEx = /^[0-9/A-z. ,]{7,}$/;
 const driverLicenseRegEx = /^[0-9]{1,}$/;
 
 let DriverValidations = [];
-DriverValidations.push({reg: driverIdRegEx, field: $('#txtDId'),error:'Driver ID Pattern is Wrong' });
 DriverValidations.push({reg: driverNameRegEx, field: $('#txtDNa'),error:'Driver Name Pattern is Wrong'});
 DriverValidations.push({reg: driverLicenseRegEx, field: $('#txtDLN'),error:'Driver License Number Pattern is Wrong'});
 DriverValidations.push({reg: driverNicRegEx, field: $('#txtDNIC'),error:'Driver NIC  Pattern is Wrong'});
@@ -114,13 +112,6 @@ $("#txtDId,#txtDNa,#txtDLN,#txtDNIC").on('blur', function (event) {
 });
 
 
-$("#txtDId").on('keydown', function (event) {
-    if (event.key == "Enter" && checkD(driverIdRegEx, $("#txtDId"))) {
-        $("#txtDNa").focus();
-    } else {
-        focusTextD($("#txtDId"));
-    }
-});
 
 
 $("#txtDNa").on('keydown', function (event) {
