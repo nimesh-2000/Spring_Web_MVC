@@ -59,5 +59,11 @@ public class CustomerController {
         return new ResponseUtil("200",dto.toString()+" Updated",null);
     }
 
+    @GetMapping(path = "/cusCount")
+    public ResponseUtil getAllCustomerCount(){
+        long count = service.count();
+        return new ResponseUtil("200"," Success",count);
+    }
+
 
 }
