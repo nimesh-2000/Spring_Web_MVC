@@ -53,4 +53,10 @@ public class DriverController {
         return new ResponseUtil("200", "Ok", s);
     }
 
+    @GetMapping(path = "/driverCount")
+    public ResponseUtil getAllDriverCount(){
+        long count = service.count();
+        return new ResponseUtil("200"," Success",count);
+    }
+
 }
