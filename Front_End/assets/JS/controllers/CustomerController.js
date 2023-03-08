@@ -1,6 +1,6 @@
 
 let baseURL="http://localhost:8080/Back_End_war/";
-
+customerCount();
 $("#btnSignL").click(function (){
     addCustomer();
     $("#home").css('display','none');
@@ -253,7 +253,15 @@ $("#btnUp").click(function () {
 
     });
 });
-
+function customerCount(){
+    $.ajax({
+        url: baseURL+"customer/cusCount",
+        dataType: "json",
+        success: function (res) {
+            $("#registerV").text(res.data);
+        }
+    })
+}
 
 
 
