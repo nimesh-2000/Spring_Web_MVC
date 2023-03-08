@@ -25,6 +25,7 @@ public class Payment {
     private double damage_cost;
     private String damageDescription;
     private String payment_status;
+    private double total;
 
     @OneToOne
     private Rental rentalId;

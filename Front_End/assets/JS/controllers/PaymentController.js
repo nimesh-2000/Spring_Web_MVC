@@ -1,7 +1,7 @@
 generatePaymentId();
 loadAllRentalsId();
 // selectReservation();
-paymentsCount();
+// paymentsCount();
 monthlyIncome();
 annuallyIncome();
 
@@ -124,7 +124,7 @@ function makePayment(){
                                 }
                             }
 
-                            var rentAmount = (differenceIndays*dailyRate);
+                            var rentAmount = -(differenceIndays*dailyRate);
                             console.log(rentAmount)
 
                             let total=rentAmount+(totalDamageWaiwerAmount-damageCost)+extraKmCost;
@@ -190,15 +190,15 @@ function makePayment(){
 
 //======================================================
 //
-function paymentsCount(){
-    $.ajax({
-        url: baseURL+"payment/paymentCount",
-        dataType: "json",
-        success: function (res) {
-            $("#lblTotalPayments").text(res.data);
-        }
-    })
-}
+// function paymentsCount(){
+//     $.ajax({
+//         url: baseURL+"payment/paymentCount",
+//         dataType: "json",
+//         success: function (res) {
+//             $("#lblTotalPayments").text(res.data);
+//         }
+//     })
+// }
 
 
 //Daily
