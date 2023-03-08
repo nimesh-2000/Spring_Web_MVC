@@ -1,7 +1,9 @@
 generatePaymentId();
 loadAllRentalsId();
 // selectReservation();
-// paymentsCount();
+paymentsCount();
+monthlyIncome();
+annuallyIncome();
 
 function generatePaymentId() {
     $.ajax({
